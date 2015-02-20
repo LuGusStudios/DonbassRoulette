@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Game>
+	<Structures>
+		<Left>
+			<Structure>
+				<Name>Spawner</Name>
+				<Position>-66;0</Position>
+			</Structure>
+		
+		
+			<Structure>
+				<Name>Barricade</Name>
+				<Position>-60;0.2</Position>
+			</Structure>
+		</Left>
+	
+		<Right>
+			<Structure>
+				<Name>Spawner</Name>
+				<Position>-11.63;0</Position>
+			</Structure>
+			<Structure>
+				<Name>Tower</Name>
+				<Position>-32.79015;1.4</Position>
+			</Structure>
+			<Structure>
+				<Name>Tower</Name>
+				<Position>-18.21225;1.4</Position>
+			</Structure>
+		</Right>
+	</Structures>
+	
+	<Others>
+		<Ground>
+			<Name></Name>
+			<Position></Position>
+		</Ground>
+	</Others>
+</Game>
+
+
+
+
+
+<LeftUser>
+	<UserData>
+		<AvailableSpells>
+			<Spell>
+				<Name>S_Explosion</Name>
+			</Spell>
+			<Spell>
+				<Name>S_Healing</Name>
+			</Spell>
+		</AvailableSpells>	
+			
+		<AvailableFactories>
+			<Factory>
+				<Name>F_RebelSoldier</Name>
+			</Factory>
+			<Factory>
+				<Name>F_RebelMedic</Name>
+			</Factory>
+			<Factory>
+				<Name>F_RebelTank</Name>
+			</Factory>
+		</AvailableFactories>
+	
+		<Money>
+			<Base>1000</Base>
+			<Regen>100</Regen>
+			<Couldown>5</Couldown>
+			<Multiplicator>1.5</Multiplicator>
+			<Price>200</Price>
+			<PriceMultiplicator>1.5</PriceMultiplicator>
+			<RateMultiplicator>0.5</RateMultiplicator>
+			<RatePrice>300</RatePrice>
+			<RatePriceMultiplicator>1.3</RatePriceMultiplicator>
+		</Money>
+		
+		<Mana>
+			<Base>150</Base>
+			<Regen>10</Regen>
+			<Couldown>3</Couldown>
+			<Multiplicator>1.5</Multiplicator>
+			<Price>150</Price>
+			<PriceMultiplicator>1.2</PriceMultiplicator>
+		</Mana>
+	</UserData>
+</LeftUser>
+
+<RightUser>
+	<UserData>
+		<AvailableSpells>
+			<Spell>
+				<Name>S_Explosion</Name>
+			</Spell>
+			<Spell>
+				<Name>S_Healing</Name>
+			</Spell>
+		</AvailableSpells>
+		
+		<AvailableFactories>
+			<Factory>
+				<Name>F_UkraineSoldier</Name>
+				<Weight>1</Weight>
+			</Factory>
+			<Factory>
+				<Name>F_UkraineMedic</Name>
+				<Weight>2.4</Weight>
+			</Factory>
+		</AvailableFactories>
+		
+		<Money>
+			<Base>1000</Base>
+			<Regen>100</Regen>
+			<Couldown>5</Couldown>
+			<Multiplicator>1.5</Multiplicator>
+			<Price>200</Price>
+			<PriceMultiplicator>1.5</PriceMultiplicator>
+			<RateMultiplicator>0.5</RateMultiplicator>
+			<RatePrice>300</RatePrice>
+			<RatePriceMultiplicator>1.3</RatePriceMultiplicator>
+		</Money>
+		
+		<Mana>
+			<Base>150</Base>
+			<Regen>10</Regen>
+			<Couldown>3</Couldown>
+			<Multiplicator>1.5</Multiplicator>
+			<Price>150</Price>
+			<PriceMultiplicator>1.2</PriceMultiplicator>
+		</Mana>
+	</UserData>		
+	<AIData>
+		<Behaviour></Behaviour>
+		<TrySpawnCouldown>3</TrySpawnCouldown>
+		<ForcedSpawnCouldown>5</ForcedSpawnCouldown>
+		<SpellCastCouldown>5</SpellCastCouldown>
+		<SpellCastRange>35</SpellCastRange>
+		<SafetyRange>12</SafetyRange>
+		<SafetyMana>50</SafetyMana>
+	</AIData>	
+</RightUser>
