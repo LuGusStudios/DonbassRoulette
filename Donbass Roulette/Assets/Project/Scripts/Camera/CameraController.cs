@@ -31,7 +31,7 @@ public class CameraController : MonoBehaviour {
 	void Update () {
 		if(LugusInput.use.Key(KeyCode.Mouse0))
 		{
-			Transform t = LugusInput.use.RayCastFromMouse();
+			Transform t = LugusInput.use.RayCastFromMouse(LugusCamera.game);
 			if(t)
 			{
 				if(t.collider2D == this.m_arrowLeft)

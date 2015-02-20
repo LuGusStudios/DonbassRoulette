@@ -11,6 +11,7 @@ public class Arrow : Projectile {
 	public override void Initialize( float value, Vector3 goal )
 	{
 		m_value = value;
+
 		Vector3[] path = { this.transform.position, Vector3.Lerp(this.transform.position,goal,.5f) + new Vector3(0,3,0), goal };
 		this.gameObject.MoveTo(path).Time(m_timeReach).Execute();
 	}
