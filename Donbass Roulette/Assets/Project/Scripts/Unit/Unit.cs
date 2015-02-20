@@ -15,8 +15,9 @@ public class Unit : Entity {
 	}
 
 
-	new void Update () {
+	override protected void Update () {
 		base.Update();
+        
 		if(m_attackTimer <= 0)
 		{
 			Move();

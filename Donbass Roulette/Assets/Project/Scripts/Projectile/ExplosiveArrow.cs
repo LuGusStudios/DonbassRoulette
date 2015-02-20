@@ -4,11 +4,21 @@ using System.Collections;
 public class ExplosiveArrow : Arrow {
 	public AreaOfEffect m_aoe;
 
-	protected override void ApplyEffect(Collider2D col)
+    protected override void ApplyBodyEffect(Body body)
+    {
+        Explode();
+    }
+	protected override void ApplyNonBodyEffect(Collider2D col)
 	{
-		Instantiate(m_aoe, this.transform.position, this.transform.rotation);
-		Destroy(this.gameObject);
+        Explode();	
 	}
+
+    protected void Explode()
+    {
+        Instantiate(m_aoe, this.transform.position, this.transform.rotation);
+        Destroy(this.gameObject);
+    }
+
 
 	override protected IEnumerator Remove()
 	{

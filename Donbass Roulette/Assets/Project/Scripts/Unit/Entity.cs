@@ -14,7 +14,7 @@ public class Entity : Body {
 	protected float m_attackTimer = 0;
 
 	// Update is called once per frame
-	protected void Update () {
+	virtual protected void Update () {
 		if(m_attackTimer > 0)
 			m_attackTimer -= Time.deltaTime;
 
@@ -34,7 +34,7 @@ public class Entity : Body {
 		if(m_projectile != null)
 		{// range attack
 			Projectile projectile = Instantiate(m_projectile,this.transform.position, Quaternion.identity) as Projectile;
-			projectile.Initialize(this.m_damage, body.transform.position);
+			projectile.Initialize(this.m_side, this.m_damage, body.transform.position);
 		}
 		else
 		{// melee attack (immediate)
@@ -45,7 +45,7 @@ public class Entity : Body {
 		
 	}
 
-	protected Body GetNearestSideBody(Side side, float range)
+	protected Body GetNearestSideBody(Side side, float range, Composition composition = Composition.None)
 	{
 		Collider2D[] cols = Physics2D.OverlapCircleAll( new Vector2( this.transform.position.x, 0 ), range);
 
@@ -59,7 +59,7 @@ public class Entity : Body {
 				if(col != this.collider2D)
 				{
 					Body body = col.GetComponent<Body>();
-					if(	body != null && body.m_side == side)
+					if(	body != null && body.m_side == side && (m_composition == Composition.None || body.m_composition == composition) )
 					{
 						float dist = Vector2.Distance(col.transform.position, this.transform.position);
 						if(dist < smallestDist)
@@ -70,16 +70,13 @@ public class Entity : Body {
 					}
 				}
 			}
-
 			if(smallestDist != float.MaxValue)
 			{
 				return nearest;
 			}
-			
 		}
 		return null;
 	}
-
 
 	protected void OnDrawGizmos()
 	{

@@ -5,13 +5,17 @@ public class UnitMedic : Unit {
     public float m_healRange;
     public float m_healValue;
 
-    new protected void Update()
+    override protected void Update()
     {
-        Body onRangeAlly = GetNearestSideBody(this.m_side, m_healRange);
-        if (onRangeAlly != null)
-             Heal(onRangeAlly);
+        Body onRangeAlly = GetNearestSideBody(this.m_side, m_healRange, Composition.Organic);
+        if (onRangeAlly != null && onRangeAlly.GetHpRatio() < 1)
+        {
+            Heal(onRangeAlly);
+        }
         else
+        {
             base.Update();
+        }
     }
 
 

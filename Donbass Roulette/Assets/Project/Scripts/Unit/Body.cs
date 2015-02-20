@@ -2,8 +2,21 @@
 using System.Collections;
 
 public class Body : MonoBehaviour {
-	public float m_hpMax;
+
+    public enum Composition
+    {
+        None = 0,
+        Mineral = 1,
+        Organic = 2
+    };
+    public Composition m_composition;
+    public float m_hpMax;
 	protected float m_hp;
+
+
+
+
+
 
 	public float m_deathDestroyTime;
 	public Side m_side;

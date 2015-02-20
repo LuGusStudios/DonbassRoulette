@@ -105,10 +105,6 @@
 				<Name>F_UkraineSoldier</Name>
 				<Weight>1</Weight>
 			</Factory>
-			<Factory>
-				<Name>F_UkraineMedic</Name>
-				<Weight>2.4</Weight>
-			</Factory>
 		</AvailableFactories>
 		
 		<Money>
