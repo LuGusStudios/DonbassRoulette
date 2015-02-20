@@ -36,34 +36,40 @@ public abstract class User : MonoBehaviour {
 	public List<Factory> m_factories = new List<Factory>();
 	public Transform m_spawner;
 
-	protected void BuyIncome()
+	protected bool BuyIncome()
 	{
 		if(m_money > m_incomePrice)
 		{
 			m_money -= m_incomePrice;
 			m_income = (int)(m_income * m_incomeMultiplicator);
 			m_incomePrice = (int)(m_incomePrice * m_incomePriceMultiplicator);
+            return true;
 		}
+        return false;
 	}
 
-	protected void BuyManaRegen()
+	protected bool BuyManaRegen()
 	{
 		if(m_money > m_manaRegenPrice)
 		{
 			m_money -= m_manaRegenPrice;
 			m_manaRegen = (int)(m_manaRegen * m_manaRegenMultiplicator);
 			m_manaRegenPrice = (int)(m_manaRegenPrice * m_manaRegenMultiplicator);
+            return true;
 		}
+        return false;
 	}
 
-	protected void BuyIncomeRate()
+	protected bool BuyIncomeRate()
 	{
 		if(m_money > m_incomeRatePrice)
 		{
 			m_money -= m_incomeRatePrice;
 			m_incomeCouldown *= m_incomeRateMultiplicator;
 			m_incomeRatePrice = (int)(m_incomeRatePrice * m_incomeRatePriceMultiplicator);
+            return true;
 		}
+        return false;
 	}
 
 
