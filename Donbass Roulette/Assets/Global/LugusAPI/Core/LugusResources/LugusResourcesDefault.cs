@@ -78,6 +78,7 @@ public class LugusResourcesDefault : LugusSingletonExisting<LugusResourcesDefaul
 		// Quick and dirty fix. We want to set the language key as soon as possible, but this means Awake()s on other objects might run before
 		// the collections below have been initialized. If this is the case, the setting of the langID on the collections is delayed until
 		// LoadDefaultCollections().
+		// TODO: Fix this with InitializeSingleton?
 		if(collections == null || collections.Count == 0)
 		{
 			languageTemp = langKey;
