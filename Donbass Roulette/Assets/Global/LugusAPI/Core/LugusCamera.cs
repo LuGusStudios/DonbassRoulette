@@ -132,6 +132,6 @@ public static class LugusCameraExtensions
 
 	public static void Shake(this Camera camera, Vector3 displacement, float time = 0.3f)
 	{
-		iTween.ShakePosition(camera.transform.parent.gameObject, displacement, time );	 	
+		iTween.ShakePosition(camera.transform.parent.gameObject, displacement, time );		
 	}
 }

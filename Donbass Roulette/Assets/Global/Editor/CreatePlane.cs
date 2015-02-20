@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 using System.Collections;
-
+using System.IO;
 
 public class CreatePlane : ScriptableWizard
 {
@@ -38,8 +38,9 @@ public class CreatePlane : ScriptableWizard
     static Camera cam;
     static Camera lastUsedCam;
 
-
-    [MenuItem("GameObject/Create Other/Custom Plane...")]
+	protected string targetPathRelativeToAssets = "Project/Meshes/PlaneMeshes/";
+	
+    [MenuItem("GameObject/3D Object/Custom Plane...")]
     static void CreateWizard()
     {
         cam = Camera.current;
@@ -50,7 +51,17 @@ public class CreatePlane : ScriptableWizard
             lastUsedCam = cam;
         ScriptableWizard.DisplayWizard("Create Plane", typeof(CreatePlane));
     }
+	
+	protected void CheckDirectory()
+	{
+		if (!Directory.Exists(Application.dataPath + "/" + targetPathRelativeToAssets))
+		{
+			Debug.Log("CreatePlane: Creating directory: " + Application.dataPath + "/" + targetPathRelativeToAssets);
 
+			Directory.CreateDirectory(Application.dataPath + "/" + targetPathRelativeToAssets);
+			AssetDatabase.Refresh();
+		}
+	}
 
     void OnWizardUpdate()
     {
@@ -61,6 +72,8 @@ public class CreatePlane : ScriptableWizard
 
     void OnWizardCreate()
     {
+		CheckDirectory();
+
         GameObject plane = new GameObject();
 
         if (!string.IsNullOrEmpty(optionalName))
@@ -120,7 +133,8 @@ public class CreatePlane : ScriptableWizard
         plane.AddComponent(typeof(MeshRenderer));
 
         string planeAssetName = plane.name + widthSegments + "x" + lengthSegments + "W" + width + "L" + length + (orientation == Orientation.Horizontal ? "H" : "V") + anchorId + ".asset";
-        Mesh m = (Mesh)AssetDatabase.LoadAssetAtPath(/*"Assets/Editor/"*/ "Assets/Project/PlaneMeshes/" + planeAssetName, typeof(Mesh));
+
+		Mesh m = (Mesh)AssetDatabase.LoadAssetAtPath("Assets" + "/" +  targetPathRelativeToAssets + planeAssetName, typeof(Mesh));
 
         if (m == null)
         {
@@ -178,7 +192,7 @@ public class CreatePlane : ScriptableWizard
             m.triangles = triangles;
             m.RecalculateNormals();
 
-            AssetDatabase.CreateAsset(m, /*"Assets/Editor/"*/ "Assets/Project/PlaneMeshes/" + planeAssetName);
+			AssetDatabase.CreateAsset(m, "Assets" + "/" +  targetPathRelativeToAssets + planeAssetName);
             AssetDatabase.SaveAssets();
         }
 
