@@ -13,18 +13,13 @@ public class Body : MonoBehaviour {
     public float m_hpMax;
 	protected float m_hp;
 
-
-
-
-
-
 	public float m_deathDestroyTime;
 	public Side m_side;
 	
 	public delegate void Delegate();
 	public Delegate m_DelDeath;
 
-	protected void Start()
+	virtual protected void Start()
 	{
 		m_hp = m_hpMax;
 		if(m_side == Side.Right)

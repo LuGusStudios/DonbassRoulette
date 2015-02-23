@@ -24,7 +24,7 @@ public class UnitMedic : Unit {
         body.AddHp(m_healValue);
     }
 
-    new void OnDrawGizmos()
+    override protected void OnDrawGizmos()
     {
         base.OnDrawGizmos();
         // draw circle2D

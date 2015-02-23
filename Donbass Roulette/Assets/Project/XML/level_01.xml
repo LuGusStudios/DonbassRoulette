@@ -2,35 +2,35 @@
 
 <Game>
 	<Camera>
-		<Position>0;1;0</Position>
+		<Position>0;1;-10</Position>
 	</Camera>
 
 	<Structures>
 		<Left>
 			<Structure>
 				<Name>Spawner</Name>
-				<Position>-66;0</Position>
+				<Position>-45.5;0</Position>
 			</Structure>
 		
 		
 			<Structure>
 				<Name>Barricade</Name>
-				<Position>-60;0.2</Position>
+				<Position>-40;0.2</Position>
 			</Structure>
 		</Left>
 	
 		<Right>
 			<Structure>
 				<Name>Spawner</Name>
-				<Position>-11.63;0</Position>
+				<Position>45.5;0</Position>
 			</Structure>
 			<Structure>
 				<Name>Tower</Name>
-				<Position>-32.79015;1.4</Position>
+				<Position>31;1.4</Position>
 			</Structure>
 			<Structure>
 				<Name>Tower</Name>
-				<Position>-18.21225;1.4</Position>
+				<Position>6;1.4</Position>
 			</Structure>
 		</Right>
 	</Structures>

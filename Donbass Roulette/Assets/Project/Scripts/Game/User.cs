@@ -99,7 +99,7 @@ public abstract class User : MonoBehaviour {
 		}
 	}
 
-	protected void Start()
+	virtual protected void Start()
 	{
 		if(m_factories.Count > 0)
 			SetComponents();

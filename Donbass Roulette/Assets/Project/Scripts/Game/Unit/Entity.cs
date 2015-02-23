@@ -28,8 +28,6 @@ public class Entity : Body {
 
 	void Attack(Body body)
 	{
-        Debug.Log("go");
-
 		if( m_DelAttack != null )
 			m_DelAttack();
 
@@ -81,7 +79,7 @@ public class Entity : Body {
 		return null;
 	}
 
-	protected void OnDrawGizmos()
+	virtual protected void OnDrawGizmos()
 	{
 		// draw circle2D
 		Gizmos.color = Color.blue;

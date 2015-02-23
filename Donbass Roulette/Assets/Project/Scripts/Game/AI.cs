@@ -25,7 +25,7 @@ public class AI : User
 	}
 
 
-	new void Start()
+	override protected void Start()
 	{
 		base.Start();
 		StartCoroutine(TryWeightSpawn());
