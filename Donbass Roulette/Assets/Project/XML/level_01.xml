@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Game>
+	<Camera>
+		<Position>0;1;0</Position>
+	</Camera>
+
 	<Structures>
 		<Left>
 			<Structure>

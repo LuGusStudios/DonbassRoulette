@@ -27,6 +27,7 @@ public static class SideExtension
 
 
 public class GameData : MonoBehaviour {
+    public Camera m_camera;
 	public User m_leftUser;
 	public User m_rightUser;
 	public List<Factory> m_factories = new List<Factory>();
