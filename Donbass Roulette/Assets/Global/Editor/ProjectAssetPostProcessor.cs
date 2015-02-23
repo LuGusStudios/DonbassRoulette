@@ -7,7 +7,7 @@ class ProjectAssetPostprocessor : AssetPostprocessor
 	// Use this to only apply post-processing to certain directories.
 	// Others can then remain unaffected by this script and retain the settings set by the author (e.g. for asset packs, standard assets).
 	
-	protected string[] includedFolders = new string[]{"Assets/Project", "Assets/Resources"};
+	public static string[] includedFolders = new string[]{"Assets/Project", "Assets/Resources"};
 	protected string DEFAULT_KEY = "DEFAULTS_SET";
 	protected uint DEFAULT_VERSION = 1;
 
@@ -34,7 +34,7 @@ class ProjectAssetPostprocessor : AssetPostprocessor
 	}
 
 	// UTILITIES------------------------------------------------------------------------------------------------------------------------------------
-	protected bool IsIncludedFolder(string path)
+	public static bool IsIncludedFolder(string path)
 	{
 		foreach (string s in includedFolders)
 		{
