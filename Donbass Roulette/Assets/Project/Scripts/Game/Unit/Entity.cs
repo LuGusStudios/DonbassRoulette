@@ -26,7 +26,7 @@ public class Entity : Body {
 		}
 	}
 
-	void Attack(Body body)
+	virtual protected void Attack(Body body)
 	{
 		if( m_DelAttack != null )
 			m_DelAttack();
@@ -43,7 +43,6 @@ public class Entity : Body {
 		}
 
 		m_attackTimer = m_attackCouldown;
-		
 	}
 
 	protected Body GetNearestSideBody(Side side, float range, Composition composition = Composition.None)
@@ -82,7 +81,7 @@ public class Entity : Body {
 	virtual protected void OnDrawGizmos()
 	{
 		// draw circle2D
-		Gizmos.color = Color.blue;
+		Gizmos.color = Color.red;
 		const int sections = 12;
 		float radius = m_range;
 

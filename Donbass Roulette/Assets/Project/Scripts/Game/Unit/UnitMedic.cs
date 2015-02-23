@@ -28,7 +28,7 @@ public class UnitMedic : Unit {
     {
         base.OnDrawGizmos();
         // draw circle2D
-        Gizmos.color = Color.green;
+        Gizmos.color = Color.yellow;
         const int sections = 12;
         float radius = m_healRange;
 

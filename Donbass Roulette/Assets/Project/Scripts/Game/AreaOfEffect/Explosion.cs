@@ -3,8 +3,6 @@ using System.Collections;
 
 
 public class Explosion : AreaOfEffect {
-	public int m_damage;
-
 	override public SpellType GetSpellType()
 	{
 		return SpellType.Offensive;
@@ -16,7 +14,7 @@ public class Explosion : AreaOfEffect {
 		Body body = col.GetComponent<Body>();
 		if(body /*&& body.m_side != m_side*/)
 		{
-			body.ReduceHp(m_damage);
+			body.ReduceHp(m_value);
 		}
 	}
 

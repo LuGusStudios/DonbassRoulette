@@ -15,7 +15,8 @@ public class ExplosiveArrow : Arrow {
 
     protected void Explode()
     {
-        Instantiate(m_aoe, this.transform.position, this.transform.rotation);
+        AreaOfEffect aoe = Instantiate(m_aoe, this.transform.position, this.transform.rotation) as AreaOfEffect;
+        aoe.m_value = this.m_value;
         Destroy(this.gameObject);
     }
 

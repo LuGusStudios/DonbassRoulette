@@ -3,6 +3,7 @@ using System.Collections;
 
 public abstract class AreaOfEffect : MonoBehaviour {
 	public Side m_side;
+    public float m_value;
 
 	public enum SpellType
 	{
