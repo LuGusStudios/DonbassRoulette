@@ -6,7 +6,7 @@ public class UnitAnim : MonoBehaviour {
 
 	// Change these default values on the unit if needed.
 	public string walkAnimName = "Walking";
-	public string attackAnimName = "Attack";
+	public string attackAnimName = "Firing";
 	public string deathAnimName = "Death";
 
 	protected Unit m_unit;
@@ -43,16 +43,16 @@ public class UnitAnim : MonoBehaviour {
 
 	void PlayWalkAnim()
 	{
-		m_animator.CrossFade(walkAnimName, 0.2f);
+		m_animator.Play(walkAnimName);
 	}
 
 	void PlayAttackAnim()
 	{
-		m_animator.CrossFade(attackAnimName, 0.2f);
+		m_animator.Play(attackAnimName);
 	}
 
 	void PlayDeathAnim()
 	{
-		m_animator.CrossFade(deathAnimName, 0.2f);
+		m_animator.Play(deathAnimName);
 	}
 }

@@ -7,7 +7,7 @@ class ProjectAssetPostprocessor : AssetPostprocessor
 	// Use this to only apply post-processing to certain directories.
 	// Others can then remain unaffected by this script and retain the settings set by the author (e.g. for asset packs, standard assets).
 	
-	public static string[] includedFolders = new string[]{"Assets/Project", "Assets/Resources"};
+	public static string[] includedFolders = new string[]{"Assets/Project", "Assets/Resources"}; 
 	protected string DEFAULT_KEY = "DEFAULTS_SET";
 	protected uint DEFAULT_VERSION = 1;
 
@@ -17,7 +17,7 @@ class ProjectAssetPostprocessor : AssetPostprocessor
 
 	// AUDIO DEFAULTS
 	public static bool audio3DDefault = false;
-	public static string[] compressedAudioExtensions = {".mp3", ".ogg"};
+	public static string[] compressedAudioExtensions = {".mp3", ".ogg"}; 
 	public static float streamFromDiscLength = 60.0f;
 	public static float compressedInMemoryLength = 30.0f;
 
