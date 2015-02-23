@@ -13,14 +13,7 @@ public class Minimap : MonoBehaviour {
 		return (m_maxX - m_minX);
 	}
 
-
-
-
-	void Start () {
-	
-	}
-	
-	protected void Update () {
+	virtual protected void Update () {
 		foreach(Miniature element in m_elements)
 		{
             if (element && element.m_ref)

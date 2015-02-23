@@ -28,11 +28,13 @@ public class Map : MonoBehaviour {
 
     public Vector3 GetRandomStartingGroundPos()
     {
-        return (this.transform.position.yAdd(Random.Range(m_minY_ground, m_maxY_ground)));
+        float randVal = Random.Range(m_minY_ground, m_maxY_ground);
+        return (this.transform.position.yAdd(randVal).zAdd(randVal));
     }
     public Vector3 GetRandomStartingAirPos()
     {
-        return (this.transform.position.yAdd(Random.Range(m_minY_air, m_maxY_air)));
+        float randVal = Random.Range(m_minY_air, m_maxY_air);
+        return (this.transform.position.yAdd(randVal).zAdd(randVal));
     }
 
 

@@ -25,7 +25,7 @@ public class AI : User
 	}
 
 
-	new void Start()
+	override protected void Start()
 	{
 		base.Start();
 		StartCoroutine(TryWeightSpawn());
@@ -95,12 +95,12 @@ public class AI : User
 		while(true)
 		{
 			yield return new WaitForSeconds(m_spellCastCouldown);
-			OffensiveSpellCastCheck(m_safetyRange);
+			OffensiveSpellCastRoutine(m_safetyRange);
 
 			if(Random.Range(0, 10) == 0) // irregular value factor (frequency)
 			{
 				if(Random.Range(0, 1) == 0)
-					OffensiveSpellCastCheck(m_spellCastRange, m_safetyMana); // TODO : bug, spellCastRange isn't correct (why?)
+					OffensiveSpellCastRoutine(m_spellCastRange, m_safetyMana); // TODO : bug, spellCastRange isn't correct (why?)
 				else
 					HealingSpellCastCheck(m_spellCastRange, m_safetyMana);
 			}
@@ -118,16 +118,16 @@ public class AI : User
 		return false;
 	}
 
-	private void OffensiveSpellCastCheck(float range, float reservedMana = 0)
+	private void OffensiveSpellCastRoutine(float range, float reservedMana = 0)
 	{
-		Collider2D[] cols = Physics2D.OverlapCircleAll(this.transform.position, range);
-		if(cols.Length > 0)
-		{// check if there is any enemy near the base
-			Spell spell = GetRandomSpell(AreaOfEffect.SpellType.Offensive);
-			if(spell && m_mana - spell.m_cost > reservedMana )
-			{
-				Unit nearest = NearestSideUnit(this.m_spawner.position, cols, this.m_side.GetOpposite());
-
+        Spell spell = GetRandomSpell(AreaOfEffect.SpellType.Offensive);
+        if(spell && m_mana - spell.m_cost > reservedMana )
+		{
+            Collider2D[] cols = Physics2D.OverlapCircleAll(this.transform.position, range);
+            if (cols.Length > 0)
+            {// check if there is any enemy near the base
+				
+                Unit nearest = NearestSideUnit(this.m_spawner.position, cols, this.m_side.GetOpposite());
 				if(nearest)
 				{
 					Collider2D[] colsAround = Physics2D.OverlapCircleAll(nearest.transform.position, spell.m_prefabEffect.m_range);

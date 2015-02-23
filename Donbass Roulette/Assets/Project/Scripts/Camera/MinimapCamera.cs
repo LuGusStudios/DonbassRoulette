@@ -29,7 +29,7 @@ public class MinimapCamera : Minimap {
 	}
 	
 	// Update is called once per frame
-	new void Update () {
+	override protected void Update () {
 		base.Update();
 		m_cameraLeft.transform.localPosition = ConvertToMinimap(m_camera.transform.position.xAdd(-m_cameraSize));
 		m_cameraRight.transform.localPosition = ConvertToMinimap(m_camera.transform.position.xAdd(m_cameraSize));

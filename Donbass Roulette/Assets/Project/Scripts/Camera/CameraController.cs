@@ -29,17 +29,21 @@ public class CameraController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(LugusInput.use.Key(KeyCode.Mouse0))
-		{
-			Transform t = LugusInput.use.RayCastFromMouse(LugusCamera.game);
-			if(t)
-			{
-				if(t.collider2D == this.m_arrowLeft)
-					MoveLeft();
-				else if(t.collider2D == this.m_arrowRight)
-					MoveRight();
-			}
-		}
+        if (LugusInput.use.Key(KeyCode.Mouse0))
+        {
+            Transform t = LugusInput.use.RayCastFromMouse(LugusCamera.game);
+            if (t)
+            {
+                if (t.collider2D == this.m_arrowLeft)
+                    MoveLeft();
+                else if (t.collider2D == this.m_arrowRight)
+                    MoveRight();
+            }
+        }
+        else if (LugusInput.use.Key(KeyCode.LeftArrow))
+            MoveLeft();
+        else if (LugusInput.use.Key(KeyCode.RightArrow))
+            MoveRight();
 	}
 
 	void Move(bool left)

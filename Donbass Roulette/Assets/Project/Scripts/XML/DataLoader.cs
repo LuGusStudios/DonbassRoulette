@@ -48,6 +48,7 @@ public class DataLoader : FileManager
 			{
 				switch(parser.tagName)
 				{
+                    case "Camera": LoadCameraData(parser); break;
 					case "Structures": LoadStructuresData(parser); break;
 					case "Others": LoadOthersData(parser); break;
 				}
@@ -74,6 +75,24 @@ public class DataLoader : FileManager
 	}
 	
 	// game data
+    public void LoadCameraData(TinyXmlReader parser)
+    {
+        while(parser.Read("Camera"))
+        {
+            if(parser.tagType == TinyXmlReader.TagType.OPENING)
+            {
+                switch(parser.tagName)
+                {
+                    case "Position":
+                        m_game.m_camera.gameObject.MoveTo(GetVector3(parser.content, ';')).Time(2f).Execute();
+                        break;
+                }
+            }
+        }
+
+    }
+
+
 	public void LoadStructuresData(TinyXmlReader parser)
 	{
 		while(parser.Read("Structures"))
@@ -287,7 +306,7 @@ public class DataLoader : FileManager
 			{
 				switch(parser.tagName)
 				{
-					case "Behaviour": break;
+					case "Behaviour": break; // TODO
 					case "TrySpawnCouldown": ai.m_trySpawnCouldown = float.Parse(parser.content); break;
 					case "ForcedSpawnCouldown": ai.m_forcedSpawnCouldown = float.Parse(parser.content); break;
 					case "SpellCastCouldown": ai.m_spellCastCouldown = float.Parse(parser.content); break;

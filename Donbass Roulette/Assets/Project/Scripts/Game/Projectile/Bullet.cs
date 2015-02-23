@@ -13,19 +13,19 @@ public class Bullet : Projectile {
 	}
 
 
-	override protected void ApplyEffect(Collider2D col)
+	override protected void ApplyBodyEffect(Body body)
 	{
-		Body body = col.GetComponent<Body>();
-
-		if(body)
-		{
-			body.ReduceHp(m_value);
-			Destroy(this.gameObject);
-
-		}
+		body.ReduceHp(m_value);
+		Destroy(this.gameObject);
 	}
-	override public void Initialize(float value, Vector3 goal)
+    override protected void ApplyNonBodyEffect(Collider2D col)
+    {
+        Destroy(this.gameObject);
+    }
+
+	override public void Initialize(Side side, float value, Vector3 goal)
 	{
+        m_side = side;
 		m_value = value;
 		this.gameObject.MoveTo(goal).Speed(m_speed).Execute();
 	}

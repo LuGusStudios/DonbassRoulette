@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Base : Body {
-	new void Start()
+	override protected void Start()
 	{
 		base.Start();
 		m_DelDeath += End;
