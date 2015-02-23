@@ -167,18 +167,23 @@ public class DataLoader : FileManager
 	{
 		string[] splitText = reference.Split(separator);
         Vector3 output = Vector3.zero;
+
         float textLength = splitText.Length;
-        if(textLength >= 2)
+
+        if (textLength >= 1)
         {
             output.x = float.Parse(splitText[0]);
-            output.y = float.Parse(splitText[1]);
-            
-            if (splitText.Length == 3)
-                output.z = float.Parse(splitText[2]);
-
-            return output;
+            if (textLength >= 2)
+            {
+                output.y = float.Parse(splitText[1]);
+                if (splitText.Length >= 3)
+                {
+                    output.z = float.Parse(splitText[2]);
+                }
+            }
         }
-		return Vector3.zero;
+
+        return output;
 	}
 
 	// user data
