@@ -28,11 +28,14 @@ public class Entity : Body {
 
 	void Attack(Body body)
 	{
+        Debug.Log("go");
+
 		if( m_DelAttack != null )
 			m_DelAttack();
 
 		if(m_projectile != null)
 		{// range attack
+            
 			Projectile projectile = Instantiate(m_projectile,this.transform.position, Quaternion.identity) as Projectile;
 			projectile.Initialize(this.m_side, this.m_damage, body.transform.position);
 		}
@@ -59,7 +62,7 @@ public class Entity : Body {
 				if(col != this.collider2D)
 				{
 					Body body = col.GetComponent<Body>();
-					if(	body != null && body.m_side == side && (m_composition == Composition.None || body.m_composition == composition) )
+					if(	body != null && body.m_side == side && (composition == Composition.None || body.m_composition == composition) )
 					{
 						float dist = Vector2.Distance(col.transform.position, this.transform.position);
 						if(dist < smallestDist)

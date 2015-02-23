@@ -14,15 +14,21 @@ public abstract class Projectile : MonoBehaviour
     abstract protected void ApplyBodyEffect(Body body);
     abstract protected void ApplyNonBodyEffect(Collider2D col);
 
+
 	void OnTriggerEnter2D(Collider2D col)
 	{
         if (!m_removing)
         {
             Body body = col.GetComponent<Body>();
-            if (body && body.m_side != m_side)
-                ApplyBodyEffect(body);
+            if (body)
+            {
+                if (body.m_side != m_side)
+                    ApplyBodyEffect(body);
+            }
             else
+            {
                 ApplyNonBodyEffect(col);
+            }
         }
 	}
 }
