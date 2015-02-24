@@ -16,7 +16,10 @@ public class Unit : Entity {
 
 
 	override protected void Update () {
-		base.Update();
+        if (m_hp <= 0)
+            return;
+        
+        base.Update();
         
 		if(m_attackTimer <= 0)
 		{

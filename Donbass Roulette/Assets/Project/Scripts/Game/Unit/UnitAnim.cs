@@ -53,6 +53,7 @@ public class UnitAnim : MonoBehaviour {
 
 	void PlayDeathAnim()
 	{
+        print("urgh");
 		m_animator.Play(deathAnimName);
 	}
 }
