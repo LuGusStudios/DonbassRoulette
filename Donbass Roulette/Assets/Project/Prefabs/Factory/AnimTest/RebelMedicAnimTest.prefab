@@ -940,12 +940,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_composition: 2
   m_hpMax: 120
-  m_deathDestroyTime: 0
+  m_deathDestroyTime: 2
   m_side: 1
   m_damage: 20
   m_range: 7
   m_projectile: {fileID: 11400000, guid: 09efb48c00ef5084086a93e57512d639, type: 2}
-  m_attackCouldown: 4
+  m_attackCooldown: 2
   m_speed: .0149999997
   m_healRange: 5
   m_healValue: .100000001
