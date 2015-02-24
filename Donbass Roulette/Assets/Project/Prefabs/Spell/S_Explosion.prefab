@@ -40,8 +40,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_prefabEffect: {fileID: 11400000, guid: 491dfc90423eb2e46b0fc6b3a624cce3, type: 2}
-  m_cost: 30
-  m_couldown: 0
+  m_cost: 70
+  m_couldown: 10
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -19,7 +19,7 @@ public class OptionsMenu : MonoBehaviour {
 
         slMusic.onValueChanged.AddListener(SliderMusicChanged);
         slFX.onValueChanged.AddListener(SliderFXChanged);
-        btnBack.onClick.AddListener(BackClicked);
+        btnBack.onClick.AddListener(DoBack);
 
         LoadStoredSettings();
 	}
@@ -28,6 +28,11 @@ public class OptionsMenu : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void OnEnable()
+    {
+        AnalyticsIntegration.OpenOptionsEvent();
+    }
 
     void LoadStoredSettings()
     {
@@ -47,7 +52,7 @@ public class OptionsMenu : MonoBehaviour {
         LugusAudio.use.SFX().VolumePercentage = val;
     }
 
-    void BackClicked()
+    void DoBack()
     {        
         LugusConfig.use.System.Store();
         MenuManager.use.GotoPrevious();

@@ -50,7 +50,6 @@ public class DataLoader : FileManager
 				{
                     case "Camera": LoadCameraData(parser); break;
 					case "Structures": LoadStructuresData(parser); break;
-					case "Others": LoadOthersData(parser); break;
 				}
 			}
 		}
@@ -84,7 +83,7 @@ public class DataLoader : FileManager
                 switch(parser.tagName)
                 {
                     case "Position":
-                        m_game.m_camera.gameObject.MoveTo(GetVector3(parser.content, ';')).Time(2f).Execute();
+                        m_game.m_camera.gameObject.MoveTo(GetVector3(parser.content, ';')).Time(1f).Execute(); // TODO : lock the camera during that operation
                         break;
                 }
             }
@@ -103,19 +102,6 @@ public class DataLoader : FileManager
 				{
 					case "Left": LoadSidingStructuresData(parser, "Left", Side.Left); break;
 					case "Right": LoadSidingStructuresData(parser, "Right", Side.Right); break;
-				}
-			}
-		}
-	}
-	public void LoadOthersData(TinyXmlReader parser)
-	{
-		while(parser.Read("Others"))
-		{
-			if(parser.tagType == TinyXmlReader.TagType.OPENING)
-			{
-				switch(parser.tagName)
-				{
-					case "Ground": break;
 				}
 			}
 		}
