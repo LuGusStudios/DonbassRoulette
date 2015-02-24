@@ -58,6 +58,8 @@ ModelImporter:
     2300012: RebelMedic01_R_Arm
     2300014: RebelMedic01_R_Foot
     2300016: RebelMedic01_R_Leg
+    2300018: Gun
+    2300020: RebelMedic01_L_Hand
     3300000: RebelMedic01_Bodyback
     3300002: RebelMedic01_Bodyfront
     3300004: RebelMedic01_Head
@@ -67,6 +69,8 @@ ModelImporter:
     3300012: RebelMedic01_R_Arm
     3300014: RebelMedic01_R_Foot
     3300016: RebelMedic01_R_Leg
+    3300018: Gun
+    3300020: RebelMedic01_L_Hand
     4300000: RebelMedic01_Bodyback
     4300002: RebelMedic01_Bodyfront
     4300004: RebelMedic01_R_Leg
