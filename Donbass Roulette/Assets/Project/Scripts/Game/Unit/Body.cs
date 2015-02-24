@@ -39,7 +39,7 @@ public class Body : MonoBehaviour {
 	public void ReduceHp( float value )
 	{
 		m_hp -= value;
-		if(m_hp < 0)
+		if(m_hp <= 0)
 		{
 			m_hp = 0;
 			StartCoroutine(Death());

@@ -38,7 +38,7 @@ public abstract class User : MonoBehaviour {
 
 	protected bool BuyIncome()
 	{
-		if(m_money > m_incomePrice)
+		if(m_money >= m_incomePrice)
 		{
 			m_money -= m_incomePrice;
 			m_income = (int)(m_income * m_incomeMultiplicator);
@@ -50,7 +50,7 @@ public abstract class User : MonoBehaviour {
 
 	protected bool BuyManaRegen()
 	{
-		if(m_money > m_manaRegenPrice)
+		if(m_money >= m_manaRegenPrice)
 		{
 			m_money -= m_manaRegenPrice;
 			m_manaRegen = (int)(m_manaRegen * m_manaRegenMultiplicator);
@@ -62,7 +62,7 @@ public abstract class User : MonoBehaviour {
 
 	protected bool BuyIncomeRate()
 	{
-		if(m_money > m_incomeRatePrice)
+		if(m_money >= m_incomeRatePrice)
 		{
 			m_money -= m_incomeRatePrice;
 			m_incomeCouldown *= m_incomeRateMultiplicator;
