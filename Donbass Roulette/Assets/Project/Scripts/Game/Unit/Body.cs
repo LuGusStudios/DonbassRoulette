@@ -33,8 +33,6 @@ public class Body : MonoBehaviour {
 
 	protected IEnumerator Death()
 	{
-        print("kicked the bucket");
-
         m_collider.enabled = false;
 
 		if(m_DelDeath != null)
