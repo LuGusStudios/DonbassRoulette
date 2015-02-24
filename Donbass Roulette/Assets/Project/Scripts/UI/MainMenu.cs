@@ -12,16 +12,21 @@ public class MainMenu : MonoBehaviour {
         btnStart = gameObject.FindComponentInChildren<Button>(true, "btn_start");
         btnOptions = gameObject.FindComponentInChildren<Button>(true, "btn_options");
 
-        btnOptions.onClick.AddListener(GoToOptions);
+        btnOptions.onClick.AddListener(DoOptions);
+        btnStart.onClick.AddListener(DoStartGame);            
 	}
 	
 	// Update is called once per frame
 	void Update () {	           
 	}
 
-    void GoToOptions()
+    void DoOptions()
     {
         MenuManager.use.Goto(MenuManager.MenuType.OPTIONSMENU);
     }
 
+    void DoStartGame()
+    {
+        AnalyticsIntegration.GameOverEvent(120, 30.5f);
+    }
 }
