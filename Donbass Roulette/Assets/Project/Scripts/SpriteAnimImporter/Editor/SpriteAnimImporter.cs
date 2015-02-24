@@ -168,7 +168,7 @@ public class SpriteAnimImporter : AssetPostprocessor
 			// Most characters are modeled with their z-axis align with the world z-axis (facing away from the camera.)
 			// Sprites, on the other hand, by default face the camera.
 			// To counteract this, we need to rotate the game object.
-//			targetGameObject.transform.Rotate(new Vector3(0, 180, 0));
+			targetGameObject.transform.Rotate(new Vector3(0, 180, 0));
 		}
 		AssetDatabase.StopAssetEditing();
 		Debug.Log("SpriteAnimImporter: Game object " + root.name + " finished importing as sprite animation.");
