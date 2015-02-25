@@ -8,13 +8,20 @@ public class Arrow : Projectile {
 	protected Vector3 m_prvPos;
 	protected bool m_start = false;
 
+
     override public void Initialize(Side side, float value, Vector3 goal)
 	{
         m_side = side;
 		m_value = value;
-		Vector3[] path = { this.transform.position, Vector3.Lerp(this.transform.position,goal,.5f) + new Vector3(0,3,0), goal };
-		this.gameObject.MoveTo(path).Time(m_timeReach).Execute();
+        StartCoroutine(LifetimeTo(goal));
 	}
+
+    IEnumerator LifetimeTo(Vector3 goal)
+    {
+        Vector3[] path = { this.transform.position, Vector3.Lerp(this.transform.position, goal, .5f) + new Vector3(0, 3, 0), goal };
+        yield return this.gameObject.MoveTo(path).Time(m_timeReach).YieldExecute();
+        StartCoroutine(Remove());
+    }
 
 	protected override void ApplyBodyEffect(Body body)
 	{

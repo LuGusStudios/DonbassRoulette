@@ -2128,6 +2128,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 325da91eb423e0d458808b78ce86a2e0, type: 2}
   - {fileID: 11444242, guid: 7c073b0e96138e54c8eaba4cb41d7fd1, type: 2}
   - {fileID: 11401028, guid: 2cde9581656633042bbbd10bc4d9bdd0, type: 2}
+  - {fileID: 11400000, guid: 4f93b03f3178bfc4f81a660781ee0fd4, type: 2}
   m_spells:
   - {fileID: 11400000, guid: 47ec873e016f9ec45a1e9be580e3fca1, type: 2}
   - {fileID: 11400000, guid: ac4b325d88e721e469cd5796a15eac02, type: 2}

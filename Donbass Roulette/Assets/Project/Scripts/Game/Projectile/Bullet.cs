@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class Bullet : Projectile {
+    public Vector3 m_dir;
+    public float m_distLeft;
 	public float m_speed;
 	protected Vector3 m_prvPos;
 	protected bool m_start = false;
@@ -11,7 +13,6 @@ public class Bullet : Projectile {
 	{
 		m_prvPos = this.transform.position;
 	}
-
 
 	override protected void ApplyBodyEffect(Body body)
 	{
@@ -27,18 +28,33 @@ public class Bullet : Projectile {
 	{
         m_side = side;
 		m_value = value;
-		this.gameObject.MoveTo(goal).Speed(m_speed).Execute();
-	}
 
+        m_distLeft = (goal - this.transform.position).magnitude * 2;
+
+        if (this.m_side == Side.Left)
+        {
+            m_dir = Vector3.zero.xAdd(1);
+        }
+        else if (this.m_side == Side.Right)
+        {
+            m_dir = Vector3.zero.xAdd(-1);
+        }
+        this.transform.rotation = Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(-m_dir.y, -m_dir.x) + 90);
+    }
+
+    void FixedUpdate()
+    {
+        Vector3 move = m_dir * m_speed;
+        this.transform.position += move;
+        m_distLeft -= m_speed;
+        if( m_distLeft < 0 )
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
 	void Update()
 	{
-		Vector3 diff = this.transform.position - m_prvPos;
-		if( diff != Vector3.zero )
-			this.transform.rotation = Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(-diff.y, -diff.x) + 90);
-
-		m_prvPos = this.transform.position;
-
 	}
 
 }

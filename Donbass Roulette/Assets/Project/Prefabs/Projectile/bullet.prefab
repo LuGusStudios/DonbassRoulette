@@ -69,7 +69,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_side: 0
-  m_speed: 10.0900002
+  m_dir: {x: 0, y: 0, z: 0}
+  m_distLeft: 0
+  m_speed: .300000012
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
