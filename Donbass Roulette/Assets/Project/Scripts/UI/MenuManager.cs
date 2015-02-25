@@ -8,13 +8,17 @@ public class MenuManager : LugusSingletonExisting<MenuManager> {
         MAINMENU = 1,
         GAMEMENU = 2,
         OPTIONSMENU = 3,
-        PAUSEMENU = 4
+        PAUSEMENU = 4,
+        GAMEOVERMENU = 5,
+        SHAREMENU = 6
     }
 
     private MainMenu _mainMenu;
     private OptionsMenu _optionsMenu;
     private GameMenu _gameMenu;
     private PauseMenu _pauseMenu;
+    private GameOverMenu _gameOverMenu;
+    public ShareMenu _shareMenu;
 
     public MenuType currentMenu = MenuType.NONE;
     public MenuType previousMenu = MenuType.NONE;
@@ -52,6 +56,12 @@ public class MenuManager : LugusSingletonExisting<MenuManager> {
             case MenuType.PAUSEMENU:
                 _pauseMenu.gameObject.SetActive(true);
                 break;
+            case MenuType.GAMEOVERMENU:
+                _gameOverMenu.gameObject.SetActive(true);
+                break;
+            case MenuType.SHAREMENU:
+                _shareMenu.gameObject.SetActive(true);
+                break;
             default:
                 break;
         }
@@ -63,6 +73,8 @@ public class MenuManager : LugusSingletonExisting<MenuManager> {
         _optionsMenu.gameObject.SetActive(false);
         _gameMenu.gameObject.SetActive(false);
         _pauseMenu.gameObject.SetActive(false);
+        _gameOverMenu.gameObject.SetActive(false);
+        _shareMenu.gameObject.SetActive(false);
     }
 
 	// Use this for initialization
@@ -71,6 +83,8 @@ public class MenuManager : LugusSingletonExisting<MenuManager> {
         _optionsMenu = gameObject.FindComponentInChildren<OptionsMenu>(true);
         _gameMenu = gameObject.FindComponentInChildren<GameMenu>(true);
         _pauseMenu = gameObject.FindComponentInChildren<PauseMenu>(true);
+        _gameOverMenu = gameObject.FindComponentInChildren<GameOverMenu>(true);
+        _shareMenu = gameObject.FindComponentInChildren<ShareMenu>(true);
 
         HideAllMenus();
         ShowMenu(currentMenu);

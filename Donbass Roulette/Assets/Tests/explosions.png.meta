@@ -1,6 +1,19 @@
 fileFormatVersion: 2
 guid: 2c9994faf23ce8446a9cee5b6b9ce38b
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: explosions_0
+    21300002: explosions_1
+    21300004: explosions_2
+    21300006: explosions_3
+    21300008: explosions_4
+    21300010: explosions_5
+    21300012: explosions_6
+    21300014: explosions_7
+    21300016: explosions_8
+    21300018: explosions_9
+    21300020: explosions_10
+    21300022: explosions_11
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
