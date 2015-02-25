@@ -121,17 +121,17 @@ public static class LugusCameraExtensions
 	{
 		Vector3 displacement = Vector3.zero;
 		if( amount == ShakeAmount.SMALL )	
-			displacement =  new Vector3(0.1f, 0.0f, 0.05f);
+			displacement =  new Vector3(0.1f, 0.1f, 0.0f);
 		else if( amount == ShakeAmount.MEDIUM )
-			displacement =  new Vector3(0.2f, 0.0f, 0.2f);
+			displacement =  new Vector3(0.2f, 0.2f, 0.0f);
 		else if( amount == ShakeAmount.LARGE )
-			displacement =  new Vector3(0.5f, 0.0f, 0.5f);
+			displacement =  new Vector3(0.5f, 0.5f, 0.0f);
 			
 		Shake (camera, displacement, time);	
 	}
 
 	public static void Shake(this Camera camera, Vector3 displacement, float time = 0.3f)
 	{
-		iTween.ShakePosition(camera.transform.parent.gameObject, displacement, time );		
+		iTween.ShakePosition(camera.gameObject, displacement, time );		
 	}
 }
