@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c59e46867582f2e46b5b6c0dd0e7a6f6
+guid: cae8934e7a0d0814ab13b238a7a1ce5e
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -82,21 +82,10 @@ ModelImporter:
     4300016: RebelMedic01_Head
     4300018: RebelMedic01_L_Arm
     4300020: RebelMedic01_L_Hand
-    7400000: Running
+    7400000: WalkingRPG
     9500000: //RootNode
-    21200000: Gun
-    21200002: RebelMedic01_Bodyback
-    21200004: RebelMedic01_Bodyfront
-    21200006: RebelMedic01_Head
-    21200008: RebelMedic01_L_Arm
-    21200010: RebelMedic01_L_Foot
-    21200012: RebelMedic01_L_Hand
-    21200014: RebelMedic01_L_Leg
-    21200016: RebelMedic01_R_Arm
-    21200018: RebelMedic01_R_Foot
-    21200020: RebelMedic01_R_Leg
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -112,10 +101,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Running
+      name: WalkingRPG
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 20
+      lastFrame: 29
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

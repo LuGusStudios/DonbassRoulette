@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f224bf174c4d95a43a886f6acad7cad5
+guid: 13b46272d29606c4094edbb66f6ed01a
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -49,6 +49,28 @@ ModelImporter:
     400040: RebelMedic01_R_Foot
     400042: RebelMedic01_R_Leg
     400044: //RootNode
+    2300000: Gun
+    2300002: RebelMedic01_Bodyback
+    2300004: RebelMedic01_Bodyfront
+    2300006: RebelMedic01_Head
+    2300008: RebelMedic01_L_Arm
+    2300010: RebelMedic01_L_Foot
+    2300012: RebelMedic01_L_Hand
+    2300014: RebelMedic01_L_Leg
+    2300016: RebelMedic01_R_Arm
+    2300018: RebelMedic01_R_Foot
+    2300020: RebelMedic01_R_Leg
+    3300000: Gun
+    3300002: RebelMedic01_Bodyback
+    3300004: RebelMedic01_Bodyfront
+    3300006: RebelMedic01_Head
+    3300008: RebelMedic01_L_Arm
+    3300010: RebelMedic01_L_Foot
+    3300012: RebelMedic01_L_Hand
+    3300014: RebelMedic01_L_Leg
+    3300016: RebelMedic01_R_Arm
+    3300018: RebelMedic01_R_Foot
+    3300020: RebelMedic01_R_Leg
     4300000: RebelMedic01_Bodyback
     4300002: RebelMedic01_Bodyfront
     4300004: RebelMedic01_R_Leg
@@ -62,19 +84,8 @@ ModelImporter:
     4300020: RebelMedic01_L_Hand
     7400000: Firing
     9500000: //RootNode
-    21200000: Gun
-    21200002: RebelMedic01_Bodyback
-    21200004: RebelMedic01_Bodyfront
-    21200006: RebelMedic01_Head
-    21200008: RebelMedic01_L_Arm
-    21200010: RebelMedic01_L_Foot
-    21200012: RebelMedic01_L_Hand
-    21200014: RebelMedic01_L_Leg
-    21200016: RebelMedic01_R_Arm
-    21200018: RebelMedic01_R_Foot
-    21200020: RebelMedic01_R_Leg
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -93,7 +104,7 @@ ModelImporter:
       name: Firing
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 13
+      lastFrame: 31
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
