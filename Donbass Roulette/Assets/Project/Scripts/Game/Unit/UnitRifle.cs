@@ -18,6 +18,6 @@ public class UnitRifle : Unit {
             body.ReduceHp(m_damage);
         }
 
-        m_attackTimer = m_attackCouldown;
+        m_attackTimer = m_attackCooldown;
     }
 }

@@ -10,11 +10,15 @@ public class Entity : Body {
 	public Delegate m_DelAttack;
 	
 
-	public float m_attackCouldown = 2;
+	public float m_attackCooldown = 2;
 	protected float m_attackTimer = 0;
 
 	// Update is called once per frame
-	virtual protected void Update () {
+	virtual protected void Update () 
+    {
+        if (m_hp <= 0)
+            return;
+
 		if(m_attackTimer > 0)
 			m_attackTimer -= Time.deltaTime;
 
@@ -42,7 +46,7 @@ public class Entity : Body {
 			body.ReduceHp(m_damage);
 		}
 
-		m_attackTimer = m_attackCouldown;
+		m_attackTimer = m_attackCooldown;
 	}
 
 	protected Body GetNearestSideBody(Side side, float range, Composition composition = Composition.None)
