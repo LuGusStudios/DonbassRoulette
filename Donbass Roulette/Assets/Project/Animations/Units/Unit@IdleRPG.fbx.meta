@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 13b46272d29606c4094edbb66f6ed01a
+guid: 7c463fad98b394447bce44ce27a935fc
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -82,7 +82,7 @@ ModelImporter:
     4300016: RebelMedic01_Head
     4300018: RebelMedic01_L_Arm
     4300020: RebelMedic01_L_Hand
-    7400000: Firing
+    7400000: IdleRPG
     9500000: //RootNode
   materials:
     importMaterials: 0
@@ -101,10 +101,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Firing
+      name: IdleRPG
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 31
+      lastFrame: 50
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

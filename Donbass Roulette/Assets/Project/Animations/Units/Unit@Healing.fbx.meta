@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 13b46272d29606c4094edbb66f6ed01a
+guid: 9a9c928832ee51543b73b160c06be69e
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -82,7 +82,7 @@ ModelImporter:
     4300016: RebelMedic01_Head
     4300018: RebelMedic01_L_Arm
     4300020: RebelMedic01_L_Hand
-    7400000: Firing
+    7400000: Take 001
     9500000: //RootNode
   materials:
     importMaterials: 0
@@ -99,79 +99,7 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Firing
-      takeName: Take 001
-      firstFrame: 0
-      lastFrame: 31
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Bodyback_joint
-        weight: 1
-      - path: Bodyback_joint/Bodyfront_joint
-        weight: 1
-      - path: Bodyback_joint/Bodyfront_joint/RebelMedic01_Bodyfront
-        weight: 1
-      - path: Bodyback_joint/Head_joint
-        weight: 1
-      - path: Bodyback_joint/Head_joint/RebelMedic01_Head
-        weight: 1
-      - path: Bodyback_joint/L_Arm_joint
-        weight: 1
-      - path: Bodyback_joint/L_Arm_joint/L_Hand_joint
-        weight: 1
-      - path: Bodyback_joint/L_Arm_joint/L_Hand_joint/RebelMedic01_L_Hand
-        weight: 1
-      - path: Bodyback_joint/L_Arm_joint/RebelMedic01_L_Arm
-        weight: 1
-      - path: Bodyback_joint/L_Leg_joint
-        weight: 1
-      - path: Bodyback_joint/L_Leg_joint/L_Foot_joint
-        weight: 1
-      - path: Bodyback_joint/L_Leg_joint/L_Foot_joint/RebelMedic01_L_Foot
-        weight: 1
-      - path: Bodyback_joint/L_Leg_joint/RebelMedic01_L_Leg
-        weight: 1
-      - path: Bodyback_joint/R_Arm_joint
-        weight: 1
-      - path: Bodyback_joint/R_Arm_joint/Gun_joint
-        weight: 1
-      - path: Bodyback_joint/R_Arm_joint/Gun_joint/Gun
-        weight: 1
-      - path: Bodyback_joint/R_Arm_joint/RebelMedic01_R_Arm
-        weight: 1
-      - path: Bodyback_joint/R_Leg_joint
-        weight: 1
-      - path: Bodyback_joint/R_Leg_joint/R_Foot_joint
-        weight: 1
-      - path: Bodyback_joint/R_Leg_joint/R_Foot_joint/RebelMedic01_R_Foot
-        weight: 1
-      - path: Bodyback_joint/R_Leg_joint/RebelMedic01_R_Leg
-        weight: 1
-      - path: Bodyback_joint/RebelMedic01_Bodyback
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
