@@ -121,6 +121,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 460066}
   - 212: {fileID: 21260066}
+  - 114: {fileID: 11402250}
   m_Layer: 0
   m_Name: Shadow01
   m_TagString: Untagged
@@ -520,7 +521,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.85748863, y: -6.28704405, z: 0}
+  m_LocalPosition: {x: -8.86805058, y: -12.1820583, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400004}
@@ -988,6 +989,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_bar: {fileID: 100008}
   m_body: {fileID: 11400002}
+--- !u!114 &11402250
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aecb6d4956d6655489b00e6eb84212c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11412570
 MonoBehaviour:
   m_ObjectHideFlags: 1

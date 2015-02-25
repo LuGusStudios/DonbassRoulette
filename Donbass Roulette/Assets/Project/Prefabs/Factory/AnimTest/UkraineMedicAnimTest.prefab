@@ -136,6 +136,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 464742}
   - 212: {fileID: 21264742}
+  - 114: {fileID: 11404358}
   m_Layer: 0
   m_Name: Shadow01
   m_TagString: Untagged
@@ -508,7 +509,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.29772043, y: -6.78146505, z: 0}
+  m_LocalPosition: {x: -10.5256882, y: -12.148366, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 433154}
@@ -942,6 +943,17 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11404358
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 164742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aecb6d4956d6655489b00e6eb84212c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11433148
 MonoBehaviour:
   m_ObjectHideFlags: 1

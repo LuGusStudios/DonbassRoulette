@@ -121,6 +121,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 403060}
   - 212: {fileID: 21203060}
+  - 114: {fileID: 11460904}
   m_Layer: 0
   m_Name: Shadow01
   m_TagString: Untagged
@@ -573,7 +574,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.40002155, y: -6.55392694, z: 0}
+  m_LocalPosition: {x: -12.1226797, y: -11.063489, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400008}
@@ -1002,6 +1003,17 @@ MonoBehaviour:
   walkAnimName: Walking
   attackAnimName: Firing
   deathAnimName: Death
+--- !u!114 &11460904
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aecb6d4956d6655489b00e6eb84212c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
