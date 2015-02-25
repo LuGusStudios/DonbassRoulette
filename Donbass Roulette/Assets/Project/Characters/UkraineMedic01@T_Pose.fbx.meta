@@ -59,6 +59,7 @@ ModelImporter:
     2300014: UkraineMedic01_R_Arm
     2300016: UkraineMedic01_R_Foot
     2300018: UkraineMedic01_R_Leg
+    2300020: Gun
     3300000: UkraineMedic01_Bodyback
     3300002: UkraineMedic01_Bodyfront
     3300004: UkraineMedic01_Head
@@ -69,6 +70,7 @@ ModelImporter:
     3300014: UkraineMedic01_R_Arm
     3300016: UkraineMedic01_R_Foot
     3300018: UkraineMedic01_R_Leg
+    3300020: Gun
     4300000: UkraineMedic01_Bodyback
     4300002: UkraineMedic01_Bodyfront
     4300004: UkraineMedic01_R_Leg

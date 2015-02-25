@@ -49,6 +49,28 @@ ModelImporter:
     400040: RebelMedic01_R_Foot
     400042: RebelMedic01_R_Leg
     400044: //RootNode
+    2300000: Gun
+    2300002: RebelMedic01_Bodyback
+    2300004: RebelMedic01_Bodyfront
+    2300006: RebelMedic01_Head
+    2300008: RebelMedic01_L_Arm
+    2300010: RebelMedic01_L_Foot
+    2300012: RebelMedic01_L_Hand
+    2300014: RebelMedic01_L_Leg
+    2300016: RebelMedic01_R_Arm
+    2300018: RebelMedic01_R_Foot
+    2300020: RebelMedic01_R_Leg
+    3300000: Gun
+    3300002: RebelMedic01_Bodyback
+    3300004: RebelMedic01_Bodyfront
+    3300006: RebelMedic01_Head
+    3300008: RebelMedic01_L_Arm
+    3300010: RebelMedic01_L_Foot
+    3300012: RebelMedic01_L_Hand
+    3300014: RebelMedic01_L_Leg
+    3300016: RebelMedic01_R_Arm
+    3300018: RebelMedic01_R_Foot
+    3300020: RebelMedic01_R_Leg
     4300000: RebelMedic01_Bodyback
     4300002: RebelMedic01_Bodyfront
     4300004: RebelMedic01_R_Leg

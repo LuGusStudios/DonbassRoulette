@@ -59,6 +59,7 @@ ModelImporter:
     2300014: UkraineSoldier01_R_Arm
     2300016: UkraineSoldier01_R_Foot
     2300018: UkraineSoldier01_R_Leg
+    2300020: Gun
     3300000: UkraineSoldier01_Bodyback
     3300002: UkraineSoldier01_Bodyfront
     3300004: UkraineSoldier01_Head
@@ -69,6 +70,7 @@ ModelImporter:
     3300014: UkraineSoldier01_R_Arm
     3300016: UkraineSoldier01_R_Foot
     3300018: UkraineSoldier01_R_Leg
+    3300020: Gun
     4300000: UkraineSoldier01_Bodyback
     4300002: UkraineSoldier01_Bodyfront
     4300004: UkraineSoldier01_R_Leg

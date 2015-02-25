@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Collider2D))]
 public class Body : MonoBehaviour {
 
     public enum Composition
@@ -19,41 +18,30 @@ public class Body : MonoBehaviour {
 	
 	public delegate void Delegate();
 	public Delegate m_DelDeath;
-    protected Collider2D m_collider = null;
 
 	virtual protected void Start()
 	{
 		m_hp = m_hpMax;
 		if(m_side == Side.Right)
 			this.transform.localScale = this.transform.localScale.xMul(-1);
-
-        m_collider = gameObject.FindComponent<Collider2D>();
 	}
 
 
 	protected IEnumerator Death()
 	{
-        m_collider.enabled = false;
-
 		if(m_DelDeath != null)
 			m_DelDeath();
-
 		yield return new WaitForSeconds(m_deathDestroyTime); // death animation time
-
 		Destroy(this.transform.parent.gameObject);
 	}
 
 
 	public void ReduceHp( float value )
 	{
-        if (m_hp <= 0)
-            return;
-
 		m_hp -= value;
 		if(m_hp <= 0)
 		{
-			m_hp = 0;
-
+			m_hp = 0; // may be unecessary
 			StartCoroutine(Death());
 		}
 	}

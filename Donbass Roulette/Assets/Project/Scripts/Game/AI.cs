@@ -74,7 +74,7 @@ public class AI : User
 		{
 			yield return new WaitForSeconds(m_forcedSpawnCouldown);
 
-			float spawn = Random.Range(0f, 1f);
+			float spawn = Random.Range(0f, GetTotalChances());
 
 
 			for(int i = 0; i < m_factories.Count; i++)
