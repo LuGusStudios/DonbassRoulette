@@ -12,13 +12,13 @@ public class UnitAnim : MonoBehaviour
 	protected Unit m_unit;
 	protected Animator m_animator;
 
-	void Awake()
+	protected virtual void Awake()
 	{
 		m_unit =  this.gameObject.FindComponentInParent<Unit>(true);
 		m_animator = this.gameObject.FindComponent<Animator>();
 	}
 
-	void Start () 
+    protected virtual void Start() 
 	{
 		if (m_unit != null)
 		{

@@ -5,6 +5,9 @@ public class UnitMedic : Unit {
     public float m_healRange;
     public float m_healValue;
 
+    public delegate void OnHeal(Body target);
+    public OnHeal onHeal = null;
+
     override protected void Update()
     {
         if (m_hp <= 0)
@@ -25,6 +28,9 @@ public class UnitMedic : Unit {
     protected void Heal(Body body)
     {
         body.AddHp(m_healValue);
+
+        if (onHeal != null)
+            onHeal(body);
     }
 
     override protected void OnDrawGizmos()
