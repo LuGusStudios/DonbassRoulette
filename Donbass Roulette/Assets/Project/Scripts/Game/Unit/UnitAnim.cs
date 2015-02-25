@@ -2,8 +2,8 @@
 using System.Collections;
 
 [RequireComponent(typeof(Animator))]
-public class UnitAnim : MonoBehaviour {
-
+public class UnitAnim : MonoBehaviour 
+{
 	// Change these default values on the unit if needed.
 	public string walkAnimName = "Walking";
 	public string attackAnimName = "Firing";
@@ -40,20 +40,18 @@ public class UnitAnim : MonoBehaviour {
 	
 	}
 
-
-	void PlayWalkAnim()
+    protected virtual void PlayWalkAnim()
 	{
 		m_animator.Play(walkAnimName);
 	}
 
-	void PlayAttackAnim()
+    protected virtual void PlayAttackAnim()
 	{
 		m_animator.Play(attackAnimName);
 	}
 
-	void PlayDeathAnim()
+    protected virtual void PlayDeathAnim()
 	{
-        print("urgh");
 		m_animator.Play(deathAnimName);
 	}
 }
