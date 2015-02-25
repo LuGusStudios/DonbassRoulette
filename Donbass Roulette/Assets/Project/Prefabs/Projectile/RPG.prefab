@@ -93,12 +93,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 120312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b68445926634fc46a980f591a89ff33, type: 3}
+  m_Script: {fileID: 11500000, guid: bdd50ebdb929d324ba53cf2a58c7398b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_side: 0
-  m_timeReach: 1.5
   m_timeRemove: 0
+  m_timeReach: 1.5
   m_aoe: {fileID: 11400000, guid: 491dfc90423eb2e46b0fc6b3a624cce3, type: 2}
 --- !u!212 &21220310
 SpriteRenderer:
