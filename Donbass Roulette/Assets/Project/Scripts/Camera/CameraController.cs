@@ -10,6 +10,19 @@ public class CameraController : MonoBehaviour {
 	public Collider2D m_arrowLeft;
 	public Collider2D m_arrowRight;
 
+    private void Start()
+    {
+        // Automatically create a parent container for this object so that camera shakes can act on that 
+        // instead of the camera directly (which disables movement during the shake).
+
+        Transform cameraParent = new GameObject("CameraContainer").transform;
+        cameraParent.transform.parent = this.transform.parent;
+        cameraParent.transform.localPosition = this.transform.localPosition;
+        cameraParent.transform.localRotation = this.transform.localRotation;
+
+        this.transform.parent = cameraParent;
+    }
+
 	private void MoveLeft()
 	{
 		if(this.transform.position.x - m_speed < m_map.m_minX)
