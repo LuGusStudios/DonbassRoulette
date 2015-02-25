@@ -1,6 +1,23 @@
 fileFormatVersion: 2
 guid: bb194b431e376d14cbfcaf5e3cbb54b7
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: akira_the_tactician_sprite_set_by_sythexp-d3fxhxm_0
+    21300002: akira_the_tactician_sprite_set_by_sythexp-d3fxhxm_1
+    21300004: akira_the_tactician_sprite_set_by_sythexp-d3fxhxm_2
+    21300006: akira_the_tactician_sprite_set_by_sythexp-d3fxhxm_3
+    21300008: akira_the_tactician_sprite_set_by_sythexp-d3fxhxm_4
+    21300010: akira_the_tactician_sprite_set_by_sythexp-d3fxhxm_5
+    21300012: akira_the_tactician_sprite_set_by_sythexp-d3fxhxm_6
+    21300014: akira_the_tactician_sprite_set_by_sythexp-d3fxhxm_7
+    21300016: akira_the_tactician_sprite_set_by_sythexp-d3fxhxm_8
+    21300018: akira_the_tactician_sprite_set_by_sythexp-d3fxhxm_9
+    21300020: akira_the_tactician_sprite_set_by_sythexp-d3fxhxm_10
+    21300022: akira_the_tactician_sprite_set_by_sythexp-d3fxhxm_11
+    21300024: akira_the_tactician_sprite_set_by_sythexp-d3fxhxm_12
+    21300026: akira_the_tactician_sprite_set_by_sythexp-d3fxhxm_13
+    21300028: akira_the_tactician_sprite_set_by_sythexp-d3fxhxm_14
+    21300030: akira_the_tactician_sprite_set_by_sythexp-d3fxhxm_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
