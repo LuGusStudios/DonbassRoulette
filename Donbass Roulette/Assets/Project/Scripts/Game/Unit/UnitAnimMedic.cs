@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class UnitAnimMedic : UnitAnim 
 {
-    public string healAnimName = "Heal";
+    public string healAnimName = "Healing";
 
     protected UnitMedic medic = null;
 

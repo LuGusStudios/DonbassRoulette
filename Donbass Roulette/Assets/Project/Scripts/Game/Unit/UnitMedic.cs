@@ -14,7 +14,7 @@ public class UnitMedic : Unit {
             return;
 
         Body onRangeAlly = GetNearestSideBody(this.m_side, m_healRange, Composition.Organic);
-        if (onRangeAlly != null && onRangeAlly.GetHpRatio() < 1)
+        if (onRangeAlly != null && onRangeAlly.GetHpRatio() < 1 && onRangeAlly.GetHpRatio() > 0)
         {
             Heal(onRangeAlly);
         }
