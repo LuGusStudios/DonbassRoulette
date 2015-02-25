@@ -19,6 +19,7 @@ public class GameOverMenu : MonoBehaviour {
 
         btnContinue = gameObject.FindComponentInChildren<Button>(true, "btn_continue");
         btnContinue.gameObject.SetActive(false);
+        btnContinue.onClick.AddListener(DoContinue);
 
 
         // Test 
@@ -31,6 +32,11 @@ public class GameOverMenu : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void DoContinue()
+    {
+        MenuManager.use.Goto(MenuManager.MenuType.SHAREMENU);
+    }
 
     IEnumerator AnimateScores(List<int> scores)
     {
