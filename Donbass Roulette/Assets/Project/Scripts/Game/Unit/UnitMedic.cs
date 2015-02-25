@@ -7,6 +7,9 @@ public class UnitMedic : Unit {
 
     override protected void Update()
     {
+        if (m_hp <= 0)
+            return;
+
         Body onRangeAlly = GetNearestSideBody(this.m_side, m_healRange, Composition.Organic);
         if (onRangeAlly != null && onRangeAlly.GetHpRatio() < 1)
         {

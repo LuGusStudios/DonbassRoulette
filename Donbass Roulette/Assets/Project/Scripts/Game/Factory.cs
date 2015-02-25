@@ -7,7 +7,7 @@ public class Factory : MonoBehaviour {
 	public GameObject m_prefabUnit;
 	public int m_price;
 
-	public float m_couldown;
+	public float m_cooldown;
 	private float m_timer = 0;
 
     void Start()
@@ -28,10 +28,19 @@ public class Factory : MonoBehaviour {
 		if(m_timer <= 0)
 		{
             GameObject obj = Instantiate(m_prefabUnit, m_map.GetRandomStartingGroundPos().xAdd(posX), Quaternion.identity) as GameObject;
+
+            // This is a bit of a silly fix. Given that some units have bone animations, they also have parts that are offset on the z-axis.
+            // Because of this, they might sometimes clip through one another on the z-axis. To prevent this, we make them very narrow in that direction.
+            // Normally, this would be applied on the prefab, but that requires us to apply to every single unit (which is prone to oversights)
+            // and has the additional disadvantage that it becomes hard to edit the prefab.
+            // Instead, we "flatten" the unit in code here. On units that don't need it, the effect is invisible anyway.
+            // Note: we can't scale them to 0, because that would give z-fighting.
+            obj.transform.localScale = obj.transform.localScale.z(0.05f);
+
 			Unit unit = obj.GetComponentInChildren<Unit>();
 			unit.Initialize(side);
 			
-			m_timer = m_couldown;
+			m_timer = m_cooldown;
 			return true;
 		}
 		return false;

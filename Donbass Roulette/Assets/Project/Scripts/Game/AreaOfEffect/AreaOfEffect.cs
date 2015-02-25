@@ -50,12 +50,19 @@ public abstract class AreaOfEffect : MonoBehaviour {
 			{
 				ApplyEffect(col);
 			}
+
+            OnApply();
+
 			m_timeApplied++;
 		}
 
 		m_timer += Time.deltaTime;
 	}
 
+    //Override for some extra effect every time the effect is applied, regardless of whether it hit something. (e.g. camera shake).
+    public virtual void OnApply()
+    { 
+    }
 
 	void OnDrawGizmos()
 	{

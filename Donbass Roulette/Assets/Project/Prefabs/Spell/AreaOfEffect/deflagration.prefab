@@ -57,10 +57,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_side: 0
-  m_value: 0
+  m_value: 15
   m_times: 3
-  m_duration: 1.5
-  m_range: 2.48000002
+  m_duration: 3
+  m_range: 3
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
