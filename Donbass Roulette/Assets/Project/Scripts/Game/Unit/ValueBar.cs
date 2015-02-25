@@ -7,9 +7,15 @@ public abstract class ValueBar : MonoBehaviour {
 	public void UpdateValue(float value)
 	{
 		m_bar.transform.localScale = new Vector3(value, 1, 1);
+
+        OnValueChanged(value);
 	}
 
 	public abstract float GetRefValue();
+
+    protected virtual void OnValueChanged(float value)
+    { 
+    }
 
 	void Update()
 	{
