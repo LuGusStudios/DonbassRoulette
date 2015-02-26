@@ -118,9 +118,9 @@
 		</AvailableFactories>
 		
 		<Money>
-			<Base>1000</Base>
-			<Regen>350</Regen>
-			<Couldown>3</Couldown>
+			<Base>500</Base>
+			<Regen>300</Regen>
+			<Couldown>5</Couldown>
 			<Multiplicator>1.5</Multiplicator>
 			<Price>200</Price>
 			<PriceMultiplicator>1.5</PriceMultiplicator>
@@ -130,7 +130,7 @@
 		</Money>
 		
 		<Mana>
-			<Base>150</Base>
+			<Base>100</Base>
 			<Regen>10</Regen>
 			<Couldown>3</Couldown>
 			<Multiplicator>1.5</Multiplicator>
