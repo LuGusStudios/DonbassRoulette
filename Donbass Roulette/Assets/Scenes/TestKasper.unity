@@ -2134,6 +2134,7 @@ MonoBehaviour:
   m_spells:
   - {fileID: 11400000, guid: 47ec873e016f9ec45a1e9be580e3fca1, type: 2}
   - {fileID: 11400000, guid: ac4b325d88e721e469cd5796a15eac02, type: 2}
+  - {fileID: 11400000, guid: be56aa7153e8e7842bb18e65624dfd62, type: 2}
   m_structures:
   - {fileID: 100010, guid: 5dffcee4f104c0841b3c64ab22abd35a, type: 2}
   - {fileID: 100000, guid: c1234c132dcf70f4aae350dca0802346, type: 2}

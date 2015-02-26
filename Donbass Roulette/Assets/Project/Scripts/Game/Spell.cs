@@ -4,22 +4,41 @@ using System.Collections;
 public class Spell : MonoBehaviour {
 	public AreaOfEffect m_prefabEffect;
 	public int m_cost;
+    public float instantiateDelay = 0.0f;
 
-	public float m_couldown;
+	public float m_cooldown;
 	private float m_timer = 0;
 
 	public bool Summon( Vector2 pos, Side side )
 	{
 		if(m_timer <= 0)
 		{
-			AreaOfEffect aoe = Instantiate(m_prefabEffect, pos, Quaternion.identity) as AreaOfEffect;
-			aoe.Initialize(side);
-            m_timer = m_couldown;
+            LugusCoroutines.use.StartRoutine(AreaAppear(pos, side)); 
             return true;
 		}
         return false;
 	}
+    protected IEnumerator AreaAppear(Vector2 position, Side side)
+    {
+        OnBegin(position);
 
+        yield return new WaitForSeconds(instantiateDelay);
+
+        AreaOfEffect aoe = Instantiate(m_prefabEffect, position, Quaternion.identity) as AreaOfEffect;
+        aoe.Initialize(side);
+        m_timer = m_cooldown;
+
+        OnInstantiate(aoe);
+    }
+
+    // Override, for instance to have a projectile travel at the beginning of the spell.
+    protected virtual void OnBegin(Vector2 position)
+    { 
+    }
+
+    protected virtual void OnInstantiate(AreaOfEffect aoe)
+    { 
+    }
 
 	public float GetTimer()
 	{
