@@ -29,16 +29,9 @@ public class Bullet : Projectile {
         m_side = side;
 		m_value = value;
 
+        m_dir = (goal - this.transform.position).normalized;
         m_distLeft = (goal - this.transform.position).magnitude * 2;
 
-        if (this.m_side == Side.Left)
-        {
-            m_dir = Vector3.zero.xAdd(1);
-        }
-        else if (this.m_side == Side.Right)
-        {
-            m_dir = Vector3.zero.xAdd(-1);
-        }
         this.transform.rotation = Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(-m_dir.y, -m_dir.x) + 90);
     }
 
