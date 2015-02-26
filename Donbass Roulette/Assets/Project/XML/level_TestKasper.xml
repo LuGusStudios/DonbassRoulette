@@ -76,6 +76,10 @@
 				<Name>F_RebelTank</Name>
         <Weight>1</Weight>
 			</Factory>
+    	<Factory>
+				<Name>F_RebelRPGAnimTest</Name>
+        <Weight>1</Weight>
+			</Factory>
 		</AvailableFactories>
 	
 		<Money>

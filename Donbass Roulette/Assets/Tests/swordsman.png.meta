@@ -1,6 +1,59 @@
 fileFormatVersion: 2
 guid: a0e187d4d6b753e479bf297a16359d18
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: swordsman_0
+    21300002: swordsman_1
+    21300004: swordsman_2
+    21300006: swordsman_3
+    21300008: swordsman_4
+    21300010: swordsman_5
+    21300012: swordsman_6
+    21300014: swordsman_7
+    21300016: swordsman_8
+    21300018: swordsman_9
+    21300020: swordsman_10
+    21300022: swordsman_11
+    21300024: swordsman_12
+    21300026: swordsman_13
+    21300028: swordsman_14
+    21300030: swordsman_15
+    21300032: swordsman_16
+    21300034: swordsman_17
+    21300036: swordsman_18
+    21300038: swordsman_19
+    21300040: swordsman_20
+    21300042: swordsman_21
+    21300044: swordsman_22
+    21300046: swordsman_23
+    21300048: swordsman_24
+    21300050: swordsman_25
+    21300052: swordsman_26
+    21300054: swordsman_27
+    21300056: swordsman_28
+    21300058: swordsman_29
+    21300060: swordsman_30
+    21300062: swordsman_31
+    21300064: swordsman_32
+    21300066: swordsman_33
+    21300068: swordsman_34
+    21300070: swordsman_35
+    21300072: swordsman_36
+    21300074: swordsman_37
+    21300076: swordsman_38
+    21300078: swordsman_39
+    21300080: swordsman_40
+    21300082: swordsman_41
+    21300084: swordsman_42
+    21300086: swordsman_43
+    21300088: swordsman_44
+    21300090: swordsman_45
+    21300092: swordsman_46
+    21300094: swordsman_47
+    21300096: swordsman_48
+    21300098: swordsman_49
+    21300100: swordsman_50
+    21300102: swordsman_51
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

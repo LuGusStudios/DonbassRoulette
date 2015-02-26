@@ -1,6 +1,17 @@
 fileFormatVersion: 2
 guid: 424dce79b5580f14994b3a4a1d1f5292
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: iceBlaster_hit_0
+    21300002: iceBlaster_hit_1
+    21300004: iceBlaster_hit_2
+    21300006: iceBlaster_hit_3
+    21300008: iceBlaster_hit_4
+    21300010: iceBlaster_hit_5
+    21300012: iceBlaster_hit_6
+    21300014: iceBlaster_hit_7
+    21300016: iceBlaster_hit_8
+    21300018: iceBlaster_hit_9
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

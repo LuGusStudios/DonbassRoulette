@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f224bf174c4d95a43a886f6acad7cad5
+guid: 13b46272d29606c4094edbb66f6ed01a
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -115,7 +115,7 @@ ModelImporter:
       name: Firing
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 13
+      lastFrame: 31
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

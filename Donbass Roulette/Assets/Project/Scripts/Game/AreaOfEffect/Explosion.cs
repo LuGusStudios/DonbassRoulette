@@ -18,7 +18,15 @@ public class Explosion : AreaOfEffect {
         Vector3 cameraShake = new Vector3(0.5f, 0.5f, 0);
         float distanceToCamera = Mathf.Abs(this.transform.position.x - LugusCamera.game.transform.position.x);
         float fallOffPerMeter = 0.1f;
-        LugusCamera.game.Shake(cameraShake * Mathf.Lerp(0.5f, 0.0f, distanceToCamera * fallOffPerMeter), 0.5f);
+       // LugusCamera.game.Shake(cameraShake * Mathf.Lerp(0.5f, 0.0f, distanceToCamera * fallOffPerMeter), 0.5f);
+
+        // Shake camera parent so that camera itself can keep moving.
+        if (LugusCamera.game.transform.parent != null)
+        {
+            iTween.ShakePosition(LugusCamera.game.transform.parent.gameObject,
+            cameraShake * Mathf.Lerp(0.5f, 0.0f, distanceToCamera * fallOffPerMeter),
+            0.5f);
+        }
     }
 
 	override protected void ApplyEffect(Collider2D col)

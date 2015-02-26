@@ -5,13 +5,16 @@ public class UnitMedic : Unit {
     public float m_healRange;
     public float m_healValue;
 
+    public delegate void OnHeal(Body target);
+    public OnHeal onHeal = null;
+
     override protected void Update()
     {
         if (m_hp <= 0)
             return;
 
         Body onRangeAlly = GetNearestSideBody(this.m_side, m_healRange, Composition.Organic);
-        if (onRangeAlly != null && onRangeAlly.GetHpRatio() < 1)
+        if (onRangeAlly != null && onRangeAlly.GetHpRatio() < 1 && onRangeAlly.GetHpRatio() > 0)
         {
             Heal(onRangeAlly);
         }
@@ -25,6 +28,9 @@ public class UnitMedic : Unit {
     protected void Heal(Body body)
     {
         body.AddHp(m_healValue);
+
+        if (onHeal != null)
+            onHeal(body);
     }
 
     override protected void OnDrawGizmos()

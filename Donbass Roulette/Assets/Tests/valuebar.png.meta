@@ -1,6 +1,9 @@
 fileFormatVersion: 2
 guid: 4e68c0e0d215e334ba23b268ecf74be8
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: valuebar_bg
+    21300002: valuebar_fg
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

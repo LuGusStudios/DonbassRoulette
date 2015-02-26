@@ -1,6 +1,10 @@
 fileFormatVersion: 2
 guid: cfb08347a31552441b99a5cb6e2babb8
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: dd_part_sheet_expl_0
+    21300002: dd_part_sheet_expl_1
+    21300004: dd_part_sheet_expl_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

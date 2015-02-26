@@ -8,4 +8,12 @@ public class HpBar : ValueBar {
 	{
 		return m_body.GetHpRatio();
 	}
+
+    protected override void OnValueChanged(float value)
+    {
+        if (value <= 0)
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
 }
