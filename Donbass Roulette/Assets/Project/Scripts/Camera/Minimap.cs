@@ -25,11 +25,17 @@ public class Minimap : MonoBehaviour {
 	}
 
 
-	protected Vector3 ConvertToMinimap(Vector3 pos)
+	public Vector3 ConvertToMinimap(Vector3 pos)
 	{
         Vector3 center = m_map.GetCenterGround();
         return ((pos - center) * GetScalingDifference());
 	}
+    public Vector3 ConvertToWorld(Vector3 pos)
+    {
+        Vector3 center = m_map.GetCenterGround();
+        return ((pos - center) / GetScalingDifference());
+    }
+
 
 	protected float GetScalingDifference()
 	{
