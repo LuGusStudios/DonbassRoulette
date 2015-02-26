@@ -5193,6 +5193,7 @@ GameObject:
   - 81: {fileID: 1356159798}
   - 114: {fileID: 1356159804}
   - 114: {fileID: 1356159803}
+  - 114: {fileID: 1356159805}
   m_Layer: 0
   m_Name: mainCamera
   m_TagString: MainCamera
@@ -5283,8 +5284,10 @@ MonoBehaviour:
   m_UILayer:
     serializedVersion: 2
     m_Bits: 32
+  m_cameraData: {fileID: 0}
   m_map: {fileID: 982974553}
-  m_speed: .200000003
+  m_arrowSpeed: 0
+  m_dragSpeed: 0
   m_arrowLeft: {fileID: 16567676}
   m_arrowRight: {fileID: 1296349727}
 --- !u!114 &1356159804
@@ -5306,6 +5309,17 @@ MonoBehaviour:
   - {fileID: 400510225}
   - {fileID: 152755932}
   - {fileID: 2109101961}
+--- !u!114 &1356159805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1356159797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bcd4a0a82752ad4f9a9fb9ee7d9de25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1375389062
 GameObject:
   m_ObjectHideFlags: 0
@@ -7465,7 +7479,7 @@ MonoBehaviour:
   m_minX: -5
   m_maxX: 5
   m_map: {fileID: 982974553}
-  m_camera: {fileID: 1356159801}
+  m_cameraData: {fileID: 1356159805}
   m_cameraLeft: {fileID: 1666311957}
   m_cameraRight: {fileID: 1647565178}
   m_cameraTop: {fileID: 1495760919}

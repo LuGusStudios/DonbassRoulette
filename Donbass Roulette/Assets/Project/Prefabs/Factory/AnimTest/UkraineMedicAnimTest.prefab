@@ -401,6 +401,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 471380}
   - 212: {fileID: 21271378}
+  - 114: {fileID: 11430990}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -509,7 +510,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.5256882, y: -12.148366, z: 0}
+  m_LocalPosition: {x: -10.4830656, y: -7.47754431, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 433154}
@@ -954,6 +955,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aecb6d4956d6655489b00e6eb84212c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11430990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a466902ab8cfc43af5a173ab055087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSprite: {fileID: 21300000, guid: b44d60fe11d4bed4a8fd3fa85fe3ce2b, type: 3}
+  healSprite: {fileID: 21300000, guid: 96c10b5ddbad5e94491091da5b3359f6, type: 3}
 --- !u!114 &11433148
 MonoBehaviour:
   m_ObjectHideFlags: 1
