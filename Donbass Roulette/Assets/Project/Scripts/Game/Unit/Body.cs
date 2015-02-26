@@ -95,7 +95,7 @@ public class Body : MonoBehaviour {
             sr.gameObject.AddComponent<Rigidbody2D>();
 
             // The tiny random vector2 below adds a little random torque on the exploding parts.
-            Vector2 direction = ( ((new Vector2(Random.value , Random.value) * 0.01f ) + sr.transform.position.ToVector2()) - position).normalized;
+            Vector2 direction = ( ((new Vector2(Random.value , Random.value) * 0.05f ) + sr.transform.position.ToVector2()) - position).normalized;
 
             rigidbody2d.angularDrag = 1f;
             rigidbody2d.mass = 1.0f;
