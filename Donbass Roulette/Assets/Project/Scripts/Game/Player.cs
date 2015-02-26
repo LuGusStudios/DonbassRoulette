@@ -28,7 +28,12 @@ public class Player : User {
 		{
 			size.x = 130;
 		}
-		
+
+        Rect millionDollars = new Rect(Screen.width - 100, 0, 100, 50);
+        if (GUI.Button(millionDollars, "Million Dollars!"))
+            GetMillionDollars();
+
+
 		Rect buyIncomeButton = new Rect(0, Screen.height - 3 * size.y, size.x, size.y);
 		if(GUI.Button(buyIncomeButton, "$+\n" + m_incomePrice + "$"))
 			BuyIncome();

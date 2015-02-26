@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 444242}
   - 114: {fileID: 11444242}
   m_Layer: 0
-  m_Name: F_RebelRPGAnimTest
+  m_Name: F_RebelRPG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,8 +40,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_prefabUnit: {fileID: 100010, guid: 2f3a34625dbd5c9498fb1c285aa663e1, type: 2}
-  m_price: 400
-  m_cooldown: 0
+  m_price: 800
+  m_cooldown: 10
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

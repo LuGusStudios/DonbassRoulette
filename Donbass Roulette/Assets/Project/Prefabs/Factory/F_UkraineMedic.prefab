@@ -39,9 +39,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eba6df947bc8e540a8148c70fb0e055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_prefabUnit: {fileID: 133148, guid: 74913ae4c107bb34ba8dd22283c29c90, type: 2}
+  m_prefabUnit: {fileID: 133148, guid: c24d86c28098898459b7c7571f17f42a, type: 2}
   m_price: 350
-  m_couldown: 3
+  m_cooldown: 5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

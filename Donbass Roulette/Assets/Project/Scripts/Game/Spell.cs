@@ -8,13 +8,16 @@ public class Spell : MonoBehaviour {
 	public float m_couldown;
 	private float m_timer = 0;
 
-	public void Summon( Vector2 pos, Side side )
+	public bool Summon( Vector2 pos, Side side )
 	{
 		if(m_timer <= 0)
 		{
 			AreaOfEffect aoe = Instantiate(m_prefabEffect, pos, Quaternion.identity) as AreaOfEffect;
 			aoe.Initialize(side);
+            m_timer = m_couldown;
+            return true;
 		}
+        return false;
 	}
 
 
