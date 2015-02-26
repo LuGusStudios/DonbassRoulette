@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class RPG : Projectile 
 {
-    public float m_timeRemove;
     public float m_timeReach;
     public AreaOfEffect m_aoe;
 
@@ -19,11 +18,9 @@ public class RPG : Projectile
 
     IEnumerator LifetimeTo(Vector3 goal)
     {
-        Vector3[] path = { this.transform.position, Vector3.Lerp(this.transform.position, goal, .5f) + new Vector3(0, 1, 0), goal };
-
-         this.gameObject.MoveTo(path).Time(m_timeReach).Execute();
-
-         yield break;
+         Vector3[] path = { this.transform.position, Vector3.Lerp(this.transform.position, goal, .5f) + new Vector3(0, 1, 0), goal };
+         yield return this.gameObject.MoveTo(path).Time(m_timeReach).YieldExecute();
+         Explode();
     }
 
     protected override void ApplyBodyEffect(Body body)

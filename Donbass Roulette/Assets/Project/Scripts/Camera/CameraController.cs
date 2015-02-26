@@ -20,8 +20,6 @@ public class CameraController : MonoBehaviour {
     void Start()
     {
         m_cameraData = GetComponent<OrthographicCameraData>();
-
-
         // Automatically create a parent container for this object so that camera shakes can act on that 
         // instead of the camera directly (which disables movement during the shake).
 
@@ -38,6 +36,7 @@ public class CameraController : MonoBehaviour {
     private void Move(float x)
     {
         this.transform.position = this.transform.position.xAdd(x);
+        ClampToMap();
     }
 
 
@@ -71,6 +70,7 @@ public class CameraController : MonoBehaviour {
                     Vector3 hit = camera.ScreenToWorldPoint(LugusInput.use.currentPosition);
                     Vector3 correctPos = hit - minimap.transform.position;
                     camera.transform.position = new Vector3(minimap.ConvertToWorld(correctPos).x, camera.transform.position.y, camera.transform.position.z);
+                    ClampToMap();
                     return true;
                 }
             
@@ -84,6 +84,7 @@ public class CameraController : MonoBehaviour {
         {
             m_uiEdit = MoveWithUI();
             m_prvDragPos = LugusInput.use.currentPosition;
+            
         }
         else if (LugusInput.use.dragging)
         {
@@ -97,19 +98,16 @@ public class CameraController : MonoBehaviour {
                 Move((m_prvDragPos.x - curDragPos.x) * m_dragSpeed);
                 m_prvDragPos = curDragPos;
             }
-            ClampToMap();
         }
 
 
         if (LugusInput.use.Key(KeyCode.LeftArrow))
         {
             Move(-m_arrowSpeed);
-            ClampToMap();
         }
         else if (LugusInput.use.Key(KeyCode.RightArrow))
         {
             Move(m_arrowSpeed);
-            ClampToMap();
         }
 	}
 }
