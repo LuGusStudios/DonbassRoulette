@@ -2123,11 +2123,13 @@ MonoBehaviour:
   m_leftUser: {fileID: 2040784880}
   m_rightUser: {fileID: 1698350957}
   m_factories:
-  - {fileID: 11400000, guid: 1f0f254eac4ecdf4fbd3613f4dc8ee77, type: 2}
+  - {fileID: 11400000, guid: 3d7ddb2534ad02f4b97184b8ae2a8641, type: 2}
+  - {fileID: 11400000, guid: b40f7f277cf9c914f8445e2a54439ad7, type: 2}
+  - {fileID: 11401028, guid: 388b5da74f146954a9929ac39d7060ce, type: 2}
+  - {fileID: 11444242, guid: f74ce26c0eaa65d4d8d21dafa709e941, type: 2}
+  - {fileID: 11400000, guid: 06f3a66cea0717a4d84495ff4e0d7a1d, type: 2}
+  - {fileID: 11444242, guid: 9df5e28e7db77bc4a9ed5a574fbb09ee, type: 2}
   - {fileID: 11400000, guid: ec43f12252d192047a836395b549ddac, type: 2}
-  - {fileID: 11400000, guid: 325da91eb423e0d458808b78ce86a2e0, type: 2}
-  - {fileID: 11444242, guid: 7c073b0e96138e54c8eaba4cb41d7fd1, type: 2}
-  - {fileID: 11401028, guid: 2cde9581656633042bbbd10bc4d9bdd0, type: 2}
   - {fileID: 11400000, guid: 4f93b03f3178bfc4f81a660781ee0fd4, type: 2}
   m_spells:
   - {fileID: 11400000, guid: 47ec873e016f9ec45a1e9be580e3fca1, type: 2}
