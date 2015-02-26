@@ -110,6 +110,21 @@ State:
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
+--- !u!1102 &110274970
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: WalkingRPG
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 125957edb2547b5428681387707bf707, type: 3}
+  m_ParentStateMachine: {fileID: 110737760}
+  m_Position: {x: 588, y: -12, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
 --- !u!1102 &110276618
 State:
   m_ObjectHideFlags: 3
@@ -155,21 +170,6 @@ State:
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1102 &110296876
-State:
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: WalkingRPG
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Motions:
-  - {fileID: 7400000, guid: cae8934e7a0d0814ab13b238a7a1ce5e, type: 3}
-  m_ParentStateMachine: {fileID: 110737760}
-  m_Position: {x: 588, y: -12, z: 0}
-  m_IKOnFeet: 0
-  m_Mirror: 0
-  m_Tag: 
 --- !u!1107 &110737760
 StateMachine:
   serializedVersion: 2
@@ -186,9 +186,9 @@ StateMachine:
   - {fileID: 110281706}
   - {fileID: 110276618}
   - {fileID: 110201152}
-  - {fileID: 110296876}
   - {fileID: 110289060}
   - {fileID: 110200894}
+  - {fileID: 110274970}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions: {}
