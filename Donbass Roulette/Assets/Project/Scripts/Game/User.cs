@@ -48,6 +48,11 @@ public abstract class User : MonoBehaviour {
         return false;
 	}
 
+    protected void GetMillionDollars()
+    {
+        m_money += 1000000;
+    }
+
 	protected bool BuyManaRegen()
 	{
 		if(m_money >= m_manaRegenPrice)
