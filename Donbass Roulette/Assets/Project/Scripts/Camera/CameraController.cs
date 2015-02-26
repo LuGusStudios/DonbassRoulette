@@ -1,17 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(OrthographicCameraData))]
 public class CameraController : MonoBehaviour {
 	public LayerMask m_UILayer;
+    public OrthographicCameraData m_cameraData;
 
 	public Map m_map;
-	public float m_speed;
+	public float m_arrowSpeed;
+    public float m_dragSpeed;
 
 	public Collider2D m_arrowLeft;
 	public Collider2D m_arrowRight;
 
-    private void Start()
+    protected Vector3 m_prvDragPos;
+    protected bool m_uiEdit;
+
+
+    void Start()
     {
+        m_cameraData = GetComponent<OrthographicCameraData>();
         // Automatically create a parent container for this object so that camera shakes can act on that 
         // instead of the camera directly (which disables movement during the shake).
 
@@ -23,44 +31,83 @@ public class CameraController : MonoBehaviour {
         this.transform.parent = cameraParent;
     }
 
-	private void MoveLeft()
-	{
-		if(this.transform.position.x - m_speed < m_map.m_minX)
-			this.transform.position = new Vector3(m_map.m_minX, this.transform.position.y, this.transform.position.z);
-		else
-			this.transform.Translate(new Vector3(-m_speed, 0));
-	}
-	private void MoveRight()
-	{
-		if(this.transform.position.x + m_speed > m_map.m_maxX)
-			this.transform.position = new Vector3(m_map.m_maxX, this.transform.position.y, this.transform.position.z);
-		else
-			this.transform.Translate(new Vector3(m_speed, 0));
-	}
 
 
+    private void Move(float x)
+    {
+        this.transform.position = this.transform.position.xAdd(x);
+        ClampToMap();
+    }
 
-	// Update is called once per frame
-	void Update () {
-        if (LugusInput.use.Key(KeyCode.Mouse0))
+
+    protected void ClampToMap()
+    {
+        float sizeX = m_cameraData.GetSize().x;
+        this.transform.position = new Vector3(Mathf.Clamp(this.transform.position.x, m_map.m_minX + sizeX, m_map.m_maxX - sizeX), this.transform.position.y, this.transform.position.z);
+    }
+
+    protected bool MoveWithUI()
+    {
+        Camera camera = m_cameraData.GetObject();
+        Transform t = LugusInput.use.RayCastFromMouse(camera);
+        if (t)
         {
-            Transform t = LugusInput.use.RayCastFromMouse(LugusCamera.game);
-            if (t)
+            if (t.collider2D == this.m_arrowLeft)
             {
-                if (t.collider2D == this.m_arrowLeft)
-                    MoveLeft();
-                else if (t.collider2D == this.m_arrowRight)
-                    MoveRight();
+                Move(-m_arrowSpeed);
+                return true;
+            }
+            else if (t.collider2D == this.m_arrowRight)
+            {
+                Move(m_arrowSpeed);
+                return true;
+            }
+            else
+            {
+                MinimapCamera minimap = t.GetComponent<MinimapCamera>();
+                if(minimap)
+                {
+                    Vector3 hit = camera.ScreenToWorldPoint(LugusInput.use.currentPosition);
+                    Vector3 correctPos = hit - minimap.transform.position;
+                    camera.transform.position = new Vector3(minimap.ConvertToWorld(correctPos).x, camera.transform.position.y, camera.transform.position.z);
+                    ClampToMap();
+                    return true;
+                }
+            
             }
         }
-        else if (LugusInput.use.Key(KeyCode.LeftArrow))
-            MoveLeft();
-        else if (LugusInput.use.Key(KeyCode.RightArrow))
-            MoveRight();
-	}
+        return false;
+    }
 
-	void Move(bool left)
-	{
-		//this.transform.Translate(
+	void Update () {
+        if( LugusInput.use.down )
+        {
+            m_uiEdit = MoveWithUI();
+            m_prvDragPos = LugusInput.use.currentPosition;
+            
+        }
+        else if (LugusInput.use.dragging)
+        {
+            if (m_uiEdit)
+            {
+                MoveWithUI();
+            }
+            else
+            {
+                Vector3 curDragPos = LugusInput.use.currentPosition;
+                Move((m_prvDragPos.x - curDragPos.x) * m_dragSpeed);
+                m_prvDragPos = curDragPos;
+            }
+        }
+
+
+        if (LugusInput.use.Key(KeyCode.LeftArrow))
+        {
+            Move(-m_arrowSpeed);
+        }
+        else if (LugusInput.use.Key(KeyCode.RightArrow))
+        {
+            Move(m_arrowSpeed);
+        }
 	}
 }
