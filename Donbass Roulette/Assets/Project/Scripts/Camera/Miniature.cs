@@ -26,7 +26,7 @@ public class Miniature : MonoBehaviour {
 		if(m_ref == null)
 		{
 			m_minimap.m_elements.Remove(this);
-			Destroy(this);
+			Destroy(this.gameObject);
 		}
 
 	}

@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400010}
   m_Layer: 0
-  m_Name: RebelSoldierAnimTest
+  m_Name: RebelRPGAnimTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -574,7 +574,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .00117095199, y: -9.08333302, z: 0}
+  m_LocalPosition: {x: -1.53708231, y: -10.5180559, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400008}
@@ -860,8 +860,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121562}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37113883e-08}
-  m_LocalPosition: {x: -.23500368, y: -.0254058018, z: 0}
+  m_LocalRotation: {x: .0394553356, y: .999221325, z: -6.42486331e-09, w: -1.62793953e-07}
+  m_LocalPosition: {x: -.0469999984, y: .0130000003, z: -0}
   m_LocalScale: {x: .194999993, y: .194999993, z: .194999993}
   m_Children: []
   m_Father: {fileID: 421564}
@@ -973,7 +973,7 @@ MonoBehaviour:
   m_side: 1
   m_damage: 30
   m_range: 6.5
-  m_projectile: {fileID: 11400000, guid: 09efb48c00ef5084086a93e57512d639, type: 2}
+  m_projectile: {fileID: 11420310, guid: d62514521cee9304fa4f7eff1206158d, type: 2}
   m_attackCooldown: 2
   m_speed: .0149999997
 --- !u!114 &11400006
@@ -1000,8 +1000,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 315ef62202a7cf14dac76304d5d9c1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkAnimName: Walking
-  attackAnimName: Firing
+  walkAnimName: WalkingRPG
+  attackAnimName: FiringRPG
   deathAnimName: Death
 --- !u!114 &11460904
 MonoBehaviour:
@@ -1254,7 +1254,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b84dcb41b000b8f459aecc93d46a8c3f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 66d03216745066546ae14f784d762a48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21221568
 SpriteRenderer:
