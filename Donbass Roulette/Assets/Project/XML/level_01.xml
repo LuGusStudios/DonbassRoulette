@@ -63,6 +63,9 @@
 			<Factory>
 				<Name>F_RebelMedic</Name>
 			</Factory>
+      <Factory>
+        <Name>F_RebelRPG</Name>
+      </Factory>      
 			<Factory>
 				<Name>F_RebelTank</Name>
 			</Factory>
@@ -113,7 +116,7 @@
 			</Factory>
 			<Factory>
 				<Name>F_UkraineTank</Name>
-				<Weight>1</Weight>
+				<Weight>0</Weight>
 			</Factory>
 		</AvailableFactories>
 		
