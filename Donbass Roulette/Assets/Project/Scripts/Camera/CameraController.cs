@@ -20,6 +20,17 @@ public class CameraController : MonoBehaviour {
     void Start()
     {
         m_cameraData = GetComponent<OrthographicCameraData>();
+
+
+        // Automatically create a parent container for this object so that camera shakes can act on that 
+        // instead of the camera directly (which disables movement during the shake).
+
+        Transform cameraParent = new GameObject("CameraContainer").transform;
+        cameraParent.transform.parent = this.transform.parent;
+        cameraParent.transform.localPosition = this.transform.localPosition;
+        cameraParent.transform.localRotation = this.transform.localRotation;
+
+        this.transform.parent = cameraParent;
     }
 
 
