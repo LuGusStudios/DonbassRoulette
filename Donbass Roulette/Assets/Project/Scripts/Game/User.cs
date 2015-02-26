@@ -157,7 +157,7 @@ public abstract class User : MonoBehaviour {
 	{
 		if(m_mana >= spell.m_cost)
 		{
-			if(spell.Summon(pos, side));
+            if (spell.Summon(pos, side))
 			    m_mana -= spell.m_cost;
 			return true;
 		}
