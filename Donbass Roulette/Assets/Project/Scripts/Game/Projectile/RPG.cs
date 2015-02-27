@@ -18,7 +18,7 @@ public class RPG : Projectile
 
     IEnumerator LifetimeTo(Vector3 goal)
     {
-         Vector3[] path = { this.transform.position, Vector3.Lerp(this.transform.position, goal, .5f) + new Vector3(0, 1, 0), goal };
+         Vector3[] path = { this.transform.position, Vector3.Lerp(this.transform.position, goal, .5f), goal };
          yield return this.gameObject.MoveTo(path).Time(m_timeReach).YieldExecute();
          Explode();
     }

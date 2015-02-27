@@ -97,8 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_side: 0
-  m_timeRemove: 0
-  m_timeReach: 1.5
+  m_timeReach: .5
   m_aoe: {fileID: 11400000, guid: 491dfc90423eb2e46b0fc6b3a624cce3, type: 2}
 --- !u!212 &21220310
 SpriteRenderer:

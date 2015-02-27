@@ -12,6 +12,7 @@ public class Entity : Body {
 
 	public float m_attackCooldown = 2;
 	protected float m_attackTimer = 0;
+    protected Transform m_launchPoint = null;
 
 	// Update is called once per frame
 	virtual protected void Update () 
@@ -30,6 +31,13 @@ public class Entity : Body {
 		}
 	}
 
+    protected override void Start()
+    {
+        base.Start();
+
+        m_launchPoint = this.transform.FindChild("LaunchPoint");
+    }
+
 	virtual protected void Attack(Body body)
 	{
 		if( m_delAttack != null )
@@ -37,8 +45,13 @@ public class Entity : Body {
 
 		if(m_projectile != null)
 		{// range attack
-            
-			Projectile projectile = Instantiate(m_projectile,this.transform.position, Quaternion.identity) as Projectile;
+
+            Vector3 launchPosition = this.transform.position;
+
+            if (m_launchPoint != null)
+                launchPosition = m_launchPoint.transform.position;
+
+            Projectile projectile = Instantiate(m_projectile, launchPosition, Quaternion.identity) as Projectile;
 			projectile.Initialize(this.m_side, this.m_damage, body.transform.position);
 		}
 		else
