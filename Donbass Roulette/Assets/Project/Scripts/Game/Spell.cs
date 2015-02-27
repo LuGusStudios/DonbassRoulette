@@ -20,7 +20,7 @@ public class Spell : MonoBehaviour {
 	}
     protected IEnumerator AreaAppear(Vector2 position, Side side)
     {
-        OnBegin(position);
+        OnBegin(position, side);
 
         yield return new WaitForSeconds(instantiateDelay);
 
@@ -32,7 +32,7 @@ public class Spell : MonoBehaviour {
     }
 
     // Override, for instance to have a projectile travel at the beginning of the spell.
-    protected virtual void OnBegin(Vector2 position)
+    protected virtual void OnBegin(Vector2 position, Side side)
     { 
     }
 

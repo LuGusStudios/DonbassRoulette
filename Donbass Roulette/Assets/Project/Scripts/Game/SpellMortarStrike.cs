@@ -7,11 +7,16 @@ public class SpellMortarStrike : Spell
     public GameObject mortarAmmoPrefab = null;
     protected GameObject currentProjectile = null;
 
-    protected override void OnBegin(Vector2 position)
+    protected override void OnBegin(Vector2 position, Side side)
     {
         GameObject mortarStrike = Instantiate(mortarAmmoPrefab) as GameObject;
 
-        mortarStrike.transform.position = position.xAdd(Random.Range(-8, 8)).yAdd(16); // 16 = roughly screen height
+        float xOffset = Random.Range(-10, -2);
+
+        if (side == Side.Right)
+            xOffset = Random.Range(2, 10);
+
+        mortarStrike.transform.position = position.xAdd(xOffset).yAdd(16); // 16 = roughly screen height
 
         mortarStrike.LobTo(mortarStrike.transform.position, position, 2.0f).
             Time(instantiateDelay).
