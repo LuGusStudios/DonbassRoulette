@@ -6,7 +6,7 @@ public class Base : Body {
 	override protected void Start()
 	{
 		base.Start();
-		m_DelDeath += End;
+		m_delDeath += End;
         m_game = GameObject.FindObjectOfType<GameData>();
         if (!m_game)
             Debug.LogError("No Game existing !");

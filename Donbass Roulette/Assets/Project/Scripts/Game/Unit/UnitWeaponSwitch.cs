@@ -17,7 +17,7 @@ public class UnitWeaponSwitch : MonoBehaviour
 
         if (unit != null)
         {
-            unit.m_DelAttack += OnAttack;
+            unit.m_delAttack += OnAttack;
         }
 	}
 	

@@ -401,6 +401,7 @@ GameObject:
   - 4: {fileID: 496110}
   - 114: {fileID: 11496114}
   - 58: {fileID: 5896118}
+  - 114: {fileID: 11451570}
   m_Layer: 0
   m_Name: unit
   m_TagString: Untagged
@@ -968,6 +969,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackSprite: {fileID: 21300000, guid: b44d60fe11d4bed4a8fd3fa85fe3ce2b, type: 3}
   healSprite: {fileID: 21300000, guid: 96c10b5ddbad5e94491091da5b3359f6, type: 3}
+--- !u!114 &11451570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a310cde8e9c77c448b1c64c0b89d6b89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitType: 2
+  hitType2: 4
 --- !u!114 &11462096
 MonoBehaviour:
   m_ObjectHideFlags: 1
