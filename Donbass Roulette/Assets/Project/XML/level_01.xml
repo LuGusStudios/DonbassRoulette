@@ -54,6 +54,9 @@
 			<Spell>
 				<Name>S_Healing</Name>
 			</Spell>
+    	<Spell>
+				<Name>S_MortarStrike</Name>
+			</Spell>
 		</AvailableSpells>	
 			
 		<AvailableFactories>
