@@ -6,7 +6,7 @@ public class HideOnDeath : MonoBehaviour
 {
     protected Body controllingBody = null;
 
-    public void SetupGlobal()
+    public void SetupGlobal() 
 	{
         controllingBody = gameObject.FindComponentInParent<Body>(true);
 

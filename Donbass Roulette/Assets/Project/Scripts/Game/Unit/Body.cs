@@ -18,6 +18,7 @@ public class Body : MonoBehaviour {
 	
 	public delegate void Delegate();
 	public Delegate m_DelDeath;
+    public Delegate m_onLoseHealth;
 
 	virtual protected void Start()
 	{
@@ -39,6 +40,12 @@ public class Body : MonoBehaviour {
 	public void ReduceHp( float value )
 	{
 		m_hp -= value;
+
+        if (m_hp > 0 && m_onLoseHealth != null)
+        {
+            m_onLoseHealth();
+        }
+
 		if(m_hp <= 0)
 		{
 			m_hp = 0; // may be unecessary
