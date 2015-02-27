@@ -5,10 +5,17 @@ using System.Collections.Generic;
 public class SpellMortarStrike : Spell 
 {
     public GameObject mortarAmmoPrefab = null;
+    public GameObject crosshairPrefab = null;
+
     protected GameObject currentProjectile = null;
 
     protected override void OnBegin(Vector2 position, Side side)
     {
+        GameObject crossHair = Instantiate(crosshairPrefab) as GameObject;
+        crossHair.transform.position = position;
+        Destroy(crossHair, instantiateDelay);
+
+
         GameObject mortarStrike = Instantiate(mortarAmmoPrefab) as GameObject;
 
         float xOffset = Random.Range(-10, -2);
