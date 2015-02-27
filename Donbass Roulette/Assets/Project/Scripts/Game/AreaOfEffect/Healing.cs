@@ -11,7 +11,7 @@ public class Healing : AreaOfEffect
 	protected override void ApplyEffect(Collider2D col)
 	{
 		Body body = col.GetComponent<Body>();
-		if(body && body.m_side == m_side)
+		if(body && body.m_side == m_side && body.m_composition == Body.Composition.Organic)
 		{
 			body.AddHp(m_value);
 		}
