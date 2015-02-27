@@ -16,7 +16,7 @@ public class HideOnDeath : MonoBehaviour
         }
         else
         {
-            controllingBody.m_DelDeath += OnDeath;
+            controllingBody.m_delDeath += OnDeath;
         }
 	}
 	

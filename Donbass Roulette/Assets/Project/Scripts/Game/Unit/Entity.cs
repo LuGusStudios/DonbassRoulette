@@ -7,7 +7,7 @@ public class Entity : Body {
 	public Projectile m_projectile;
 
 	public delegate void Delegate();
-	public Delegate m_DelAttack;
+	public Delegate m_delAttack;
 	
 
 	public float m_attackCooldown = 2;
@@ -32,8 +32,8 @@ public class Entity : Body {
 
 	virtual protected void Attack(Body body)
 	{
-		if( m_DelAttack != null )
-			m_DelAttack();
+		if( m_delAttack != null )
+			m_delAttack();
 
 		if(m_projectile != null)
 		{// range attack

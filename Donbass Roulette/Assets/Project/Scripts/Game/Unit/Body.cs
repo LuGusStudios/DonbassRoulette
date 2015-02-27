@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Body : MonoBehaviour {
+public class Body : MonoBehaviour 
+{
 
     public enum Composition
     {
@@ -17,7 +18,7 @@ public class Body : MonoBehaviour {
 	public Side m_side;
 	
 	public delegate void Delegate();
-	public Delegate m_DelDeath;
+	public Delegate m_delDeath;
     public Delegate m_onLoseHealth;
 
 	virtual protected void Start()
@@ -30,8 +31,8 @@ public class Body : MonoBehaviour {
 
 	protected IEnumerator Death()
 	{
-		if(m_DelDeath != null)
-			m_DelDeath();
+		if(m_delDeath != null)
+			m_delDeath();
 		yield return new WaitForSeconds(m_deathDestroyTime); // death animation time
 		Destroy(this.transform.parent.gameObject);
 	}

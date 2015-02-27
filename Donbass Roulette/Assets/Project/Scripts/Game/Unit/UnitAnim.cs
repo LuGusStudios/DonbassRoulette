@@ -22,9 +22,9 @@ public class UnitAnim : MonoBehaviour
 	{
 		if (m_unit != null)
 		{
-			m_unit.m_DelAttack += PlayAttackAnim;
+			m_unit.m_delAttack += PlayAttackAnim;
 			m_unit.m_DelMove += PlayWalkAnim;
-			m_unit.m_DelDeath += PlayDeathAnim;
+			m_unit.m_delDeath += PlayDeathAnim;
 		}
 		else
 		{
