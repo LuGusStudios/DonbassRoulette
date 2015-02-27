@@ -45,6 +45,7 @@ MonoBehaviour:
   m_cooldown: 0
   mortarAmmoPrefab: {fileID: 179536, guid: a723e9c57674f45489a5839646ad6d8b, type: 2}
   crosshairPrefab: {fileID: 173582, guid: ba133405822a1b444adeeab778608cd7, type: 2}
+  impactPrefab: {fileID: 134494, guid: 58083574a259b5c4a94eff8f0e99e83c, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
