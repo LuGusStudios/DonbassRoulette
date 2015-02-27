@@ -13,12 +13,6 @@
 			</Structure>
 		
 			<Structure>
-				<Name>Tower</Name>
-				<Position>-20.5</Position>
-			</Structure>
-		
-		
-			<Structure>
 				<Name>Barricade</Name>
 				<Position>-5</Position>
 			</Structure>
@@ -28,14 +22,6 @@
 			<Structure>
 				<Name>Spawner</Name>
 				<Position>25.5</Position>
-			</Structure>
-			<Structure>
-				<Name>Tower</Name>
-				<Position>20.5</Position>
-			</Structure>
-			<Structure>
-				<Name>Tower</Name>
-				<Position>10</Position>
 			</Structure>
 		</Right>
 	</Structures>

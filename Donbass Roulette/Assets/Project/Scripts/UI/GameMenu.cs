@@ -14,23 +14,29 @@ public class GameMenu : MonoBehaviour {
 
     Player _player = null;
 
+    protected bool isInitialized = false;
+
 	// Use this for initialization
 	void Start () {
         btnPause = gameObject.FindComponentInChildren<Button>(true, "btn_pause");
         btnPause.onClick.AddListener(DoPause);        
       
-        _player = FindObjectOfType<Player>();
-
-        btnIncome.onClick.AddListener(_player.DoBuyIncome);
-        btnTechnology.onClick.AddListener(_player.DoBuyMana);
+        
 	}
 
     void OnEnable()
     {
         Time.timeScale = 1;
+        _player = FindObjectOfType<Player>();
 
-                
-        SetupButtons();        
+        SetupButtons();  
+
+        if (!isInitialized)
+        {
+            btnIncome.onClick.AddListener(_player.DoBuyIncome);
+            btnTechnology.onClick.AddListener(_player.DoBuyMana);
+            isInitialized = true;
+        }
     }
 	
 	// Update is called once per frame
@@ -71,7 +77,9 @@ public class GameMenu : MonoBehaviour {
             Button b = unitButtons[i];            
 
             b.image.sprite = f.icon;
+
             b.onClick.AddListener(() => { _player.DoSpawnUnit(f); });
+
             b.gameObject.FindComponentInChildren<Text>(true).text = f.m_price.ToString();
             b.gameObject.SetActive(true);
         }
@@ -83,7 +91,9 @@ public class GameMenu : MonoBehaviour {
             Button b = powerButtons[i];
 
             b.image.sprite = s.icon;
+
             b.onClick.AddListener(() => { _player.DoCastSpell(s); });
+
             b.gameObject.FindComponentInChildren<Text>(true).text = s.m_cost.ToString();
             b.gameObject.SetActive(true);
         }                
