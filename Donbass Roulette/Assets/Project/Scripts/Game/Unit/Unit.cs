@@ -40,6 +40,6 @@ public class Unit : Entity {
 		else
 			Debug.LogError("Unit has an unused Side variable");        
 
-		this.transform.position = this.transform.position.xAdd(dir * m_speed);
+		this.transform.position = this.transform.position.xAdd(dir * m_speed * Time.deltaTime);
 	}
 }

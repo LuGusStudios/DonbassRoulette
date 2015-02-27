@@ -5,10 +5,18 @@ using System.Collections.Generic;
 public class SpellMortarStrike : Spell 
 {
     public GameObject mortarAmmoPrefab = null;
+    public GameObject crosshairPrefab = null;
+    public GameObject impactPrefab = null;
+
     protected GameObject currentProjectile = null;
 
     protected override void OnBegin(Vector2 position, Side side)
     {
+        GameObject crossHair = Instantiate(crosshairPrefab) as GameObject;
+        crossHair.transform.position = position;
+        crossHair.transform.position = crossHair.transform.position.zAdd(Map.use.m_maxZ);
+        Destroy(crossHair, instantiateDelay);
+
         GameObject mortarStrike = Instantiate(mortarAmmoPrefab) as GameObject;
 
         float xOffset = Random.Range(-10, -2);
@@ -25,6 +33,12 @@ public class SpellMortarStrike : Spell
             Execute();
 
         Destroy(mortarStrike, instantiateDelay);
+    }
+
+    protected override void OnInstantiate(AreaOfEffect aoe)
+    {
+        GameObject impact = Instantiate(impactPrefab) as GameObject;
+        impact.transform.position = aoe.transform.position.zAdd(Map.use.m_maxZ);
     }
 
 }

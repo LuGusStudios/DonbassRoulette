@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Map : MonoBehaviour {
+public class Map : LugusSingletonExisting<Map> {
 	public float m_minX;
 	public float m_maxX;
 
@@ -9,6 +9,8 @@ public class Map : MonoBehaviour {
     public float m_maxY_ground;
     public float m_minY_air;
     public float m_maxY_air;
+
+    public float m_maxZ = 100;
 
 
 	public float GetLength()
@@ -37,6 +39,16 @@ public class Map : MonoBehaviour {
         return (this.transform.position.yAdd(randVal).zAdd(randVal));
     }
 
+    public bool IsPointOnGround(Vector2 point)
+    {
+        Rect newRect = new Rect(
+            this.transform.position.x + m_minX, 
+            this.transform.position.y + m_maxY_ground, 
+            Mathf.Abs(m_minX) + Mathf.Abs(m_maxX),  
+            Mathf.Abs(m_minY_ground) + Mathf.Abs(m_maxY_ground));
+
+        return newRect.Contains(point);
+    }
 
 
 	void OnDrawGizmosSelected()

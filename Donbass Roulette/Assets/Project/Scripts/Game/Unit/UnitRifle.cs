@@ -5,8 +5,8 @@ public class UnitRifle : Unit {
 
     override protected void Attack(Body body)
     {
-        if (m_DelAttack != null)
-            m_DelAttack();
+        if (m_delAttack != null)
+            m_delAttack();
 
         if (m_projectile != null)
         {// range attack
