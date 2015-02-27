@@ -6,6 +6,7 @@ public class Factory : MonoBehaviour {
     protected Map m_map;
 	public GameObject m_prefabUnit;
 	public int m_price;
+    public Sprite icon;
 
 	public float m_cooldown;
 	private float m_timer = 0;

@@ -41,6 +41,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_prefabUnit: {fileID: 100010, guid: 8efce2153bae8b5419a89787fa0a6935, type: 2}
   m_price: 2000
+  icon: {fileID: 21300000, guid: 066b4af1f7c4b6542b2341dd49bb17a4, type: 3}
   m_cooldown: 10
 --- !u!1001 &100100000
 Prefab:

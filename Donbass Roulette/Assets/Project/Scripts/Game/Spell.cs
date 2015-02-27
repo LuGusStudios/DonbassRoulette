@@ -4,6 +4,7 @@ using System.Collections;
 public class Spell : MonoBehaviour {
 	public AreaOfEffect m_prefabEffect;
 	public int m_cost;
+    public Sprite icon;
 
 	public float m_couldown;
 	private float m_timer = 0;
