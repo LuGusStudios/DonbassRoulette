@@ -5,6 +5,7 @@ public class Spell : MonoBehaviour {
 	public AreaOfEffect m_prefabEffect;
 	public int m_cost;
     public float instantiateDelay = 0.0f;
+    public Sprite icon;
 
 	public float m_cooldown;
 	private float m_timer = 0;
@@ -38,6 +39,11 @@ public class Spell : MonoBehaviour {
 
     protected virtual void OnInstantiate(AreaOfEffect aoe)
     { 
+    }
+
+    public float GetTimerPercentage()
+    {
+        return 1.0f - (m_timer / m_cooldown);
     }
 
 	public float GetTimer()

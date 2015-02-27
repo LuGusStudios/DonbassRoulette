@@ -25,6 +25,12 @@ public class PauseMenu : MonoBehaviour {
 	
 	}
 
+    void OnEnable()
+    {
+        Time.timeScale = float.Epsilon;
+    }
+
+
     void DoResume()
     {
         MenuManager.use.Goto(MenuManager.MenuType.GAMEMENU);

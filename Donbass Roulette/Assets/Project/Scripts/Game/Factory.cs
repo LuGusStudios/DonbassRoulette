@@ -47,6 +47,11 @@ public class Factory : MonoBehaviour {
 		return false;
 	}
 
+    public float GetTimerPercentage()
+    {
+        return 1.0f - (m_timer / m_cooldown);
+    }
+
 	public float GetTimer()
 	{
 		return m_timer;

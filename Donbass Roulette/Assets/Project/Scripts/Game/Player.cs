@@ -34,20 +34,20 @@ public class Player : User {
             GetMillionDollars();
 
 
-		Rect buyIncomeButton = new Rect(0, Screen.height - 4 * size.y, size.x, size.y);
-		if(GUI.Button(buyIncomeButton, "$+\n" + m_incomePrice + "$"))
-			BuyIncome();
+        //Rect buyIncomeButton = new Rect(0, Screen.height - 4 * size.y, size.x, size.y);
+        //if(GUI.Button(buyIncomeButton, "$+\n" + m_incomePrice + "$"))
+        //    BuyIncome();
 
 		
 
-		Rect buyIncomeRateButton = new Rect(1 * size.x, Screen.height - 4 * size.y, size.x, size.y);
-		if(GUI.Button(buyIncomeRateButton, "$/s+\n" + m_incomeRatePrice + "$"))
-			BuyIncomeRate();
+        //Rect buyIncomeRateButton = new Rect(1 * size.x, Screen.height - 4 * size.y, size.x, size.y);
+        //if(GUI.Button(buyIncomeRateButton, "$/s+\n" + m_incomeRatePrice + "$"))
+        //    BuyIncomeRate();
 
 
-		Rect buyManaRegenButton = new Rect(2 * size.x, Screen.height - 4 * size.y, size.x, size.y);
-		if(GUI.Button(buyManaRegenButton, "MP+\n" + m_manaRegenPrice + "$"))
-			BuyManaRegen();
+        //Rect buyManaRegenButton = new Rect(2 * size.x, Screen.height - 4 * size.y, size.x, size.y);
+        //if(GUI.Button(buyManaRegenButton, "MP+\n" + m_manaRegenPrice + "$"))
+        //    BuyManaRegen();
 
 
         //for(int i = 0; i < m_factories.Count; i++)
@@ -82,5 +82,20 @@ public class Player : User {
             m_spellCasting = s;
         else
             Debug.Log("Not enough MP got " + m_mana + ", requires " + s.m_cost);
+    }
+
+    public Spell GetCastingSpell()
+    {
+        return m_spellCasting;
+    }
+
+    public void DoBuyIncome()
+    {
+        BuyIncome();
+    }
+
+    public void DoBuyMana()
+    {
+        BuyManaRegen();
     }
 }
