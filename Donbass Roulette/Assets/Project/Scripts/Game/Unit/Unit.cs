@@ -38,10 +38,8 @@ public class Unit : Entity {
 		else if(m_side == Side.Right)
 			dir = -1;
 		else
-			Debug.LogError("Unit has an unused Side variable");
+			Debug.LogError("Unit has an unused Side variable");        
 
 		this.transform.position = this.transform.position.xAdd(dir * m_speed * Time.deltaTime);
 	}
-
-	
 }
