@@ -6,9 +6,10 @@
 	</Camera>
 
 	<Structures>
+    
 		<Left>
 			<Structure>
-				<Name>Spawner</Name>
+				<Name>SpawnerRebel</Name>
 				<Position>-25.5</Position>
 			</Structure>
 		
@@ -20,11 +21,13 @@
 	
 		<Right>
 			<Structure>
-				<Name>Spawner</Name>
+				<Name>SpawnerUkraine</Name>
 				<Position>25.5</Position>
 			</Structure>
 		</Right>
+    
 	</Structures>
+  
 </Game>
 
 
@@ -34,9 +37,6 @@
 <LeftUser>
 	<UserData>
 		<AvailableSpells>
-			<Spell>
-				<Name>S_Explosion</Name>
-			</Spell>
 			<Spell>
 				<Name>S_Healing</Name>
 			</Spell>
@@ -87,11 +87,11 @@
 	<UserData>
 		<AvailableSpells>
 			<Spell>
-				<Name>S_Explosion</Name>
-			</Spell>
-			<Spell>
 				<Name>S_Healing</Name>
 			</Spell>
+      <Spell>
+        <Name>S_MortarStrike</Name>
+      </Spell>
 		</AvailableSpells>
 		
 		<AvailableFactories>
@@ -103,6 +103,10 @@
 				<Name>F_UkraineMedic</Name>
 				<Weight>0.7</Weight>
 			</Factory>
+      <Factory>
+        <Name>F_UkraineRPG</Name>
+        <Weight>0</Weight>
+      </Factory>
 			<Factory>
 				<Name>F_UkraineTank</Name>
 				<Weight>0</Weight>

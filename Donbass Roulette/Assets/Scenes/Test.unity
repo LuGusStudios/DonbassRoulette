@@ -3483,7 +3483,8 @@ MonoBehaviour:
   m_structures:
   - {fileID: 100010, guid: 5dffcee4f104c0841b3c64ab22abd35a, type: 2}
   - {fileID: 100000, guid: c1234c132dcf70f4aae350dca0802346, type: 2}
-  - {fileID: 100002, guid: 245860b6565ee9a49adf89545eb7ebe6, type: 2}
+  - {fileID: 100002, guid: c1c473e487f580c43acbfc35cd6ac7e0, type: 2}
+  - {fileID: 100002, guid: ccf0414ded3aed44eb3b11fe65da434d, type: 2}
   m_map: {fileID: 982974553}
 --- !u!1 &469992674
 GameObject:

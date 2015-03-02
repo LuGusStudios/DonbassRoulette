@@ -138,7 +138,7 @@ public class DataLoader : FileManager
 							Debug.LogError("LoadStructureData received an unused Side variable");
 
 						obj.transform.parent = user.transform;//m_game.m_map.transform;
-						if(parser.content == "Spawner")
+						if(parser.content.StartsWith("Spawner"))    // this is bad and you should feel bad
 							user.m_spawner = obj.transform;
 						break;
 					case "Position":
@@ -209,8 +209,8 @@ public class DataLoader : FileManager
 				{
 					case "Name": 
 						Factory factory = m_game.FindFactory(parser.content);
-						if(factory)
-							user.m_factories.Add(factory);
+                        if (factory)
+                            user.m_factories.Add(factory);
 						break;
 					case "Weight":
 						AI ai = (user as AI);

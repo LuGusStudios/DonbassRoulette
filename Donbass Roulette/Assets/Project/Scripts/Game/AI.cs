@@ -57,11 +57,11 @@ public class AI : User
 		while(true)
 		{
 			yield return new WaitForSeconds(m_trySpawnCouldown);
-			float spawn = Random.Range(0f, GetTotalChances());
+			float spawnChance = Random.Range(0f, GetTotalChances());
 
 			for(int i = 0; i < m_factories.Count; i++)
 			{
-				if(spawn <= GetFactoryChances(i))
+				if(spawnChance <= GetFactoryChances(i))
 				{
 					SpawnUnit(m_factories[i], this.m_side);
 				}
@@ -74,12 +74,12 @@ public class AI : User
 		{
 			yield return new WaitForSeconds(m_forcedSpawnCouldown);
 
-			float spawn = Random.Range(0f, GetTotalChances());
+			float spawnChance = Random.Range(0f, GetTotalChances());
 
 
 			for(int i = 0; i < m_factories.Count; i++)
 			{
-				if(spawn <= GetFactoryChances(i))
+				if(spawnChance <= GetFactoryChances(i))
 				{
 					while(SpawnUnit(m_factories[i], this.m_side) != true)
 					{
