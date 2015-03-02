@@ -13227,12 +13227,12 @@ MonoBehaviour:
   m_money: 0
   m_manaMax: 0
   m_manaRegen: 0
-  m_manaRegenCouldown: 0
+  m_manaRegenCooldown: 0
   m_manaRegenMultiplicator: 0
   m_manaRegenPrice: 0
   m_manaRegenPriceMultiplicator: 0
   m_income: 0
-  m_incomeCouldown: 0
+  m_incomeCooldown: 0
   m_incomeMultiplicator: 0
   m_incomePrice: 0
   m_incomePriceMultiplicator: 0
@@ -13242,9 +13242,9 @@ MonoBehaviour:
   m_spells: []
   m_factories: []
   m_spawner: {fileID: 0}
-  m_trySpawnCouldown: 0
-  m_forcedSpawnCouldown: 0
-  m_spellCastCouldown: 0
+  m_trySpawnCooldown: 0
+  m_forcedSpawnCooldown: 0
+  m_spellCastCooldown: 0
   m_spellCastRange: 0
   m_safetyRange: 0
   m_safetyMana: 0
@@ -15747,12 +15747,12 @@ MonoBehaviour:
   m_money: 0
   m_manaMax: 0
   m_manaRegen: 0
-  m_manaRegenCouldown: 0
+  m_manaRegenCooldown: 0
   m_manaRegenMultiplicator: 0
   m_manaRegenPrice: 0
   m_manaRegenPriceMultiplicator: 0
   m_income: 0
-  m_incomeCouldown: 0
+  m_incomeCooldown: 0
   m_incomeMultiplicator: 0
   m_incomePrice: 0
   m_incomePriceMultiplicator: 0
