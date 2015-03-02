@@ -5,10 +5,10 @@ using System.Collections.Generic;
 public class AI : User
 {
 	[Header("AI Settings")]
-	public float m_trySpawnCouldown;
-	public float m_forcedSpawnCouldown;
+	public float m_trySpawnCooldown;
+	public float m_forcedSpawnCooldown;
 
-	public float m_spellCastCouldown;
+	public float m_spellCastCooldown;
 	public float m_spellCastRange;
 	public float m_safetyRange;
 	public float m_safetyMana;
@@ -56,12 +56,12 @@ public class AI : User
 	{
 		while(true)
 		{
-			yield return new WaitForSeconds(m_trySpawnCouldown);
-			float spawn = Random.Range(0f, GetTotalChances());
+			yield return new WaitForSeconds(m_trySpawnCooldown);
+			float spawnChance = Random.Range(0f, GetTotalChances());
 
 			for(int i = 0; i < m_factories.Count; i++)
 			{
-				if(spawn <= GetFactoryChances(i))
+				if(spawnChance <= GetFactoryChances(i))
 				{
 					SpawnUnit(m_factories[i], this.m_side);
 				}
@@ -72,14 +72,14 @@ public class AI : User
 	{
 		while(true)
 		{
-			yield return new WaitForSeconds(m_forcedSpawnCouldown);
+			yield return new WaitForSeconds(m_forcedSpawnCooldown);
 
-			float spawn = Random.Range(0f, GetTotalChances());
+			float spawnChance = Random.Range(0f, GetTotalChances());
 
 
 			for(int i = 0; i < m_factories.Count; i++)
 			{
-				if(spawn <= GetFactoryChances(i))
+				if(spawnChance <= GetFactoryChances(i))
 				{
 					while(SpawnUnit(m_factories[i], this.m_side) != true)
 					{
@@ -94,7 +94,7 @@ public class AI : User
 	{
 		while(true)
 		{
-			yield return new WaitForSeconds(m_spellCastCouldown);
+			yield return new WaitForSeconds(m_spellCastCooldown);
 			OffensiveSpellCastRoutine(m_safetyRange);
 
 			if(Random.Range(0, 10) == 0) // irregular value factor (frequency)

@@ -47,26 +47,41 @@ public class GameData : MonoBehaviour {
 
 	public GameObject FindStructure(string name)
 	{
-		foreach(GameObject obj in m_structures)
-			if(obj.name == name)
-				return obj;
+        foreach (GameObject obj in m_structures)
+        {
+            if (obj.name == name)
+            {
+                return obj;
+            }
+        }
+
+
+        Debug.LogError("GameData: Could not find structure named: " + name);
 		return null;
 	}
 
 
 	public Factory FindFactory(string name)
 	{
-		foreach(Factory factory in m_factories)
-			if(factory.name == name)
-				return factory;
+        foreach (Factory factory in m_factories)
+        {
+            if (factory.name == name)
+            {
+                return factory;
+            }
+        }
+
+        Debug.LogError("GameData: No factory found with name: " + name + ".");
 		return null;
-		
 	}
+
 	public Spell FindSpell(string name)
 	{
 		foreach(Spell spell in m_spells)
 			if(spell.name == name)
 				return spell;
+
+        Debug.LogError("GameData: Could not find spelll named: " + name);
 		return null;
 	}
 

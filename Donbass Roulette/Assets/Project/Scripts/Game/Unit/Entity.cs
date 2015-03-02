@@ -49,9 +49,12 @@ public class Entity : Body {
             Vector3 launchPosition = this.transform.position;
 
             if (m_launchPoint != null)
+            {
                 launchPosition = m_launchPoint.transform.position;
+            }
 
             Projectile projectile = Instantiate(m_projectile, launchPosition, Quaternion.identity) as Projectile;
+
 			projectile.Initialize(this.m_side, this.m_damage, body.transform.position);
 		}
 		else

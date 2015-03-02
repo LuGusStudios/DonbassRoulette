@@ -436,50 +436,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 357863169}
   m_GameObject: {fileID: 20351582}
---- !u!1001 &39275299
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 426660, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 426660, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 426660, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 426660, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 426660, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 426660, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 426660, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 426660, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
-  m_RootGameObject: {fileID: 771357758}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1 &45134350
 GameObject:
   m_ObjectHideFlags: 0
@@ -3483,7 +3439,8 @@ MonoBehaviour:
   m_structures:
   - {fileID: 100010, guid: 5dffcee4f104c0841b3c64ab22abd35a, type: 2}
   - {fileID: 100000, guid: c1234c132dcf70f4aae350dca0802346, type: 2}
-  - {fileID: 100002, guid: 245860b6565ee9a49adf89545eb7ebe6, type: 2}
+  - {fileID: 100002, guid: c1c473e487f580c43acbfc35cd6ac7e0, type: 2}
+  - {fileID: 100002, guid: ccf0414ded3aed44eb3b11fe65da434d, type: 2}
   m_map: {fileID: 982974553}
 --- !u!1 &469992674
 GameObject:
@@ -3936,7 +3893,7 @@ MonoBehaviour:
             Culture=neutral, PublicKeyToken=null
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: level_01.xml
+          m_StringArgument: level_01
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 64007256}
@@ -6223,12 +6180,13 @@ CanvasRenderer:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 126660, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
-  m_PrefabInternal: {fileID: 39275299}
+  m_PrefabInternal: {fileID: 1266532538}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 771357759}
   - 114: {fileID: 771357760}
   - 114: {fileID: 771357761}
+  - 114: {fileID: 771357762}
   m_Layer: 0
   m_Name: JESUS
   m_TagString: Untagged
@@ -6240,7 +6198,7 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 426660, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
-  m_PrefabInternal: {fileID: 39275299}
+  m_PrefabInternal: {fileID: 1266532538}
   m_GameObject: {fileID: 771357758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -6253,7 +6211,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11426662, guid: 29f1276c5601a1446ab3e4ca42ba2dcc,
     type: 2}
-  m_PrefabInternal: {fileID: 39275299}
+  m_PrefabInternal: {fileID: 1266532538}
   m_GameObject: {fileID: 771357758}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -6265,7 +6223,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11426660, guid: 29f1276c5601a1446ab3e4ca42ba2dcc,
     type: 2}
-  m_PrefabInternal: {fileID: 39275299}
+  m_PrefabInternal: {fileID: 1266532538}
   m_GameObject: {fileID: 771357758}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -6288,6 +6246,22 @@ MonoBehaviour:
   - {fileID: 111608, guid: 487b77bbd1e0e6f4aaa21ee8172af52d, type: 2}
   - {fileID: 107988, guid: b60a1bf600bd9fd4695b15a54fc2cf4b, type: 2}
   - {fileID: 188682, guid: 47a83a888c838e54b83d183d849d24b2, type: 2}
+--- !u!114 &771357762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11401688, guid: 29f1276c5601a1446ab3e4ca42ba2dcc,
+    type: 2}
+  m_PrefabInternal: {fileID: 1266532538}
+  m_GameObject: {fileID: 771357758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 223b8f2e9c18b434e99ff7f70115f99d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  errorTexture: {fileID: 0}
+  errorAudio: {fileID: 0}
+  errorSprite: {fileID: 0}
+  errorTextAsset: {fileID: 0}
 --- !u!1 &773881496
 GameObject:
   m_ObjectHideFlags: 0
@@ -8037,7 +8011,7 @@ MonoBehaviour:
             Culture=neutral, PublicKeyToken=null
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: level_02.xml
+          m_StringArgument: level_02
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 64007256}
@@ -9193,6 +9167,50 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 357863169}
   m_GameObject: {fileID: 1256703866}
+--- !u!1001 &1266532538
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 426660, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 426660, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 426660, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 426660, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 426660, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 426660, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 426660, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 426660, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
+  m_RootGameObject: {fileID: 771357758}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1275067629
 GameObject:
   m_ObjectHideFlags: 0
@@ -13209,12 +13227,12 @@ MonoBehaviour:
   m_money: 0
   m_manaMax: 0
   m_manaRegen: 0
-  m_manaRegenCouldown: 0
+  m_manaRegenCooldown: 0
   m_manaRegenMultiplicator: 0
   m_manaRegenPrice: 0
   m_manaRegenPriceMultiplicator: 0
   m_income: 0
-  m_incomeCouldown: 0
+  m_incomeCooldown: 0
   m_incomeMultiplicator: 0
   m_incomePrice: 0
   m_incomePriceMultiplicator: 0
@@ -13224,9 +13242,9 @@ MonoBehaviour:
   m_spells: []
   m_factories: []
   m_spawner: {fileID: 0}
-  m_trySpawnCouldown: 0
-  m_forcedSpawnCouldown: 0
-  m_spellCastCouldown: 0
+  m_trySpawnCooldown: 0
+  m_forcedSpawnCooldown: 0
+  m_spellCastCooldown: 0
   m_spellCastRange: 0
   m_safetyRange: 0
   m_safetyMana: 0
@@ -15729,12 +15747,12 @@ MonoBehaviour:
   m_money: 0
   m_manaMax: 0
   m_manaRegen: 0
-  m_manaRegenCouldown: 0
+  m_manaRegenCooldown: 0
   m_manaRegenMultiplicator: 0
   m_manaRegenPrice: 0
   m_manaRegenPriceMultiplicator: 0
   m_income: 0
-  m_incomeCouldown: 0
+  m_incomeCooldown: 0
   m_incomeMultiplicator: 0
   m_incomePrice: 0
   m_incomePriceMultiplicator: 0
