@@ -18,9 +18,9 @@ public class Arrow : Projectile {
 
     IEnumerator LifetimeTo(Vector3 goal)
     {
-        Vector3[] path = { this.transform.position, Vector3.Lerp(this.transform.position, goal, .5f) + new Vector3(0, 3, 0), goal };
-        yield return this.gameObject.MoveTo(path).Time(m_timeReach).YieldExecute();
-        StartCoroutine(Remove());
+       Vector3[] path = { this.transform.position, Vector3.Lerp(this.transform.position, goal, .5f) + new Vector3(0, 3, 0), goal };
+       yield return this.gameObject.MoveTo(path).Time(m_timeReach).YieldExecute();
+       StartCoroutine(Remove());
     }
 
 	protected override void ApplyBodyEffect(Body body)
