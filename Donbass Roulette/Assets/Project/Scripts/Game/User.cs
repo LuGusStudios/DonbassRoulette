@@ -13,14 +13,14 @@ public abstract class User : MonoBehaviour {
 	protected int m_mana;
 
 	public int m_manaRegen;
-	public float m_manaRegenCouldown;
+	public float m_manaRegenCooldown;
 
 	public float m_manaRegenMultiplicator;
 	public int m_manaRegenPrice;
 	public float m_manaRegenPriceMultiplicator;
 	
 	public int m_income;
-	public float m_incomeCouldown;
+	public float m_incomeCooldown;
 	
 	public float m_incomeMultiplicator;
 	public int m_incomePrice;
@@ -70,7 +70,7 @@ public abstract class User : MonoBehaviour {
 		if(m_money >= m_incomeRatePrice)
 		{
 			m_money -= m_incomeRatePrice;
-			m_incomeCouldown *= m_incomeRateMultiplicator;
+			m_incomeCooldown *= m_incomeRateMultiplicator;
 			m_incomeRatePrice = (int)(m_incomeRatePrice * m_incomeRatePriceMultiplicator);
             return true;
 		}
@@ -122,7 +122,7 @@ public abstract class User : MonoBehaviour {
 	{
 		while(true)
 		{
-			yield return new WaitForSeconds(m_manaRegenCouldown);
+			yield return new WaitForSeconds(m_manaRegenCooldown);
 			m_mana += m_manaRegen;
 			if(m_mana > m_manaMax)
 				m_mana = m_manaMax;
@@ -133,7 +133,7 @@ public abstract class User : MonoBehaviour {
 	{
 		while(true)
 		{
-			yield return new WaitForSeconds(m_incomeCouldown);
+			yield return new WaitForSeconds(m_incomeCooldown);
 			m_money += m_income;
 		}
 	}

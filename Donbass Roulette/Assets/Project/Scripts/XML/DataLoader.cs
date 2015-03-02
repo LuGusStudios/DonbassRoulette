@@ -11,14 +11,27 @@ public class DataLoader : FileManager
 	override protected void P_Save(string filePath) { }
 	override protected void P_Load(string filePath)
 	{
-		LoadData(File.ReadAllText(filePath));
+		//LoadData(File.ReadAllText(filePath));
+
+        TextAsset levelFile = LugusResources.use.Shared.GetTextAsset(filePath);
+
+        if (levelFile != LugusResources.use.errorTextAsset)
+        {
+            LoadData(levelFile.text);
+        }
+        else
+        {
+            Debug.LogError("DataLoader: Missing level file.");
+        }
 	}
 	
 	
 	// load
-    new public void Load(string tempPath)
+    new public void Load(string fileName)
     {
-        base.Load(m_fileFolder + tempPath);
+       // base.Load(m_fileFolder + fileName);
+
+        base.Load(fileName);
     }
 
 	private void LoadData(string xmlData)
@@ -258,7 +271,7 @@ public class DataLoader : FileManager
 				{
 					case "Base": user.m_money = int.Parse(parser.content); break;
 					case "Regen": user.m_income = int.Parse(parser.content); break;
-					case "Couldown": user.m_incomeCouldown = float.Parse(parser.content); break;
+					case "Cooldown": user.m_incomeCooldown = float.Parse(parser.content); break;
 					case "Multiplicator": user.m_incomeMultiplicator = float.Parse(parser.content); break;
 					case "Price": user.m_incomePrice = int.Parse(parser.content); break;
 					case "PriceMultiplicator": user.m_incomePriceMultiplicator = float.Parse(parser.content); break;
@@ -279,7 +292,7 @@ public class DataLoader : FileManager
 				{
 					case "Base": user.m_manaMax = int.Parse(parser.content); user.Initialize(); break;
 					case "Regen": user.m_manaRegen = int.Parse(parser.content); break;
-					case "Couldown": user.m_manaRegenCouldown = float.Parse(parser.content); break;
+					case "Cooldown": user.m_manaRegenCooldown = float.Parse(parser.content); break;
 					case "Multiplicator": user.m_manaRegenMultiplicator = float.Parse(parser.content); break;
 					case "Price": user.m_manaRegenPrice = int.Parse(parser.content); break;
 					case "PriceMultiplicator": user.m_manaRegenPriceMultiplicator = float.Parse(parser.content); break;
@@ -298,9 +311,9 @@ public class DataLoader : FileManager
 				switch(parser.tagName)
 				{
 					case "Behaviour": break; // TODO
-					case "TrySpawnCouldown": ai.m_trySpawnCouldown = float.Parse(parser.content); break;
-					case "ForcedSpawnCouldown": ai.m_forcedSpawnCouldown = float.Parse(parser.content); break;
-					case "SpellCastCouldown": ai.m_spellCastCouldown = float.Parse(parser.content); break;
+					case "TrySpawnCooldown": ai.m_trySpawnCooldown = float.Parse(parser.content); break;
+					case "ForcedSpawnCooldown": ai.m_forcedSpawnCooldown = float.Parse(parser.content); break;
+					case "SpellCastCooldown": ai.m_spellCastCooldown = float.Parse(parser.content); break;
 					case "SpellCastRange": ai.m_spellCastRange = float.Parse(parser.content); break;
 					case "SafetyRange": ai.m_safetyRange = float.Parse(parser.content); break;
 					case "SafetyMana": ai.m_safetyMana = float.Parse(parser.content); break;

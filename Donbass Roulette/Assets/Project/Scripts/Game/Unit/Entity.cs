@@ -55,8 +55,6 @@ public class Entity : Body {
 
             Projectile projectile = Instantiate(m_projectile, launchPosition, Quaternion.identity) as Projectile;
 
-            projectile.transform.position = launchPosition;
-
 			projectile.Initialize(this.m_side, this.m_damage, body.transform.position);
 		}
 		else
