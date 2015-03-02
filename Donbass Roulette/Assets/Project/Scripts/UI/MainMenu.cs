@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.Advertisements;
 
 public class MainMenu : MonoBehaviour {
 
@@ -13,7 +14,9 @@ public class MainMenu : MonoBehaviour {
         btnOptions = gameObject.FindComponentInChildren<Button>(true, "btn_options");
 
         btnOptions.onClick.AddListener(DoOptions);
-        btnStart.onClick.AddListener(DoStartGame);            
+        btnStart.onClick.AddListener(DoStartGame);
+
+        Advertisement.Initialize("24196");
 	}
 	
 	// Update is called once per frame
@@ -27,6 +30,6 @@ public class MainMenu : MonoBehaviour {
 
     void DoStartGame()
     {
-        AnalyticsIntegration.GameOverEvent(120, 30.5f);
+        MenuManager.use.Goto(MenuManager.MenuType.LEVELSELECTMENU);
     }
 }

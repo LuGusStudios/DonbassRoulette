@@ -42,7 +42,7 @@ MonoBehaviour:
   m_prefabEffect: {fileID: 11400000, guid: 55c4da0db6e509146b58d8fad8f2050c, type: 2}
   m_cost: 50
   instantiateDelay: 0
-  icon: {fileID: 21300000, guid: 90482802cdbaa7043bb4d225727d900b, type: 3}
+  icon: {fileID: 21300000, guid: bd685883ff34f0c4eb7968f87274ed70, type: 3}
   m_cooldown: 0
 --- !u!1001 &100100000
 Prefab:
