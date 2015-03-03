@@ -7,13 +7,16 @@ public class Unit : Entity {
 
 	public delegate void Delegate();
 	public Delegate m_DelMove;
+    public Delegate m_delSpawn;
 
 
 	public void Initialize( Side side )
 	{
 		m_side = side;
-	}
 
+        if (m_delSpawn != null)
+            m_delSpawn();
+	}
 
 	override protected void Update () {
         if (m_hp <= 0)

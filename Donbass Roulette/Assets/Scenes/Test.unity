@@ -874,6 +874,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11442234, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
+      propertyPath: backgroundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b3e4cf1ee3fa65f4fb779c565a9796cd, type: 3}
+    - target: {fileID: 11442234, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
+      propertyPath: backgroundMusicClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2cb974e06b866b14fba9548d54e4a6ed, type: 3}
+    - target: {fileID: 11442234, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
+      propertyPath: backgroundAmbientClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b3e4cf1ee3fa65f4fb779c565a9796cd, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 29f1276c5601a1446ab3e4ca42ba2dcc, type: 2}
   m_RootGameObject: {fileID: 771357758}
@@ -6319,6 +6331,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232e0f5a811d94046b3e74582c7e5f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroundAmbientClip: {fileID: 8300000, guid: b3e4cf1ee3fa65f4fb779c565a9796cd,
+    type: 3}
+  backgroundMusicClip: {fileID: 8300000, guid: 2cb974e06b866b14fba9548d54e4a6ed, type: 3}
   volumeFallOffPerMeter: .100000001
   explosions:
   - {fileID: 8300000, guid: 5ea589980b1564a488a0c8d368e42ef3, type: 3}
@@ -6332,7 +6347,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ecd050ced808f4445981d1f11c3b67ab, type: 3}
   - {fileID: 8300000, guid: 5544e5c0bbd64cc448de845e1756cf82, type: 3}
   - {fileID: 8300000, guid: 86ddde7113ba6ee48996616a70a93fd0, type: 3}
-  ak47Sounds: []
 --- !u!1 &773881496
 GameObject:
   m_ObjectHideFlags: 0

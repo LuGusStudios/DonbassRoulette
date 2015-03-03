@@ -40,6 +40,9 @@ public class Factory : MonoBehaviour {
 
 			Unit unit = obj.GetComponentInChildren<Unit>();
 			unit.Initialize(side);
+
+            if (unit.m_delSpawn != null)
+                unit.m_delSpawn();
 			
 			m_timer = m_cooldown;
 			return true;
