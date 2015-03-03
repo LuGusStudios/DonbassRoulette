@@ -39,6 +39,8 @@ public class SpellMortarStrike : Spell
     {
         GameObject impact = Instantiate(impactPrefab) as GameObject;
         impact.transform.position = aoe.transform.position.zAdd(Map.use.m_maxZ);
+
+        SoundManager.use.PlaySound(LugusAudio.use.SFX(), SoundManager.use.GetRandomExplosionSound());
     }
 
 }

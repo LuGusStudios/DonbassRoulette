@@ -42,6 +42,28 @@ public class LugusResourcesDefault : LugusSingletonExisting<LugusResourcesDefaul
 		LoadDefaultCollections();
 	}
 
+    public ILugusResourceCollection GetCollectionOfType(Lugus.LugusResourceCollectionType type)
+    {
+        if (type == Lugus.LugusResourceCollectionType.None)
+        {
+            Debug.LogError("LugusResourcesDefault: Resource collection type was None!");
+            return null;
+        }
+        else if (type == Lugus.LugusResourceCollectionType.Shared)
+        {
+            return Shared;
+        }
+        else if (type == Lugus.LugusResourceCollectionType.Localized)
+        {
+            return Localized;
+        }
+        else
+        {
+            Debug.LogError("LugusResourcesDefault: Resource collection type was not recognized: " + type.ToString());
+            return null;
+        }
+    }
+
 	protected void LoadDefaultCollections()
 	{ 
 		collections = new List<ILugusResourceCollection>();

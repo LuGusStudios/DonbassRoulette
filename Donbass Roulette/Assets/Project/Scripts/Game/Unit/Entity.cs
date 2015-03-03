@@ -8,6 +8,8 @@ public class Entity : Body {
 
 	public delegate void Delegate();
 	public Delegate m_delAttack;
+
+    public AudioClip[] attackSounds;
 	
 
 	public float m_attackCooldown = 2;
@@ -56,6 +58,9 @@ public class Entity : Body {
             Projectile projectile = Instantiate(m_projectile, launchPosition, Quaternion.identity) as Projectile;
 
 			projectile.Initialize(this.m_side, this.m_damage, body.transform.position);
+
+            if (attackSounds.Length > 0)
+                SoundManager.use.PlaySound(LugusAudio.use.SFX(), attackSounds[Random.Range(0, attackSounds.Length)]);
 		}
 		else
 		{// melee attack (immediate)

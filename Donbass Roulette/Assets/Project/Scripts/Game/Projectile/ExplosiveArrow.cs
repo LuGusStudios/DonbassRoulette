@@ -18,8 +18,9 @@ public class ExplosiveArrow : Arrow {
         AreaOfEffect aoe = Instantiate(m_aoe, this.transform.position, this.transform.rotation) as AreaOfEffect;
         aoe.m_value = this.m_value;
         Destroy(this.gameObject);
-    }
 
+        SoundManager.use.PlaySound(LugusAudio.use.SFX(), SoundManager.use.GetRandomExplosionSound());
+    }
 
 	override protected IEnumerator Remove()
 	{
