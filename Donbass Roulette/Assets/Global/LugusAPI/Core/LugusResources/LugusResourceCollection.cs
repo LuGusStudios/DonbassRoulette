@@ -2,6 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 
+namespace Lugus
+{
+    public enum LugusResourceCollectionType
+    {
+        None = 0,
+        Shared = 1,
+        Localized = 2
+    };
+}
+
 public interface ILugusResourceCollection
 {	
 	string URL { get; set; } 
