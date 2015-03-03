@@ -38,7 +38,8 @@ public class PauseMenu : MonoBehaviour {
 
     void DoMainMenu()
     {
-        MenuManager.use.Goto(MenuManager.MenuType.MAINMENU);
+        //MenuManager.use.Goto(MenuManager.MenuType.MAINMENU);        
+        Application.LoadLevel(Application.loadedLevel);
     }
 
     void DoOptions()

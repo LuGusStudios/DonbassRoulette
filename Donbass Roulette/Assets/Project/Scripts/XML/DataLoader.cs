@@ -13,10 +13,12 @@ public class DataLoader : FileManager
 	{
 		//LoadData(File.ReadAllText(filePath));
 
+        
+
         TextAsset levelFile = LugusResources.use.Shared.GetTextAsset(filePath);
 
         if (levelFile != LugusResources.use.errorTextAsset)
-        {
+        {            
             LoadData(levelFile.text);
         }
         else
@@ -50,8 +52,8 @@ public class DataLoader : FileManager
 				}
 			}
 		}
-
-		m_game.InstantiateUsersComponents();
+        
+		m_game.InstantiateUsersComponents();        
 	}
 	private void LoadGameData(TinyXmlReader parser)
 	{
