@@ -115,5 +115,7 @@ public class LevelSelectMenu : MonoBehaviour {
     void StartGame()
     {
         MenuManager.use.Goto(MenuManager.MenuType.GAMEMENU);
+        DataLoader dl = FindObjectOfType<DataLoader>();
+        dl.Load("level_01");
     }
 }
