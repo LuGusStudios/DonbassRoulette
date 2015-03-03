@@ -6876,6 +6876,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232e0f5a811d94046b3e74582c7e5f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroundAmbientClip: {fileID: 0}
+  backgroundMusicClip: {fileID: 0}
   volumeFallOffPerMeter: .100000001
   explosions:
   - {fileID: 8300000, guid: 5ea589980b1564a488a0c8d368e42ef3, type: 3}
@@ -6889,7 +6891,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ecd050ced808f4445981d1f11c3b67ab, type: 3}
   - {fileID: 8300000, guid: 5544e5c0bbd64cc448de845e1756cf82, type: 3}
   - {fileID: 8300000, guid: 86ddde7113ba6ee48996616a70a93fd0, type: 3}
-  ak47Sounds: []
 --- !u!114 &771357764
 MonoBehaviour:
   m_ObjectHideFlags: 0
