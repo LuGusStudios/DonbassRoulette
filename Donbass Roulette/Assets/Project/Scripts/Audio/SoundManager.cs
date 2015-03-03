@@ -4,32 +4,56 @@ using System.Collections.Generic;
 
 public class SoundManager : LugusSingletonExisting<SoundManager> 
 {
+    public AudioClip backgroundAmbientClip = null;
+    public AudioClip backgroundMusicClip = null;
+
     public float volumeFallOffPerMeter = 0.1f;
 
     public AudioClip[] explosions;
     public AudioClip[] mortarImpacts;
-    public AudioClip[] ak47Sounds;
 
     protected Dictionary<string, AudioClip> clipDictionary = new Dictionary<string, AudioClip>();
-
+    protected ILugusAudioTrack backgroundAmbient = null;
+    protected ILugusAudioTrack backgroundMusic = null;
 
     public void PlaySound(LugusAudioChannel channel, AudioClip sound)
     {
         channel.Play(sound);
     }
 
-    //public void PlaySound(LugusAudioChannel channel, AudioClip sound, Vector3 position)
-    //{
-    //    float distanceToCamera = Mathf.Abs(position.x - LugusCamera.game.transform.position.x);
-    //    float volume = Mathf.Lerp(1.0f, 0.0f, distanceToCamera * volumeFallOffPerMeter);
-    //    print(volume);
+    protected void Awake()
+    {
+        SetupLocal();
+    }
 
-    //    channel.Play(
-    //        sound,
-    //        false,
-    //        new LugusAudioTrackSettings().Volume(Mathf.Lerp(1.0f, 0.0f, volume)));
-    //}
+    protected void Start()
+    {
+        SetupGlobal();
+    }
 
+    public void SetupLocal()
+    { 
+    }
+
+    public void SetupGlobal()
+    {
+        if (backgroundAmbient == null)
+        {
+            backgroundAmbient = LugusAudio.use.Ambient().GetTrack();
+            backgroundAmbient.Claim();
+
+            backgroundAmbient.Play(backgroundAmbientClip, new LugusAudioTrackSettings().Loop(true));
+        }
+
+        if (backgroundMusic == null)
+        {
+            backgroundMusic = LugusAudio.use.Music().GetTrack();
+            backgroundMusic.Claim();
+
+            backgroundMusic.Play(backgroundMusicClip, new LugusAudioTrackSettings().Loop(true).Volume(0.2f));
+        }
+
+    }
 
 
 
@@ -53,18 +77,6 @@ public class SoundManager : LugusSingletonExisting<SoundManager>
 
         return mortarImpacts[Random.Range(0, mortarImpacts.Length)];
     }
-
-    public AudioClip GetRandomAK47Sound()
-    {
-        if (ak47Sounds.Length <= 0)
-        {
-            Debug.Log("SoundManager: No AK47 impacts defined.");
-            return null;
-        }
-
-        return ak47Sounds[Random.Range(0, ak47Sounds.Length)];
-    }
-
 
     public AudioClip GetSound(string clipName, Lugus.LugusResourceCollectionType collectionType)
     {

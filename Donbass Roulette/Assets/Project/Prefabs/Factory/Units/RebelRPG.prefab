@@ -74,6 +74,7 @@ GameObject:
   - 114: {fileID: 11400004}
   - 58: {fileID: 5800000}
   - 114: {fileID: 11440802}
+  - 114: {fileID: 11435246}
   m_Layer: 0
   m_Name: unit
   m_TagString: Untagged
@@ -1005,6 +1006,28 @@ MonoBehaviour:
   walkAnimName: WalkingRPG
   attackAnimName: FiringRPG
   deathAnimName: Death
+--- !u!114 &11435246
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082d9b9c68395ea4a9d7df478ea07917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSounds:
+  - {fileID: 8300000, guid: b73a60d0790c4d448a1c4179499b73e4, type: 3}
+  - {fileID: 8300000, guid: 26c7ce4272581a84d87340ac69f646c0, type: 3}
+  deathSounds:
+  - {fileID: 8300000, guid: 0cb0fb0aac1a8ac47a3b92aab99333d7, type: 3}
+  - {fileID: 8300000, guid: 18b5d3bfcd12e1e478b376c323a09640, type: 3}
+  - {fileID: 8300000, guid: 09a354896318c8c45b0d1851ddfedea3, type: 3}
+  - {fileID: 8300000, guid: 0ecfdb409eec25b448e43a9de8c8a6af, type: 3}
+  - {fileID: 8300000, guid: 9bedb24ef691b5745af3dcae7248a0ea, type: 3}
+  - {fileID: 8300000, guid: d6177bcee2dbebe45a83d90fd5f37e99, type: 3}
+  - {fileID: 8300000, guid: 22fff2d8c5b521648960f3852ca9a40a, type: 3}
 --- !u!114 &11440802
 MonoBehaviour:
   m_ObjectHideFlags: 1

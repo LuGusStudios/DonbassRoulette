@@ -25,7 +25,9 @@ public class MuzzleFlash : MonoBehaviour
         {
             showMuzzleFlashRoutine.StopRoutine();
         }
-        showMuzzleFlashRoutine = LugusCoroutines.use.StartRoutine(ShowMuzzleFlash());
+
+        // Run this coroutine on the game object itself to ensure it is destroyed along with it.
+        showMuzzleFlashRoutine = LugusCoroutines.use.StartRoutine(ShowMuzzleFlash(), this.gameObject);
 
     }
 

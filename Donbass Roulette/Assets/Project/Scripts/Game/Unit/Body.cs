@@ -40,6 +40,9 @@ public class Body : MonoBehaviour
 
 	public void ReduceHp( float value )
 	{
+        if (m_hp <= 0)
+            return;
+
 		m_hp -= value;
 
         if (m_hp > 0 && m_onLoseHealth != null)
