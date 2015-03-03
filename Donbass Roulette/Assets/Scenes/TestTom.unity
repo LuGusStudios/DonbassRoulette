@@ -4372,6 +4372,7 @@ GameObject:
   - 114: {fileID: 449203588}
   - 114: {fileID: 449203587}
   - 114: {fileID: 449203586}
+  - 114: {fileID: 449203590}
   m_Layer: 0
   m_Name: JESUS
   m_TagString: Untagged
@@ -4447,6 +4448,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &449203590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11442234, guid: 29f1276c5601a1446ab3e4ca42ba2dcc,
+    type: 2}
+  m_PrefabInternal: {fileID: 585258728}
+  m_GameObject: {fileID: 449203585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232e0f5a811d94046b3e74582c7e5f07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeFallOffPerMeter: .100000001
+  explosions:
+  - {fileID: 8300000, guid: 5ea589980b1564a488a0c8d368e42ef3, type: 3}
+  - {fileID: 8300000, guid: 312357ed2f204104ab73e347ba7b746d, type: 3}
+  - {fileID: 8300000, guid: 26f04a580a74bea49818b15e4f137b83, type: 3}
+  - {fileID: 8300000, guid: 67e3990d304ca374bbc348e1c0d293d2, type: 3}
+  - {fileID: 8300000, guid: b4d1a3c5c1b122c419290df39039e847, type: 3}
+  - {fileID: 8300000, guid: 871a8f0d587be774897183548d71e2e1, type: 3}
+  mortarImpacts:
+  - {fileID: 8300000, guid: 2c00a76c2324e6143ac4e82c97bb8e56, type: 3}
+  - {fileID: 8300000, guid: ecd050ced808f4445981d1f11c3b67ab, type: 3}
+  - {fileID: 8300000, guid: 5544e5c0bbd64cc448de845e1756cf82, type: 3}
+  - {fileID: 8300000, guid: 86ddde7113ba6ee48996616a70a93fd0, type: 3}
+  ak47Sounds: []
 --- !u!1 &449275093
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,12 @@ public class GameMenu : MonoBehaviour {
     public Button btnIncome;
     public Button btnTechnology;
 
+    public Text txtMoney;
+    public Text txtIncome;
+    public Text txtTimer;
+
+    float timer = 0;
+
     Player _player = null;
 
     protected bool isInitialized = false;
@@ -19,14 +25,17 @@ public class GameMenu : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         btnPause = gameObject.FindComponentInChildren<Button>(true, "btn_pause");
-        btnPause.onClick.AddListener(DoPause);        
-      
-        
+        btnPause.onClick.AddListener(DoPause);
+
+        timer = 0;
 	}
 
     void OnEnable()
     {
         Time.timeScale = 1;
+        CameraController.use.isIdleAnimating = false;
+        CameraController.use.blockingInput = false;
+
         _player = FindObjectOfType<Player>();
 
         SetupButtons();  
@@ -42,6 +51,23 @@ public class GameMenu : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         UpdateIcons();
+
+        // Update money
+        txtMoney.text = _player.m_money + "";
+        txtIncome.text = "( +" + _player.m_income + " )";
+
+
+        // Update timer 
+        timer += Time.deltaTime;
+
+        int minutes = Mathf.FloorToInt(timer / 60.0f);
+        int seconds = Mathf.FloorToInt(timer - minutes * 60);
+
+        string minutesString = (minutes > 9)?minutes+"":"0"+minutes; 
+        string secondsString = (seconds > 9)?seconds+"":"0"+seconds;
+
+        txtTimer.text = minutesString + ":" + secondsString;
+
 	}
 
     void SetupButtons()

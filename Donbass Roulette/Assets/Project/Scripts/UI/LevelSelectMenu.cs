@@ -49,7 +49,7 @@ public class LevelSelectMenu : MonoBehaviour {
     }
 
     IEnumerator DoSelectSide(bool leftSide)
-    {
+    {                        
         if (_isShowingAd || _hasMadeSelection) yield break;
         _hasMadeSelection = true;
 
@@ -62,7 +62,7 @@ public class LevelSelectMenu : MonoBehaviour {
         else {
             btnSelect = btnChooseRight;
             btnOther = btnChooseLeft;
-        }
+        }                    
 
         btnSelect.gameObject.ScaleTo(Vector3.one * 1.05f).Time(0.5f).EaseType(iTween.EaseType.easeOutBounce).Execute();
         btnSelect.image.color = new Color(1f, 1f, 1f);
@@ -71,7 +71,7 @@ public class LevelSelectMenu : MonoBehaviour {
 
         yield return new WaitForSeconds(1.0f);
 
-        if (_isShowingAd) yield break;
+        //if (_isShowingAd) yield break;
 
         if (Advertisement.isReady())
         {
@@ -114,8 +114,10 @@ public class LevelSelectMenu : MonoBehaviour {
 
     void StartGame()
     {
-        MenuManager.use.Goto(MenuManager.MenuType.GAMEMENU);
+        LugusCamera.game.gameObject.FindComponentInChildren<MinimapCamera>(true).gameObject.SetActive(true);
         DataLoader dl = FindObjectOfType<DataLoader>();
         dl.Load("level_01");
+        MenuManager.use.Goto(MenuManager.MenuType.GAMEMENU);
+        
     }
 }

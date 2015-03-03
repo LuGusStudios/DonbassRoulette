@@ -2,7 +2,7 @@
 using System.Collections;
 
 [RequireComponent(typeof(OrthographicCameraData))]
-public class CameraController : MonoBehaviour {
+public class CameraController : LugusSingletonExisting<CameraController> {
 	public LayerMask m_UILayer;
     public OrthographicCameraData m_cameraData;
 
@@ -16,6 +16,8 @@ public class CameraController : MonoBehaviour {
     protected Vector3 m_prvDragPos;
     protected bool m_uiEdit;
 
+    public bool isIdleAnimating = true;
+    public bool blockingInput = false;
 
     void Start()
     {
@@ -47,7 +49,7 @@ public class CameraController : MonoBehaviour {
     }
 
     protected bool MoveWithUI()
-    {
+    {        
         Camera camera = m_cameraData.GetObject();
         Transform t = LugusInput.use.RayCastFromMouse(camera);
         if (t)
@@ -80,6 +82,16 @@ public class CameraController : MonoBehaviour {
     }
 
 	void Update () {
+        if (isIdleAnimating)
+        {
+            idleUpdate();
+            return;
+        }
+        else if (blockingInput)
+        {
+            return;
+        }
+
         if( LugusInput.use.down )
         {
             m_uiEdit = MoveWithUI();
@@ -110,4 +122,12 @@ public class CameraController : MonoBehaviour {
             Move(m_arrowSpeed);
         }
 	}
+
+    
+    void idleUpdate()
+    {
+        float idleDist = 3;    
+        float idleFreq = 0.3f;
+        this.transform.position = new Vector3 (Mathf.Sin(Time.realtimeSinceStartup*idleFreq) * idleDist, transform.position.y, transform.position.z);        
+    }
 }
