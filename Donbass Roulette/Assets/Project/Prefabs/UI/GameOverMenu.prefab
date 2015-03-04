@@ -61,6 +61,7 @@ GameObject:
   - 224: {fileID: 22448242}
   - 222: {fileID: 22248242}
   - 114: {fileID: 11448242}
+  - 114: {fileID: 11445966}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -78,6 +79,7 @@ GameObject:
   - 224: {fileID: 22448246}
   - 222: {fileID: 22248246}
   - 114: {fileID: 11448246}
+  - 114: {fileID: 11445968}
   m_Layer: 5
   m_Name: txtGameOver
   m_TagString: Untagged
@@ -164,6 +166,7 @@ GameObject:
   - 224: {fileID: 22448260}
   - 222: {fileID: 22248260}
   - 114: {fileID: 11448262}
+  - 114: {fileID: 11445970}
   m_Layer: 5
   m_Name: txtWonTheBattle
   m_TagString: Untagged
@@ -181,6 +184,7 @@ GameObject:
   - 224: {fileID: 22448266}
   - 222: {fileID: 22248266}
   - 114: {fileID: 11448268}
+  - 114: {fileID: 11445980}
   m_Layer: 5
   m_Name: txtLabelTotal
   m_TagString: Untagged
@@ -215,6 +219,7 @@ GameObject:
   - 224: {fileID: 22486568}
   - 222: {fileID: 22286568}
   - 114: {fileID: 11486568}
+  - 114: {fileID: 11445978}
   m_Layer: 5
   m_Name: txtLabelStarvation
   m_TagString: Untagged
@@ -300,6 +305,7 @@ GameObject:
   - 224: {fileID: 22486578}
   - 222: {fileID: 22286578}
   - 114: {fileID: 11486578}
+  - 114: {fileID: 11445976}
   m_Layer: 5
   m_Name: txtLabelRocket
   m_TagString: Untagged
@@ -317,6 +323,7 @@ GameObject:
   - 224: {fileID: 22486580}
   - 222: {fileID: 22286580}
   - 114: {fileID: 11486580}
+  - 114: {fileID: 11445974}
   m_Layer: 5
   m_Name: txtLabelMortar
   m_TagString: Untagged
@@ -402,6 +409,7 @@ GameObject:
   - 224: {fileID: 22486590}
   - 222: {fileID: 22286590}
   - 114: {fileID: 11486590}
+  - 114: {fileID: 11445972}
   m_Layer: 5
   m_Name: txtLabelGunshot
   m_TagString: Untagged
@@ -409,6 +417,118 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &11445966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e0183a93bc1b24dbb5c0d86865f1f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: general.continue
+  uiText: {fileID: 0}
+  richText: 0
+--- !u!114 &11445968
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e0183a93bc1b24dbb5c0d86865f1f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: gameover.header
+  uiText: {fileID: 0}
+  richText: 0
+--- !u!114 &11445970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e0183a93bc1b24dbb5c0d86865f1f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: gameover.headertext
+  uiText: {fileID: 0}
+  richText: 0
+--- !u!114 &11445972
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e0183a93bc1b24dbb5c0d86865f1f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: gameover.gunshot
+  uiText: {fileID: 0}
+  richText: 0
+--- !u!114 &11445974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e0183a93bc1b24dbb5c0d86865f1f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: gameover.mortar
+  uiText: {fileID: 0}
+  richText: 0
+--- !u!114 &11445976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e0183a93bc1b24dbb5c0d86865f1f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: gameover.rocket
+  uiText: {fileID: 0}
+  richText: 0
+--- !u!114 &11445978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e0183a93bc1b24dbb5c0d86865f1f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: gameover.starvation
+  uiText: {fileID: 0}
+  richText: 0
+--- !u!114 &11445980
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e0183a93bc1b24dbb5c0d86865f1f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: gameover.total
+  uiText: {fileID: 0}
+  richText: 0
 --- !u!114 &11448222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -477,7 +597,7 @@ MonoBehaviour:
   m_Color: {r: .90196079, g: .90196079, b: .90196079, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: c4138bf2661039941a8abad0ea25d919, type: 3}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10

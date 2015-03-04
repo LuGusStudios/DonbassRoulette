@@ -45,6 +45,7 @@ GameObject:
   - 224: {fileID: 22405090}
   - 222: {fileID: 22205090}
   - 114: {fileID: 11405094}
+  - 114: {fileID: 11428612}
   m_Layer: 5
   m_Name: heading
   m_TagString: Untagged
@@ -79,6 +80,7 @@ GameObject:
   - 224: {fileID: 22405094}
   - 222: {fileID: 22205094}
   - 114: {fileID: 11405098}
+  - 114: {fileID: 11428614}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -96,6 +98,7 @@ GameObject:
   - 224: {fileID: 22405096}
   - 222: {fileID: 22205096}
   - 114: {fileID: 11405100}
+  - 114: {fileID: 11428616}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -307,7 +310,7 @@ MonoBehaviour:
   m_Text: "Battle for Donetsk is a <color=red>war game with an anti-war message</color>.
     It's a confronting \"topical game\", developed by the independent game studio
     <color=red>LuGus Studios</color>. \n\nWith this game LuGus Studios does not wish
-    to take a political stance and doesn't idealise violence and conflicts. Instead,
+    to take a political stance and does not condone violence and conflict. Instead,
     we hope the game will create a strong awareness of the conflict in Ukraine and
     that its sobering character will be food for thought. \r\n\nPress contact: press@lugus-studios.be"
 --- !u!114 &11405100
@@ -335,13 +338,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.20000005
-  m_Text: "Leaders of several countries and continents are fighting. People are speaking
-    of a <color=red>new Cold War</color>. Yet thousands of civilians in eastern Ukraine
-    are facing a war that is anything but \"cold\", every day. <color=red>One million
-    people are on the run</color>. During the many fights there have been <color=red>more
-    than 5000 casualties</color>, yet some research speaks numbers ten times higher.
-    \n \nIn Battle of Donetsk you are the leader who plays with the lives of these
-    people. You determine the stakes. <color=red>Can you win?</color>"
+  m_Text: "World leaders, countries and continents are at odds. Some would speak of
+    a <color=red>new Cold War</color>, but in eastern Ukraine thousands of civilians
+    face a war that is anything but cold. <color=red>A million people are on the run</color>
+    and the many fights have claimed <color=red>over 6000 casualties</color>, though
+    other research speaks of numbers ten times higher. \n\nIn Battle of Donetsk you
+    are the commander who plays with the lives of these people. You determine the
+    stakes. \n<color=red>Can you win?</color>"
 --- !u!114 &11405102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -384,6 +387,48 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11428612
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e0183a93bc1b24dbb5c0d86865f1f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: about.header
+  uiText: {fileID: 0}
+  richText: 0
+--- !u!114 &11428614
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e0183a93bc1b24dbb5c0d86865f1f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: about.panel02
+  uiText: {fileID: 0}
+  richText: 1
+--- !u!114 &11428616
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e0183a93bc1b24dbb5c0d86865f1f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: about.panel01
+  uiText: {fileID: 0}
+  richText: 1
 --- !u!222 &22205086
 CanvasRenderer:
   m_ObjectHideFlags: 1
