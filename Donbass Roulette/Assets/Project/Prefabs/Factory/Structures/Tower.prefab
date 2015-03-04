@@ -199,7 +199,7 @@ Transform:
   m_GameObject: {fileID: 100012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 6, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
   m_RootOrder: 2
@@ -227,6 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_bar: {fileID: 100006}
   m_body: {fileID: 11400002}
+  m_sprites: []
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -245,7 +246,7 @@ MonoBehaviour:
   m_damage: 50
   m_range: 10
   m_projectile: {fileID: 11400000, guid: cce71122a7fe94a4d9e9a56cd1a36b1c, type: 2}
-  m_attackCouldown: 2
+  m_attackCooldown: 2
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -345,7 +346,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1d4ebb08067d6a64984542abd0726894, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2431a1f08c3d88f46937b11423b04d88, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

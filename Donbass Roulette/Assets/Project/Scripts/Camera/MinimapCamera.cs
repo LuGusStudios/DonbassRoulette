@@ -27,10 +27,7 @@ public class MinimapCamera : Minimap {
         m_cameraRight.transform.localScale = new Vector3(m_cameraRight.transform.localScale.x, GetScalingDifference() * 1000, m_cameraRight.transform.localScale.z);
         float ratio = (cameraSize.x / cameraSize.y);
         m_cameraTop.transform.localScale = new Vector3(GetScalingDifference() * ratio * 1000, m_cameraTop.transform.localScale.y, m_cameraTop.transform.localScale.z);
-        m_cameraBot.transform.localScale = new Vector3(GetScalingDifference() * ratio * 1000, m_cameraBot.transform.localScale.y, m_cameraBot.transform.localScale.z);
-
-
-        
+        m_cameraBot.transform.localScale = new Vector3(GetScalingDifference() * ratio * 1000, m_cameraBot.transform.localScale.y, m_cameraBot.transform.localScale.z);        
 
 	}
 	
