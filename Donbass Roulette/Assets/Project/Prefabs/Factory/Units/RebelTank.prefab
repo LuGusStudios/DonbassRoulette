@@ -232,7 +232,7 @@ Transform:
   m_GameObject: {fileID: 100012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 400010}
   m_RootOrder: 1
@@ -333,6 +333,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d514fd309f2839a43824bbe46a381259, type: 3}
   - {fileID: 8300000, guid: ef2101437ad7bdb4d865384e0b474dd3, type: 3}
   deathSounds: []
+  spawnSounds: []
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -397,7 +398,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 650fa06fc15642e499f64f42c40fba77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8bff8dc607c1c1646a525d5586d65069, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21234466
 SpriteRenderer:

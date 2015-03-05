@@ -7,19 +7,27 @@ public class LevelSelectMenu : MonoBehaviour {
 
     Button btnChooseLeft;
     Button btnChooseRight;
+    Button btnStart;
     Button btnBack;
+    Image imgStart;
 
     bool _isShowingAd = false;
     bool _hasMadeSelection = false;
+
+    Side chosenSide = Side.None;
 
 	// Use this for initialization
 	void Start () {
         btnChooseLeft = gameObject.FindComponentInChildren<Button>(true, "ButtonLeft");
         btnChooseRight= gameObject.FindComponentInChildren<Button>(true, "ButtonRight");
+        btnStart = gameObject.FindComponentInChildren<Button>(true, "btn_start");
         btnBack = gameObject.FindComponentInChildren<Button>(true, "btn_back");
 
-        btnChooseLeft.onClick.AddListener(() => { LugusCoroutines.use.StartRoutine(DoSelectSide(true)); });
-        btnChooseRight.onClick.AddListener(() => { LugusCoroutines.use.StartRoutine(DoSelectSide(false)); });
+        imgStart = btnStart.transform.GetChild(0).GetComponent<Image>();
+
+        btnChooseLeft.onClick.AddListener(() => { LugusCoroutines.use.StartRoutine(DoSelectSide(Side.Left)); });
+        btnChooseRight.onClick.AddListener(() => { LugusCoroutines.use.StartRoutine(DoSelectSide(Side.Right)); });
+        btnStart.onClick.AddListener(DoStart);
         btnBack.onClick.AddListener(DoBack);
 	}
 
@@ -39,41 +47,20 @@ public class LevelSelectMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if (chosenSide != Side.None)
+        {
+            float freq = 5;
+            float amp = 0.1f;
+
+            imgStart.transform.localScale = Vector3.one + Vector3.one * Mathf.Sin(Time.realtimeSinceStartup * freq) * amp;
+        }
 	}
 
-    void DoBack()
+    void DoStart()
     {
-        if (_isShowingAd || _hasMadeSelection) return;
-        MenuManager.use.Goto(MenuManager.MenuType.MAINMENU);
-    }
+        Debug.Log("Chosen side: " + chosenSide.ToString());
 
-    IEnumerator DoSelectSide(bool leftSide)
-    {                        
-        if (_isShowingAd || _hasMadeSelection) yield break;
-        _hasMadeSelection = true;
-
-        Button btnSelect;
-        Button btnOther;
-        if (leftSide) {
-            btnSelect = btnChooseLeft;
-            btnOther = btnChooseRight;
-        }
-        else {
-            btnSelect = btnChooseRight;
-            btnOther = btnChooseLeft;
-        }
-
-        AssignSidesAndFaction(leftSide);
-
-        btnSelect.gameObject.ScaleTo(Vector3.one * 1.05f).Time(0.5f).EaseType(iTween.EaseType.easeOutBounce).Execute();
-        btnSelect.image.color = new Color(1f, 1f, 1f);
-        btnOther.gameObject.ScaleTo(Vector3.one * 0.9f).Time(0.5f).EaseType(iTween.EaseType.easeOutBounce).Execute();
-        btnOther.image.color = new Color(0.2f, 0.2f, 0.2f);
-
-        yield return new WaitForSeconds(1.0f);
-
-        //if (_isShowingAd) yield break;
+        if (chosenSide == Side.None) return;
 
         if (Advertisement.isReady())
         {
@@ -93,29 +80,63 @@ public class LevelSelectMenu : MonoBehaviour {
         }
     }
 
+    void DoBack()
+    {
+        if (_isShowingAd || _hasMadeSelection) return;
+        MenuManager.use.Goto(MenuManager.MenuType.MAINMENU);
+    }
+
+    IEnumerator DoSelectSide(Side side)
+    {                        
+        if (_isShowingAd) yield break;        
+
+        chosenSide = side;
+
+        Button btnSelect;
+        Button btnOther;
+
+        if (chosenSide == Side.Left) {
+            btnSelect = btnChooseLeft;
+            btnOther = btnChooseRight;
+        }
+        else {
+            btnSelect = btnChooseRight;
+            btnOther = btnChooseLeft;
+        }
+
+        AssignSidesAndFaction(leftSide);
+
+        btnSelect.gameObject.ScaleTo(Vector3.one * 1.05f).Time(0.5f).EaseType(iTween.EaseType.easeOutBounce).Execute();
+        btnSelect.image.color = new Color(1f, 1f, 1f);
+        btnOther.gameObject.ScaleTo(Vector3.one * 0.9f).Time(0.5f).EaseType(iTween.EaseType.easeOutBounce).Execute();
+        btnOther.image.color = new Color(0.2f, 0.2f, 0.2f);
+
+    }
+
     void AdCallback(ShowResult result)
     {
         Debug.Log( "Add result: " + result.ToString() );
         _isShowingAd = false;        
 
-        if (result == ShowResult.Finished)
-        {
-        
-        }
-        else if (result == ShowResult.Skipped)
-        { 
-        
-        }
-        else if (result == ShowResult.Failed)
-        {
-
-        }
+        // These can be used determine action depending on the add result
+        /*if (result == ShowResult.Finished){}
+        else if (result == ShowResult.Skipped){}
+        else if (result == ShowResult.Failed){}*/
 
         StartGame();
     }
 
     void StartGame()
     {
+        if (chosenSide == Side.Left)
+        {
+
+        }
+        else 
+        {
+        
+        }
+
         LugusCamera.game.gameObject.FindComponentInChildren<MinimapCamera>(true).gameObject.SetActive(true);
         DataLoader dl = FindObjectOfType<DataLoader>();
         dl.Load("level_01");

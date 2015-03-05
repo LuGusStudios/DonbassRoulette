@@ -20,9 +20,9 @@ public class MenuManager : LugusSingletonExisting<MenuManager> {
     private GameMenu _gameMenu;
     private PauseMenu _pauseMenu;
     private GameOverMenu _gameOverMenu;
-    public ShareMenu _shareMenu;
-    public LevelSelectMenu _levelSelectMenu;
-    public AboutMenu _aboutMenu;
+    private ShareMenu _shareMenu;
+    private LevelSelectMenu _levelSelectMenu;
+    private AboutMenu _aboutMenu;
 
     public MenuType currentMenu = MenuType.NONE;
     public MenuType previousMenu = MenuType.NONE;
