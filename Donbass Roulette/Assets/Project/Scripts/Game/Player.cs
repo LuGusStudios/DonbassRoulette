@@ -10,16 +10,12 @@ public class Player : User {
 	void Update () {
 		if(LugusInput.use.down && m_spellCasting != null)
 		{
-            // only allow spells if cast on ground area
-            if (Map.use.IsPointOnGround(LugusCamera.game.ScreenToWorldPoint(LugusInput.use.currentPosition)))
-            {
-			    SummonSpell(LugusCamera.game.ScreenToWorldPoint(LugusInput.use.currentPosition), m_spellCasting, this.m_side);
-			    m_spellCasting = null;
-            }
-            else // else, cancel spell??
-            {
-                 m_spellCasting = null;
-            }
+            Vector3 position = LugusCamera.game.ScreenToWorldPoint(LugusInput.use.currentPosition);
+            position = position.y(Map.use.GetRandomHeight());
+
+            SummonSpell(position, m_spellCasting, this.m_side);
+			m_spellCasting = null;
+ 
 		}
 	}
 

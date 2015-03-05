@@ -41,13 +41,14 @@ public class CameraController : LugusSingletonExisting<CameraController> {
         {
             movingToStartingPoint = true;
 
+            float sizeX = m_cameraData.GetSize().x;
             float xValue = GameData.use.player.m_spawner.position.x;
 
-           float sizeX = m_cameraData.GetSize().x;
+            xValue = Mathf.Clamp(xValue, m_map.m_minX + sizeX, m_map.m_maxX - sizeX); 
 
           // xValue = Mathf.Clamp(xValue, this.transform.position.x - m_map.m_minX + sizeX, this.transform.position.x + m_map.m_minX - sizeX);
 
-            this.gameObject.MoveTo(this.transform.position.x(xValue)).Time(1.0f).Execute();
+            this.gameObject.MoveTo(this.transform.position.x(xValue)).Speed(15.0f).Execute();
         }
         else
         {
@@ -65,7 +66,10 @@ public class CameraController : LugusSingletonExisting<CameraController> {
     protected void ClampToMap()
     {
         float sizeX = m_cameraData.GetSize().x;
-        this.transform.position = new Vector3(Mathf.Clamp(this.transform.position.x, m_map.m_minX + sizeX, m_map.m_maxX - sizeX), this.transform.position.y, this.transform.position.z);
+        this.transform.position = new Vector3(
+            Mathf.Clamp(this.transform.position.x, m_map.m_minX + sizeX, m_map.m_maxX - sizeX), 
+            this.transform.position.y, 
+            this.transform.position.z);
     }
 
     protected bool MoveWithUI()

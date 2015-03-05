@@ -72,13 +72,46 @@ public class Map : LugusSingletonExisting<Map> {
 
     public bool IsPointOnGround(Vector2 point)
     {
-        Rect newRect = new Rect(
-            this.transform.position.x + m_minX, 
-            this.transform.position.y + m_maxY_ground, 
-            Mathf.Abs(m_minX) + Mathf.Abs(m_maxX),  
-            Mathf.Abs(m_minY_ground) + Mathf.Abs(m_maxY_ground));
+        //Rect newRect = new Rect(
+        //    this.transform.position.x + m_minX, 
+        //    this.transform.position.y + m_maxY_ground, 
+        //    Mathf.Abs(m_minX) + Mathf.Abs(m_maxX),  
+        //    Mathf.Abs(m_minY_ground) + Mathf.Abs(m_maxY_ground));
 
-        return newRect.Contains(point);
+        Vector3 pos = this.transform.position;
+        // Top-Left corner
+        Vector3 TL = pos + new Vector3(m_minX, m_maxY_ground);
+        // Top-Right corner
+        Vector3 TR = pos + new Vector3(m_maxX, m_maxY_ground);
+        // Bot-Left corner
+        Vector3 BL = pos + new Vector3(m_minX, m_minY_ground);
+        // Bot-Right corner
+        Vector3 BR = pos + new Vector3(m_maxX, m_minY_ground);
+
+        if (point.x < TL.x && point.x > BR.x)
+            return false;
+
+        if (point.y < BR.y && point.y > TL.y)
+            return false;
+
+
+        return true;
+        //return newRect.Contains(point);
+    }
+
+    public float GetGroundTop()
+    {
+        return this.transform.position.y + m_maxY_ground;
+    }
+
+    public float GetGroundBottom()
+    {
+        return this.transform.position.y + m_minY_ground;
+    }
+
+    public float GetRandomHeight()
+    {
+        return Mathf.Lerp(GetGroundBottom(), GetGroundTop(), Random.value);
     }
 
 

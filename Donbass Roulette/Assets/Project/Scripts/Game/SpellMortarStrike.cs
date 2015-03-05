@@ -38,7 +38,7 @@ public class SpellMortarStrike : Spell
     protected override void OnInstantiate(AreaOfEffect aoe)
     {
         GameObject impact = Instantiate(impactPrefab) as GameObject;
-        impact.transform.position = aoe.transform.position.zAdd(Map.use.m_maxZ);
+        impact.transform.position = aoe.transform.position.z(Map.use.GetDepthByPercentage(1f));
 
         SoundManager.use.PlaySound(LugusAudio.use.SFX(), SoundManager.use.GetRandomExplosionSound());
     }
