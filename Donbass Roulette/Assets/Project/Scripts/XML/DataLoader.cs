@@ -47,8 +47,8 @@ public class DataLoader : FileManager
 				switch(parser.tagName)
 				{
 					case "Game": LoadGameData(parser); break;
-					case "LeftUser": LoadUserComponentsData(parser, m_game.m_leftUser, "LeftUser"); break;
-					case "RightUser": LoadUserComponentsData(parser, m_game.m_rightUser, "RightUser"); break;
+                    case "Player": LoadUserComponentsData(parser, m_game.player, "Player"); break;
+                    case "AI": LoadUserComponentsData(parser, m_game.ai, "AI"); break;
 				}
 			}
 		}
@@ -115,54 +115,103 @@ public class DataLoader : FileManager
 			{
 				switch(parser.tagName)
 				{
-					case "Left": LoadSidingStructuresData(parser, "Left", Side.Left); break;
-					case "Right": LoadSidingStructuresData(parser, "Right", Side.Right); break;
+                    case "Player": LoadSidingStructuresData(parser, "Player", GameData.use.player); break;
+                    case "AI": LoadSidingStructuresData(parser, "AI", GameData.use.ai); break;
 				}
 			}
 		}
 	}
 
-	public void LoadSidingStructuresData(TinyXmlReader parser, string endLoop, Side side)
+	public void LoadSidingStructuresData(TinyXmlReader parser, string endLoop, User user)
 	{
 		while(parser.Read(endLoop))
 		{
 			if(parser.tagType == TinyXmlReader.TagType.OPENING)
 			{
-				LoadStructureData(parser, side);
+				LoadStructureData(parser, user);
 			}
 		}
 	}
-	public void LoadStructureData(TinyXmlReader parser, Side side)
-	{
-		GameObject obj = null;
-		while(parser.Read("Structure"))
-		{
-			if(parser.tagType == TinyXmlReader.TagType.OPENING)
-			{
-				switch(parser.tagName)
-				{
-					case "Name":
-						obj = Instantiate(m_game.FindStructure(parser.content)) as GameObject;
-						obj.GetComponentInChildren<Body>().m_side = side;
-						User user = null;
-						if(side == Side.Left)
-							user = m_game.m_leftUser;
-						else if(side == Side.Right)
-							user = m_game.m_rightUser;
-						else
-							Debug.LogError("LoadStructureData received an unused Side variable");
+    //public void LoadStructureData(TinyXmlReader parser, Side side)
+    //{
+    //    GameObject obj = null;
+    //    while(parser.Read("Structure"))
+    //    {
+    //        if(parser.tagType == TinyXmlReader.TagType.OPENING)
+    //        {
+    //            switch(parser.tagName)
+    //            {
+    //                case "Name":
+    //                    User user = null;
+    //                    if(side == Side.Left)
+    //                        user = m_game.player;
+    //                    else if(side == Side.Right)
+    //                        user = m_game.ai;
+    //                    else
+    //                        Debug.LogError("LoadStructureData received an unused Side variable");
 
-						obj.transform.parent = user.transform;//m_game.m_map.transform;
-						if(parser.content.StartsWith("Spawner"))    // this is bad and you should feel bad
-							user.m_spawner = obj.transform;
-						break;
-					case "Position":
-						obj.transform.position = GetVector3(parser.content, ';') + m_game.m_map.GetRandomStartingGroundPos();
-						break;
-				}
-			}
-		}
-	}
+    //                    obj = Instantiate(m_game.FindStructure(parser.content, user.faction)) as GameObject;
+    //                    obj.GetComponentInChildren<Body>().m_side = side;
+
+
+    //                    obj.transform.parent = user.transform;//m_game.m_map.transform;
+    //                    if(parser.content.StartsWith("Spawner"))    // this is bad and you should feel bad
+    //                        user.m_spawner = obj.transform;
+    //                    break;
+    //                case "Position":
+    //                    obj.transform.position = GetVector3(parser.content, ';') + m_game.m_map.GetRandomStartingGroundPos();
+    //                    break;
+    //            }
+    //        }
+    //    }
+    //}
+
+    public void LoadStructureData(TinyXmlReader parser, User user)
+    {
+        GameObject obj = null;
+        while (parser.Read("Structure"))
+        {
+            if (parser.tagType == TinyXmlReader.TagType.OPENING)
+            {
+                switch (parser.tagName)
+                {
+                    case "Name":
+                        obj = Instantiate(m_game.FindStructure(parser.content, user.faction)) as GameObject;
+                        obj.GetComponentInChildren<Body>().m_side = user.m_side;
+
+
+                        obj.transform.parent = user.transform;//m_game.m_map.transform;
+                        if (parser.content.StartsWith("Spawner"))    // this is bad and you should feel bad
+                            user.m_spawner = obj.transform;
+                        break;
+                    case "Position":
+                       // obj.transform.position = GetVector3(parser.content, ';') + m_game.m_map.GetRandomStartingGroundPos();
+
+                        float parsedXValue = 0;
+
+                        if (!float.TryParse(parser.content, out parsedXValue))
+                        {
+                            Debug.LogError("DataLoader: Incorrect float value for position: " + parser.content);
+                        }
+
+                        obj.transform.position = m_game.m_map.GetLocationByPercentage(parsedXValue, user).yAdd(Map.use.GetCenterGround().y);
+
+                        break;
+
+                    case "Depth":
+                        float parsedZValue = 0;
+
+                        if (!float.TryParse(parser.content, out parsedZValue))
+                        {
+                            Debug.LogError("DataLoader: Incorrect float value for depth: " + parser.content);
+                        }
+
+                        obj.transform.position = obj.transform.position.z(Map.use.GetDepthByPercentage(parsedZValue));
+                        break;
+                }
+            }
+        }
+    }
 
 	public Vector3 GetVector3(string reference, char separator)
 	{
@@ -223,7 +272,7 @@ public class DataLoader : FileManager
 				switch(parser.tagName)
 				{
 					case "Name": 
-						Factory factory = m_game.FindFactory(parser.content);
+						Factory factory = m_game.FindFactory(parser.content, user.faction);
                         if (factory)
                             user.m_factories.Add(factory);
 						break;

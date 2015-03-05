@@ -16,11 +16,11 @@ public class Base : Body {
 		// TODO : this assume left = player, right = ai, modify it to increase modularity
 		if(m_side == Side.Right)
 		{
-            Destroy(m_game.m_rightUser.gameObject);
+            Destroy(m_game.ai.gameObject);
 		}
 		else if(m_side == Side.Left)
 		{
-            Destroy(m_game.m_leftUser.gameObject);
+            Destroy(m_game.player.gameObject);
 		}
 	}
 	

@@ -10,6 +10,13 @@ public enum Side
 	Right = 2,
 };
 
+public enum Faction
+{ 
+    None = 0,
+    Rebel = 1,
+    Ukraine = 2
+}
+
 public static class SideExtension
 {
 	public static Side GetOpposite(this Side side)
@@ -26,27 +33,30 @@ public static class SideExtension
 
 
 
-public class GameData : MonoBehaviour {
+public class GameData : LugusSingletonExisting<GameData> {
     public Camera m_camera;
-	public User m_leftUser;
-	public User m_rightUser;
+	public User player;
+	public User ai;
 	public List<Factory> m_factories = new List<Factory>();
 	public List<Spell> m_spells = new List<Spell>();
 	public List<GameObject> m_structures = new List<GameObject>();
     public Map m_map;
 
+    protected string factionReplaceString = "Faction";
 
 	void Awake()
 	{
-		m_leftUser.m_side = Side.Left;
-		m_rightUser.m_side = Side.Right;
+		player.m_side = Side.Left;
+		ai.m_side = Side.Right;
 	}
 
 
 
 
-	public GameObject FindStructure(string name)
+	public GameObject FindStructure(string name, Faction faction)
 	{
+        name = name.Replace(factionReplaceString, faction.ToString());
+
         foreach (GameObject obj in m_structures)
         {
             if (obj.name == name)
@@ -61,8 +71,10 @@ public class GameData : MonoBehaviour {
 	}
 
 
-	public Factory FindFactory(string name)
+	public Factory FindFactory(string name, Faction faction)
 	{
+        name = name.Replace(factionReplaceString, faction.ToString());
+
         foreach (Factory factory in m_factories)
         {
             if (factory.name == name)
@@ -87,7 +99,7 @@ public class GameData : MonoBehaviour {
 
 	public void InstantiateUsersComponents()
 	{
-		m_leftUser.SetComponents();
-		m_rightUser.SetComponents();
+		player.SetComponents();
+		ai.SetComponents();
 	}
 }

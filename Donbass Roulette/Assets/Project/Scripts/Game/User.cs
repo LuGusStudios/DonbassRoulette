@@ -6,6 +6,7 @@ public abstract class User : MonoBehaviour {
 	[Header("User Settings")]
 
 	public Side m_side;
+    public Faction faction = Faction.None;
 
 	public int m_money;
 	public int m_manaMax;

@@ -19,6 +19,8 @@ public class CameraController : LugusSingletonExisting<CameraController> {
     public bool isIdleAnimating = true;
     public bool blockingInput = false;
 
+    protected bool movingToStartingPoint = false;
+
     void Start()
     {
         m_cameraData = GetComponent<OrthographicCameraData>();
@@ -33,7 +35,25 @@ public class CameraController : LugusSingletonExisting<CameraController> {
         this.transform.parent = cameraParent;
     }
 
+    public void InitializeView()
+    {
+        if (GameData.use.player != null)
+        {
+            movingToStartingPoint = true;
 
+            float xValue = GameData.use.player.m_spawner.position.x;
+
+           float sizeX = m_cameraData.GetSize().x;
+
+          // xValue = Mathf.Clamp(xValue, this.transform.position.x - m_map.m_minX + sizeX, this.transform.position.x + m_map.m_minX - sizeX);
+
+            this.gameObject.MoveTo(this.transform.position.x(xValue)).Time(1.0f).Execute();
+        }
+        else
+        {
+            Debug.LogError("CameraController: Player was null!");
+        }
+    }
 
     private void Move(float x)
     {
@@ -94,6 +114,12 @@ public class CameraController : LugusSingletonExisting<CameraController> {
 
         if( LugusInput.use.down )
         {
+            if (movingToStartingPoint)
+            {
+                movingToStartingPoint = false;
+                iTween.Stop(gameObject);
+            }
+
             m_uiEdit = MoveWithUI();
             m_prvDragPos = LugusInput.use.currentPosition;
             
@@ -115,10 +141,22 @@ public class CameraController : LugusSingletonExisting<CameraController> {
 
         if (LugusInput.use.Key(KeyCode.LeftArrow))
         {
+            if (movingToStartingPoint)
+            {
+                movingToStartingPoint = false;
+                iTween.Stop(gameObject);
+            }
+
             Move(-m_arrowSpeed);
         }
         else if (LugusInput.use.Key(KeyCode.RightArrow))
         {
+            if (movingToStartingPoint)
+            {
+                movingToStartingPoint = false;
+                iTween.Stop(gameObject);
+            }
+
             Move(m_arrowSpeed);
         }
 	}

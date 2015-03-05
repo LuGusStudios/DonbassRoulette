@@ -30,9 +30,40 @@ public class Map : LugusSingletonExisting<Map> {
 
     public Vector3 GetRandomStartingGroundPos()
     {
-        float randVal = Random.Range(m_minY_ground, m_maxY_ground);
-        return (this.transform.position.yAdd(randVal).zAdd(randVal));
+        float lerpValue = Random.value;
+
+        float randY = Mathf.Lerp(m_minY_ground, m_maxY_ground, lerpValue);
+        float randZ = GetDepthByPercentage(lerpValue);
+
+        return (this.transform.position.yAdd(randY).z(randZ));
     }
+
+    public Vector3 GetLocationByPercentage(float percentage, User user)
+    {
+        float mapLength = Mathf.Abs(m_minX) + Mathf.Abs(m_maxX);
+
+        float xCoord = percentage * mapLength;
+
+        float offset = 0;
+
+        if (user.m_side == Side.Left)
+        {
+            offset = Mathf.Lerp(m_minX, m_maxX, percentage);
+        }
+        else
+        {
+            offset = Mathf.Lerp(m_maxX, m_minX, percentage);
+        }
+
+        return this.transform.position.xAdd(offset); 
+    }
+
+    public float GetDepthByPercentage(float percentage)
+    {
+        return Mathf.Lerp(this.transform.position.z, this.transform.position.z + m_maxZ, percentage);
+    }
+
+
     public Vector3 GetRandomStartingAirPos()
     {
         float randVal = Random.Range(m_minY_air, m_maxY_air);

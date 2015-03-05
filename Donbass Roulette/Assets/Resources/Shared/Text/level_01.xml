@@ -7,24 +7,36 @@
 
 	<Structures>
     
-		<Left>
+		<Player>
 			<Structure>
-				<Name>SpawnerRebel</Name>
-				<Position>-25.5</Position>
+				<Name>SpawnerFaction</Name>
+				<Position>0.05</Position>
+        <Depth>0.5</Depth>
 			</Structure>
-		
-			<Structure>
-				<Name>Barricade</Name>
-				<Position>-5</Position>
-			</Structure>
-		</Left>
+
+      <Structure>
+        <Name>Barricade</Name>
+        <Position>0.3</Position>
+        <Depth>0.5</Depth>
+      </Structure>
+      
+		</Player>
+
+
 	
-		<Right>
+		<AI>
 			<Structure>
-				<Name>SpawnerUkraine</Name>
-				<Position>25.5</Position>
+				<Name>SpawnerFaction</Name>
+				<Position>0.05</Position>
+        <Depth>0.5</Depth>
 			</Structure>
-		</Right>
+
+      <Structure>
+        <Name>Barricade</Name>
+        <Position>0.3</Position>
+        <Depth>0.5</Depth>
+      </Structure>
+		</AI>
     
 	</Structures>
   
@@ -34,7 +46,7 @@
 
 
 
-<LeftUser>
+<Player>
 	<UserData>
 		<AvailableSpells>
 			<Spell>
@@ -47,16 +59,16 @@
 			
 		<AvailableFactories>
 			<Factory>
-				<Name>F_RebelSoldier</Name>
+				<Name>F_FactionSoldier</Name>
 			</Factory>
 			<Factory>
-				<Name>F_RebelMedic</Name>
+				<Name>F_FactionMedic</Name>
 			</Factory>
       <Factory>
-        <Name>F_RebelRPG</Name>
+        <Name>F_FactionRPG</Name>
       </Factory>      
 			<Factory>
-				<Name>F_RebelTank</Name>
+				<Name>F_FactionTank</Name>
 			</Factory>
 		</AvailableFactories>
 	
@@ -81,9 +93,9 @@
 			<PriceMultiplicator>1.2</PriceMultiplicator>
 		</Mana>
 	</UserData>
-</LeftUser>
+</Player>
 
-<RightUser>
+<AI>
 	<UserData>
 		<AvailableSpells>
 			<Spell>
@@ -96,19 +108,19 @@
 		
 		<AvailableFactories>
 			<Factory>
-				<Name>F_UkraineSoldier</Name>
+				<Name>F_FactionSoldier</Name>
 				<Weight>1</Weight>
 			</Factory>
 			<Factory>
-				<Name>F_UkraineMedic</Name>
+				<Name>F_FactionMedic</Name>
 				<Weight>0.7</Weight>
 			</Factory>
       <Factory>
-        <Name>F_UkraineRPG</Name>
+        <Name>F_FactionRPG</Name>
         <Weight>0</Weight>
       </Factory>
 			<Factory>
-				<Name>F_UkraineTank</Name>
+				<Name>F_FactionTank</Name>
 				<Weight>0</Weight>
 			</Factory>
 		</AvailableFactories>
@@ -143,4 +155,4 @@
 		<SafetyRange>12</SafetyRange>
 		<SafetyMana>100</SafetyMana>
 	</AIData>	
-</RightUser>
+</AI>

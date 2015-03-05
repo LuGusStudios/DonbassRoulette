@@ -62,7 +62,9 @@ public class LevelSelectMenu : MonoBehaviour {
         else {
             btnSelect = btnChooseRight;
             btnOther = btnChooseLeft;
-        }                    
+        }
+
+        AssignSidesAndFaction(leftSide);
 
         btnSelect.gameObject.ScaleTo(Vector3.one * 1.05f).Time(0.5f).EaseType(iTween.EaseType.easeOutBounce).Execute();
         btnSelect.image.color = new Color(1f, 1f, 1f);
@@ -118,6 +120,28 @@ public class LevelSelectMenu : MonoBehaviour {
         DataLoader dl = FindObjectOfType<DataLoader>();
         dl.Load("level_01");
         MenuManager.use.Goto(MenuManager.MenuType.GAMEMENU);
-        
+        CameraController.use.InitializeView();
+    }
+
+    protected void AssignSidesAndFaction(bool playerIsRebel)
+    {
+        if (playerIsRebel)
+        {
+            GameData.use.player.m_side = Side.Left;
+            GameData.use.player.faction = Faction.Rebel;
+
+            GameData.use.ai.m_side = Side.Right;
+            GameData.use.ai.faction = Faction.Ukraine;
+        }
+        else
+        {
+            GameData.use.player.m_side = Side.Right;
+            GameData.use.player.faction = Faction.Ukraine;
+
+            GameData.use.ai.m_side = Side.Left;
+            GameData.use.ai.faction = Faction.Rebel;
+        }
+
+        Debug.Log("LevelSelectMenu: Assigned player faction: <color=magenta>" + GameData.use.player.faction + "</color>");  // Colors work in debug output. Wow.
     }
 }
