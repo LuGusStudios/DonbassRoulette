@@ -50,7 +50,7 @@
 	<UserData>
 		<AvailableSpells>
 			<Spell>
-				<Name>S_Healing</Name>
+				<Name>S_Supplies</Name>
 			</Spell>
     	<Spell>
 				<Name>S_MortarStrike</Name>
@@ -99,7 +99,7 @@
 	<UserData>
 		<AvailableSpells>
 			<Spell>
-				<Name>S_Healing</Name>
+				<Name>S_Supplies</Name>
 			</Spell>
       <Spell>
         <Name>S_MortarStrike</Name>
