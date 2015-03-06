@@ -3927,7 +3927,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4f93b03f3178bfc4f81a660781ee0fd4, type: 2}
   m_spells:
   - {fileID: 11400000, guid: be56aa7153e8e7842bb18e65624dfd62, type: 2}
-  - {fileID: 11400000, guid: ac4b325d88e721e469cd5796a15eac02, type: 2}
+  - {fileID: 11400000, guid: 4dfc9162bef3a014d879ba4e9a8d2fa8, type: 2}
   m_structures:
   - {fileID: 100010, guid: 5dffcee4f104c0841b3c64ab22abd35a, type: 2}
   - {fileID: 100000, guid: c1234c132dcf70f4aae350dca0802346, type: 2}
@@ -11367,6 +11367,7 @@ MonoBehaviour:
   m_arrowRight: {fileID: 1296349727}
   isIdleAnimating: 1
   blockingInput: 0
+  shakeFallOffPerMeter: .100000001
 --- !u!114 &1356159804
 MonoBehaviour:
   m_ObjectHideFlags: 0

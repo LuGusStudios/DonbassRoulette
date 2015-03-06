@@ -3315,6 +3315,7 @@ RectTransform:
   m_Children:
   - {fileID: 296228874}
   - {fileID: 2101921862}
+  - {fileID: 1546397517}
   m_Father: {fileID: 1927030375}
   m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 0}
@@ -3622,7 +3623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &424986060
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6661,6 +6662,7 @@ GameObject:
   - 114: {fileID: 771357762}
   - 114: {fileID: 771357763}
   - 114: {fileID: 771357764}
+  - 114: {fileID: 771357765}
   m_Layer: 0
   m_Name: JESUS
   m_TagString: Untagged
@@ -6774,6 +6776,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ad4d239a7f1bfc4c8c6a12b51d4edaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &771357765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11463210, guid: 29f1276c5601a1446ab3e4ca42ba2dcc,
+    type: 2}
+  m_PrefabInternal: {fileID: 802276670}
+  m_GameObject: {fileID: 771357758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc92c30657264fe418a0d72d17789e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &773881496
@@ -7465,7 +7479,7 @@ GameObject:
   - 114: {fileID: 853495177}
   - 114: {fileID: 853495179}
   m_Layer: 5
-  m_Name: txtWonTheBattle
+  m_Name: txtLostTheBattle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7483,11 +7497,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1001240191}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -102.599998}
-  m_SizeDelta: {x: -37.0999985, y: 43.9000015}
+  m_AnchoredPosition: {x: 0, y: -102.600098}
+  m_SizeDelta: {x: -37.0999756, y: 43.9000015}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &853495177
 MonoBehaviour:
@@ -7537,7 +7551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e0183a93bc1b24dbb5c0d86865f1f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: gameover.headertext
+  key: gameover.headerlose
   uiText: {fileID: 0}
   richText: 0
 --- !u!1 &862243304
@@ -8644,6 +8658,7 @@ RectTransform:
   m_Children:
   - {fileID: 1911439530}
   - {fileID: 182953808}
+  - {fileID: 1477523962}
   - {fileID: 853495176}
   m_Father: {fileID: 56043913}
   m_RootOrder: 0
@@ -12986,6 +13001,93 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1473582136}
+--- !u!1 &1477523961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 108202, guid: d005afda0b8df4d4bbab9a2f470d3148, type: 2}
+  m_PrefabInternal: {fileID: 1641347794}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1477523962}
+  - 222: {fileID: 1477523965}
+  - 114: {fileID: 1477523964}
+  - 114: {fileID: 1477523963}
+  m_Layer: 5
+  m_Name: txtWonTheBattle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1477523962
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22408202, guid: d005afda0b8df4d4bbab9a2f470d3148,
+    type: 2}
+  m_PrefabInternal: {fileID: 1641347794}
+  m_GameObject: {fileID: 1477523961}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1001240191}
+  m_RootOrder: 2
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -102.599998}
+  m_SizeDelta: {x: -37.0999985, y: 43.9000015}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1477523963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11408200, guid: d005afda0b8df4d4bbab9a2f470d3148,
+    type: 2}
+  m_PrefabInternal: {fileID: 1641347794}
+  m_GameObject: {fileID: 1477523961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e0183a93bc1b24dbb5c0d86865f1f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: gameover.headerwin
+  uiText: {fileID: 0}
+  richText: 0
+--- !u!114 &1477523964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11408202, guid: d005afda0b8df4d4bbab9a2f470d3148,
+    type: 2}
+  m_PrefabInternal: {fileID: 1641347794}
+  m_GameObject: {fileID: 1477523961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .90196079, g: .90196079, b: .90196079, a: 1}
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: c4138bf2661039941a8abad0ea25d919, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'You won the battle but lost the game.
+
+    A lot of civilians were killed'
+--- !u!222 &1477523965
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22208202, guid: d005afda0b8df4d4bbab9a2f470d3148,
+    type: 2}
+  m_PrefabInternal: {fileID: 1641347794}
+  m_GameObject: {fileID: 1477523961}
 --- !u!1 &1484426514
 GameObject:
   m_ObjectHideFlags: 0
@@ -13433,7 +13535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1530994156
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13712,6 +13814,75 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d5851e7fb7cf57343b1d449fdca00f95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1546397516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 161416, guid: 5cefc1d95ed25564397a584b92e498cf, type: 2}
+  m_PrefabInternal: {fileID: 905745651}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1546397517}
+  - 222: {fileID: 1546397519}
+  - 114: {fileID: 1546397518}
+  m_Layer: 5
+  m_Name: URL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1546397517
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22461416, guid: 5cefc1d95ed25564397a584b92e498cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 905745651}
+  m_GameObject: {fileID: 1546397516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 412141595}
+  m_RootOrder: 2
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: .0695555657}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1546397518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11461416, guid: 5cefc1d95ed25564397a584b92e498cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 905745651}
+  m_GameObject: {fileID: 1546397516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .90196079, g: .90196079, b: .90196079, a: 1}
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: c4138bf2661039941a8abad0ea25d919, type: 3}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: www.battlefordonetsk.com
+--- !u!222 &1546397519
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22261416, guid: 5cefc1d95ed25564397a584b92e498cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 905745651}
+  m_GameObject: {fileID: 1546397516}
 --- !u!1 &1560197458
 GameObject:
   m_ObjectHideFlags: 0
@@ -14730,7 +14901,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1687945988
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18691,10 +18862,10 @@ RectTransform:
   - {fileID: 773881497}
   m_Father: {fileID: 412141595}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: .0193888899}
+  m_AnchorMin: {x: 0, y: .0695555657}
   m_AnchorMax: {x: 1, y: .629166663}
-  m_AnchoredPosition: {x: 0, y: 1.5}
-  m_SizeDelta: {x: 1, y: -2}
+  m_AnchoredPosition: {x: 0, y: -16.5}
+  m_SizeDelta: {x: 1, y: 34}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2101921863
 MonoBehaviour:
