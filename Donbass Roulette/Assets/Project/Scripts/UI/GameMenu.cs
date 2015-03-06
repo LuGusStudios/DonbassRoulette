@@ -67,6 +67,7 @@ public class GameMenu : MonoBehaviour {
         string secondsString = (seconds > 9)?seconds+"":"0"+seconds;
 
         txtTimer.text = minutesString + ":" + secondsString;
+        CrossSceneMenuInfo.use.lvlDuration = timer;
 
 	}
 

@@ -147,6 +147,7 @@ public abstract class User : MonoBehaviour {
 		{
 			if(factory.Spawn(m_spawner.position.x, side))
 			{
+                CrossSceneMenuInfo.use.AddUnitToDict(factory);
 				m_money -= factory.m_price;
 				return true;
 			}

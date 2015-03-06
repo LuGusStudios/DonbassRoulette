@@ -32,7 +32,7 @@ public class OptionsMenu : MonoBehaviour {
     void OnEnable()
     {
         CameraController.use.blockingInput = true;
-        AnalyticsIntegration.OpenOptionsEvent();
+        AnalyticsIntegration.OpenOptionsEvent();        
     }
 
     void LoadStoredSettings()

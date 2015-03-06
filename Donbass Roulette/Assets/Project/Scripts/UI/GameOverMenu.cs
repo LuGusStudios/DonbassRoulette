@@ -8,8 +8,14 @@ public class GameOverMenu : MonoBehaviour {
     List<Text> ScoreTexts = new List<Text>();
     Button btnContinue;
 
+    Text txtWinMessage;
+    Text txtLoseMessage;
+
+    List<int> scores = new List<int>();
+
 	// Use this for initialization
 	void Start () {
+        
         // Fill scores texts
         ScoreTexts.Add(gameObject.FindComponentInChildren<Text>(true, "txtGunshot"));
         ScoreTexts.Add(gameObject.FindComponentInChildren<Text>(true, "txtMortar"));
@@ -21,13 +27,44 @@ public class GameOverMenu : MonoBehaviour {
         btnContinue.gameObject.SetActive(false);
         btnContinue.onClick.AddListener(DoContinue);
 
+        txtWinMessage = gameObject.FindComponentInChildren<Text>(true, "txtWonTheBattle");
+        txtLoseMessage = gameObject.FindComponentInChildren<Text>(true, "txtLostTheBattle");
 
-        // Test 
-        List<int> scores = new List<int>(new int[]{23, 475, 86, 24, 610});
+        if (CrossSceneMenuInfo.use.isPlayerWinner)
+        {
+            txtWinMessage.gameObject.SetActive(true);
+            txtLoseMessage.gameObject.SetActive(false);
+        }
+        else
+        {
+            txtWinMessage.gameObject.SetActive(false);
+            txtLoseMessage.gameObject.SetActive(true);
+        }
+
+        scores = new List<int>(new int[] { 23, 475, 86, 24, 610 });
         LugusCoroutines.use.StartRoutine(AnimateScores(scores));
-
 	}
-	
+
+    void OnEnable()
+    {
+        AnalyticsIntegration.GameOverEvent(CrossSceneMenuInfo.use.unitsSpawned, CrossSceneMenuInfo.use.lvlDuration);
+        CrossSceneMenuInfo.use.resetDict();
+
+        LugusCamera.game.gameObject.FindComponentInChildren<MinimapCamera>(true).gameObject.SetActive(false);
+        
+        //if (CrossSceneMenuInfo.use.isPlayerWinner)
+        //{
+        //    txtWinMessage.gameObject.SetActive(true);
+        //    txtLoseMessage.gameObject.SetActive(false);
+        //}
+        //else
+        //{
+        //    txtWinMessage.gameObject.SetActive(false);
+        //    txtLoseMessage.gameObject.SetActive(true);
+        //}
+                
+    }
+
 	// Update is called once per frame
 	void Update () {
 	

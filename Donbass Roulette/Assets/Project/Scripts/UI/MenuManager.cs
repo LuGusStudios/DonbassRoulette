@@ -101,6 +101,9 @@ public class MenuManager : LugusSingletonExisting<MenuManager> {
         _aboutMenu = gameObject.FindComponentInChildren<AboutMenu>(true);
 
         HideAllMenus();
+
+        currentMenu = CrossSceneMenuInfo.use.nextMenuOnReload;
+
         ShowMenu(currentMenu);
 	}
 	

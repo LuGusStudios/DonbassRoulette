@@ -77,7 +77,7 @@ public class Player : User {
 
     public void DoSpawnUnit(Factory f)
     {        
-        SpawnUnit(f, this.m_side);
+        SpawnUnit(f, this.m_side);        
     }
 
     public void DoCastSpell(Spell s)
