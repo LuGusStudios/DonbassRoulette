@@ -8350,7 +8350,7 @@ MonoBehaviour:
   m_maxY_ground: 1.39999998
   m_minY_air: 0
   m_maxY_air: 0
-  m_maxZ: 100
+  m_maxZ: 40
 --- !u!1 &1001240190
 GameObject:
   m_ObjectHideFlags: 0

@@ -43,7 +43,7 @@ MonoBehaviour:
   m_cost: 0
   instantiateDelay: 4
   icon: {fileID: 21300000, guid: bd685883ff34f0c4eb7968f87274ed70, type: 3}
-  m_cooldown: 0
+  m_cooldown: 20
   supplyPackagePrefab: {fileID: 143946, guid: b81ce5396b9432047afeeea663929700, type: 2}
   crosshairPrefab: {fileID: 173582, guid: ba133405822a1b444adeeab778608cd7, type: 2}
 --- !u!1001 &100100000
