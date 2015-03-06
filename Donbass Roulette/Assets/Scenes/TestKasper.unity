@@ -11421,6 +11421,7 @@ MonoBehaviour:
   m_arrowRight: {fileID: 1296349727}
   isIdleAnimating: 1
   blockingInput: 0
+  shakeFallOffPerMeter: .100000001
 --- !u!114 &1356159804
 MonoBehaviour:
   m_ObjectHideFlags: 0
