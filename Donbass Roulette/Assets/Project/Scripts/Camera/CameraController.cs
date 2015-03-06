@@ -18,8 +18,11 @@ public class CameraController : LugusSingletonExisting<CameraController> {
 
     public bool isIdleAnimating = true;
     public bool blockingInput = false;
+    public float shakeFallOffPerMeter = 0.1f;
+
 
     protected bool movingToStartingPoint = false;
+    protected Vector3 originalParentPosition = Vector3.zero;
 
     void Start()
     {
@@ -33,6 +36,8 @@ public class CameraController : LugusSingletonExisting<CameraController> {
         cameraParent.transform.localRotation = this.transform.localRotation;
 
         this.transform.parent = cameraParent;
+
+        originalParentPosition = cameraParent.transform.localPosition;
     }
 
     public void InitializeView()
@@ -70,6 +75,32 @@ public class CameraController : LugusSingletonExisting<CameraController> {
             Mathf.Clamp(this.transform.position.x, m_map.m_minX + sizeX, m_map.m_maxX - sizeX), 
             this.transform.position.y, 
             this.transform.position.z);
+    }
+
+    public void ShakeCamera(Vector2 cameraShake)
+    {
+        // Camera shake diminshes as player is further from explosion.
+        float distanceToCamera = Mathf.Abs(this.transform.position.x - LugusCamera.game.transform.position.x);
+
+        // Shake camera parent so that camera itself can keep moving.
+        if (LugusCamera.game.transform.parent != null)
+        {
+            iTween.ShakePosition(LugusCamera.game.transform.parent.gameObject,
+            cameraShake * Mathf.Lerp(0.5f, 0.0f, distanceToCamera * shakeFallOffPerMeter),
+            0.5f);
+        }
+
+        LugusCoroutines.use.StartRoutine(ReturnPositionAfterShake(0.5f), this.gameObject);
+    }
+
+    protected IEnumerator ReturnPositionAfterShake(float delay)
+    { 
+        yield return new WaitForSeconds(delay);
+
+        if (LugusCamera.game.transform.parent != null)
+        {
+            LugusCamera.game.transform.parent.localPosition = originalParentPosition;
+        }
     }
 
     protected bool MoveWithUI()
