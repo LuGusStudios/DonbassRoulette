@@ -20,6 +20,7 @@ public class Body : MonoBehaviour
 	public delegate void Delegate();
 	public Delegate m_delDeath;
     public Delegate m_onLoseHealth;
+    public Delegate m_onGainHealth;
 
 	virtual protected void Start()
 	{
@@ -62,6 +63,11 @@ public class Body : MonoBehaviour
 		m_hp += value;
 		if(m_hp > m_hpMax)
 			m_hp = m_hpMax;
+
+        if (m_hp > 0 && m_hp < m_hpMax && m_onGainHealth != null)
+        {
+            m_onGainHealth();
+        }
 	}
 
 
