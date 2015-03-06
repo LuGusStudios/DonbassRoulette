@@ -51,6 +51,11 @@ public class Spell : MonoBehaviour {
 		return m_timer;
 	}
 
+    void Start()
+    {
+        m_timer = m_cooldown;
+    }
+
 	void Update()
 	{
 		if(m_timer > 0)

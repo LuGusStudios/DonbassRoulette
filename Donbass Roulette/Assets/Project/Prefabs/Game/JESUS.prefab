@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11401688}
   - 114: {fileID: 11442234}
   - 114: {fileID: 11479778}
+  - 114: {fileID: 11463210}
   m_Layer: 0
   m_Name: JESUS
   m_TagString: Untagged
@@ -112,6 +113,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ecd050ced808f4445981d1f11c3b67ab, type: 3}
   - {fileID: 8300000, guid: 5544e5c0bbd64cc448de845e1756cf82, type: 3}
   - {fileID: 8300000, guid: 86ddde7113ba6ee48996616a70a93fd0, type: 3}
+--- !u!114 &11463210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc92c30657264fe418a0d72d17789e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11479778
 MonoBehaviour:
   m_ObjectHideFlags: 1

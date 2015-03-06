@@ -95,15 +95,19 @@ public class AI : User
 		while(true)
 		{
 			yield return new WaitForSeconds(m_spellCastCooldown);
-			OffensiveSpellCastRoutine(m_safetyRange);
 
-			if(Random.Range(0, 10) == 0) // irregular value factor (frequency)
-			{
-				if(Random.Range(0, 1) == 0)
-					OffensiveSpellCastRoutine(m_spellCastRange, m_safetyMana); // TODO : bug, spellCastRange isn't correct (why?)
-				else
-					HealingSpellCastCheck(m_spellCastRange, m_safetyMana);
-			}
+            if(Random.Range(0,2) == 0)
+                HealingSpellCastCheck(m_safetyRange);
+            else
+			    OffensiveSpellCastRoutine(m_safetyRange);
+
+            //if(Random.Range(0, 10) == 0) // irregular value factor (frequency)
+            //{
+            //    if(Random.Range(0, 1) == 0)
+            //        OffensiveSpellCastRoutine(m_spellCastRange, m_safetyMana); // TODO : bug, spellCastRange isn't correct (why?)
+            //    else
+            //        HealingSpellCastCheck(m_spellCastRange, m_safetyMana);
+            //}
 		}
 	}
 
@@ -121,7 +125,7 @@ public class AI : User
 	private void OffensiveSpellCastRoutine(float range, float reservedMana = 0)
 	{
         Spell spell = GetRandomSpell(AreaOfEffect.SpellType.Offensive);
-        if(spell && m_mana - spell.m_cost > reservedMana )
+        if(spell && m_mana - spell.m_cost > reservedMana && spell.m_cooldown <= 0)
 		{
             Collider2D[] cols = Physics2D.OverlapCircleAll(this.transform.position, range);
             if (cols.Length > 0)
@@ -154,7 +158,7 @@ public class AI : User
 		if(cols.Length > 0)
 		{// check if there is any enemy near the base
 			Spell spell = GetRandomSpell(AreaOfEffect.SpellType.Healing);
-			if(spell && m_mana - spell.m_cost > reservedMana)
+            if (spell && m_mana - spell.m_cost > reservedMana && spell.m_cooldown <= 0)
 			{
 				Unit nearest = NearestSideUnit(this.m_spawner.position, cols, this.m_side, UnitCheckHpIsNotFull);
 

@@ -25,6 +25,8 @@ public class LevelSelectMenu : MonoBehaviour {
 
         imgStart = btnStart.transform.GetChild(0).GetComponent<Image>();
 
+        LugusCamera.game.gameObject.FindComponentInChildren<MinimapCamera>(true).gameObject.SetActive(false);
+
         btnChooseLeft.onClick.AddListener(() => { LugusCoroutines.use.StartRoutine(DoSelectSide(Side.Left)); });
         btnChooseRight.onClick.AddListener(() => { LugusCoroutines.use.StartRoutine(DoSelectSide(Side.Right)); });
         btnStart.onClick.AddListener(DoStart);
@@ -34,6 +36,8 @@ public class LevelSelectMenu : MonoBehaviour {
     void OnEnable()
     {
         if (btnChooseLeft == null || btnChooseRight == null) return;
+
+        LugusCamera.game.gameObject.FindComponentInChildren<MinimapCamera>(true).gameObject.SetActive(false);
 
         btnChooseLeft.image.color = new Color(1f, 1f, 1f);
         btnChooseRight.image.color = new Color(1f, 1f, 1f);
@@ -129,14 +133,8 @@ public class LevelSelectMenu : MonoBehaviour {
 
     void StartGame()
     {
-        if (chosenSide == Side.Left)
-        {
-
-        }
-        else 
-        {
-        
-        }
+        AnalyticsIntegration.StartGameEvent();
+        AnalyticsIntegration.PickTeamEvent((chosenSide == Side.Left) ? "Rebel" : "Ukraine");
 
         LugusCamera.game.gameObject.FindComponentInChildren<MinimapCamera>(true).gameObject.SetActive(true);
         DataLoader dl = FindObjectOfType<DataLoader>();

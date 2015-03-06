@@ -39,6 +39,7 @@ public class PauseMenu : MonoBehaviour {
     void DoMainMenu()
     {
         //MenuManager.use.Goto(MenuManager.MenuType.MAINMENU);        
+        CrossSceneMenuInfo.use.nextMenuOnReload = MenuManager.MenuType.MAINMENU;
         Application.LoadLevel(Application.loadedLevel);
     }
 

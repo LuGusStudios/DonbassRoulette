@@ -33,13 +33,34 @@ public class AnalyticsIntegration : MonoBehaviour {
             });
     }
 
-    public static void GameOverEvent(int score, float time)
-    {        
+    public static void GameOverEvent(Dictionary<string, int> units, float time)
+    {
+        string pMedic = "PlayerMedic";
+        string pRPG = "PlayerRPG";
+        string pSoldier = "PlayerSoldier";
+        string pTank = "PlayerTank";
+
+        string aMedic = "AIMedic";
+        string aRPG = "AIRPG";
+        string aSoldier = "AISoldier";
+        string aTank = "AITank";
+
         UnityAnalytics.CustomEvent("GameOver", new Dictionary<string, object>
             {
-                {"score", score},
+                {pSoldier, units[pSoldier]},
+                {pMedic, units[pMedic]},
+                {pRPG, units[pRPG]},
+                {pTank, units[pTank]},
+
+                {aSoldier, units[aSoldier]},
+                {aMedic, units[aMedic]},
+                {aRPG, units[aRPG]},
+                {aTank, units[aTank]},
+
                 {"time", time}
             });
+
+        Debug.Log("SentGameOverEvent");
     }
 
     public static void OpenOptionsEvent()

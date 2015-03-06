@@ -34,24 +34,28 @@ public class ShareMenu : MonoBehaviour {
 	}
 
     void DoReplay()
-    { 
-    
+    {
+        CrossSceneMenuInfo.use.nextMenuOnReload = MenuManager.MenuType.LEVELSELECTMENU;
+        Application.LoadLevel(Application.loadedLevel);
     }
 
     void DoGotoMenu()
-    { 
-        
+    {
+        CrossSceneMenuInfo.use.nextMenuOnReload = MenuManager.MenuType.MAINMENU;
+        Application.LoadLevel(Application.loadedLevel);
     }
 
     void DoShareOnFB()
     {
         Debug.Log("Sharing on FB");
-        SocialShareBasic.use.facebook.Share("BFD");
+        AnalyticsIntegration.ClickedSocialFacebookEvent();           
+        SocialShareBasic.use.facebook.Share("I won the battle but lost the game. Just like may civilian casualties every day. Play now: Battle for Donetsk");
     }
 
     void DoShareOnTwitter()
     {
         Debug.Log("Sharing on Twitter");
-        SocialShareBasic.use.twitter.Share("BAAAAAATLE");
+        AnalyticsIntegration.ClickedSocialTwitterEvent();
+        SocialShareBasic.use.twitter.Share("I won the battle but lost the game. Just like may civilian casualties every day. Play now: Battle for Donetsk");
     }
 }
