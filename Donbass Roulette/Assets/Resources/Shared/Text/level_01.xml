@@ -16,7 +16,19 @@
 
       <Structure>
         <Name>Barricade</Name>
+        <Position>0.1</Position>
+        <Depth>0.5</Depth>
+      </Structure>
+
+      <Structure>
+        <Name>Barricade</Name>
         <Position>0.3</Position>
+        <Depth>0.5</Depth>
+      </Structure>
+
+      <Structure>
+        <Name>Barricade</Name>
+        <Position>0.48</Position>
         <Depth>0.5</Depth>
       </Structure>
       
@@ -33,7 +45,19 @@
 
       <Structure>
         <Name>Barricade</Name>
+        <Position>0.1</Position>
+        <Depth>0.5</Depth>
+      </Structure>
+
+      <Structure>
+        <Name>Barricade</Name>
         <Position>0.3</Position>
+        <Depth>0.5</Depth>
+      </Structure>
+
+      <Structure>
+        <Name>Barricade</Name>
+        <Position>0.48</Position>
         <Depth>0.5</Depth>
       </Structure>
 		</AI>

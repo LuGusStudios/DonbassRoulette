@@ -9,7 +9,7 @@ public class Miniature : MonoBehaviour {
 	void Awake()
 	{
 		m_minimap = GameObject.FindObjectOfType<Minimap>();
-		if(m_minimap)
+		if(m_minimap != null)
 		{
 			this.transform.parent = m_minimap.transform;
 			m_minimap.m_elements.Add(this);

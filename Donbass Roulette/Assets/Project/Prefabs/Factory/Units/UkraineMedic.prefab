@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_composition: 2
-  m_hpMax: 120
+  m_hpMax: 150
   m_deathDestroyTime: 2
   m_side: 1
   m_damage: 20

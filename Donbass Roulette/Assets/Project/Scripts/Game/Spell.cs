@@ -22,13 +22,13 @@ public class Spell : MonoBehaviour {
     protected IEnumerator AreaAppear(Vector2 position, Side side)
     {
         OnBegin(position, side);
+        m_timer = m_cooldown;
 
         yield return new WaitForSeconds(instantiateDelay);
 
         AreaOfEffect aoe = Instantiate(m_prefabEffect, position, Quaternion.identity) as AreaOfEffect;
         aoe.Initialize(side);
-        m_timer = m_cooldown;
-
+  
         OnInstantiate(aoe);
     }
 

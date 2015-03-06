@@ -1048,13 +1048,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_composition: 2
-  m_hpMax: 150
+  m_hpMax: 200
   m_deathDestroyTime: 2
   m_side: 1
   m_damage: 30
   m_range: 6.5
   m_projectile: {fileID: 11400000, guid: 09efb48c00ef5084086a93e57512d639, type: 2}
-  m_attackCooldown: 2
+  m_attackCooldown: 1
   m_speed: 1
 --- !u!114 &11400006
 MonoBehaviour:

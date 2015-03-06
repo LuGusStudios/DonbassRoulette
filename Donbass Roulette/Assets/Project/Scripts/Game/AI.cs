@@ -96,6 +96,9 @@ public class AI : User
 		{
 			yield return new WaitForSeconds(m_spellCastCooldown);
 
+            if (GameData.use.ai == null || GameData.use.player == null)
+                yield break;
+
             if(Random.Range(0,2) == 0)
                 HealingSpellCastCheck(m_safetyRange);
             else
@@ -125,7 +128,7 @@ public class AI : User
 	private void OffensiveSpellCastRoutine(float range, float reservedMana = 0)
 	{
         Spell spell = GetRandomSpell(AreaOfEffect.SpellType.Offensive);
-        if(spell && m_mana - spell.m_cost > reservedMana && spell.m_cooldown <= 0)
+        if(spell && m_mana - spell.m_cost > reservedMana && spell.GetTimer() <= 0)
 		{
             Collider2D[] cols = Physics2D.OverlapCircleAll(this.transform.position, range);
             if (cols.Length > 0)
@@ -158,7 +161,7 @@ public class AI : User
 		if(cols.Length > 0)
 		{// check if there is any enemy near the base
 			Spell spell = GetRandomSpell(AreaOfEffect.SpellType.Healing);
-            if (spell && m_mana - spell.m_cost > reservedMana && spell.m_cooldown <= 0)
+            if (spell && m_mana - spell.m_cost > reservedMana && spell.GetTimer() <= 0)
 			{
 				Unit nearest = NearestSideUnit(this.m_spawner.position, cols, this.m_side, UnitCheckHpIsNotFull);
 
