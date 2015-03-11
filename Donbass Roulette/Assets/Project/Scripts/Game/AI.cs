@@ -56,6 +56,7 @@ public class AI : User
 	{
 		while(true)
 		{
+
 			yield return new WaitForSeconds(m_trySpawnCooldown);
 			float spawnChance = Random.Range(0f, GetTotalChances());
 
@@ -64,6 +65,7 @@ public class AI : User
 				if(spawnChance <= GetFactoryChances(i))
 				{
 					SpawnUnit(m_factories[i], this.m_side);
+                    break;
 				}
 			}
 		}
@@ -85,6 +87,7 @@ public class AI : User
 					{
 						yield return null;
 					}
+                    break;
 				}
 			}
 		}
@@ -226,10 +229,30 @@ public class AI : User
 		return farthest;
 	}
 
-
 	void Update()
 	{
+        IncomeRubberBanding();       
 	}
+
+    float _realIncome = 0;
+
+    void IncomeRubberBanding()
+    {
+
+        // Rubber banding
+        float playerIncome = GameData.use.player.m_income;
+
+        if (_realIncome == 0)
+            _realIncome = m_income;
+
+        if (_realIncome < playerIncome)
+            _realIncome += Time.deltaTime * 2;
+
+        if (_realIncome > m_income)
+            m_income = Mathf.FloorToInt(_realIncome);
+
+        //Debug.LogWarning("Enemy income: " + m_income);
+    }
 
 
 	void OnDrawGizmos()

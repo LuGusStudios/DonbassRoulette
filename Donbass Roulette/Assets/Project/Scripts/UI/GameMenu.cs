@@ -46,6 +46,8 @@ public class GameMenu : MonoBehaviour {
             btnTechnology.onClick.AddListener(_player.DoBuyMana);
             isInitialized = true;
         }
+
+        SoundManager.use.FadeGameMusic();
     }
 	
 	// Update is called once per frame
@@ -151,7 +153,7 @@ public class GameMenu : MonoBehaviour {
             Spell s = _player.m_spells[i];
             Button b = powerButtons[i];
 
-            if (s == _player.GetCastingSpell())
+            if (s != null && s == _player.GetCastingSpell())
             {
                 float glowVal = Mathf.Abs(Mathf.Sin(Time.realtimeSinceStartup * 4));
                 b.image.color = new Color(1, glowVal, glowVal);

@@ -137,15 +137,15 @@
 			</Factory>
 			<Factory>
 				<Name>F_FactionMedic</Name>
-				<Weight>0.7</Weight>
+				<Weight>0.6</Weight>
 			</Factory>
       <Factory>
         <Name>F_FactionRPG</Name>
-        <Weight>0</Weight>
+        <Weight>0.4</Weight>
       </Factory>
 			<Factory>
 				<Name>F_FactionTank</Name>
-				<Weight>0</Weight>
+				<Weight>0.6</Weight>
 			</Factory>
 		</AvailableFactories>
 		

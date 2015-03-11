@@ -12,7 +12,7 @@ public interface ILugusAudioTrack
 	bool Loop{ get; set; }
 	float Pitch { get; set; }
 
-	float OriginalVolume { get; set; }
+	float MaxVolume { get; set; }
 	
 	// Load the clip and apply the settings, but don't start playing the clip just yet
 	bool Load(AudioClip clip, LugusAudioTrackSettings settings = null);
@@ -74,11 +74,11 @@ public class LugusAudioTrack : MonoBehaviour, ILugusAudioTrack
 		set{ Source.pitch = value; }
 	}
 
-	protected float _originalVolume = 1;
-	public float OriginalVolume
+	protected float _maxVolume = 1;
+	public float MaxVolume
 	{
-		get{ return _originalVolume; }
-		set{ _originalVolume = value; }
+		get{ return _maxVolume; }
+		set{ _maxVolume = value; }
 	}
 	
 	public bool Playing
@@ -147,11 +147,14 @@ public class LugusAudioTrack : MonoBehaviour, ILugusAudioTrack
 		// TODO: make this more decent...
 		this.Loop = false;
 		this.Volume = 1.0f;
-		this.OriginalVolume = 1.0f;
+		this.MaxVolume = 1.0f;
 
 		if( settings != null )
 		{
+            //Debug.LogWarning("Settings: Volume " + settings.Volume() + " " + settings.Volume());
 			settings.Merge( _channel.BaseTrackSettings );
+            //Debug.LogWarning("Merged settings");
+            //Debug.LogWarning("Settings: Volume " + settings.Volume() + " " + settings.Volume());
 			
 		}
 		else
@@ -225,7 +228,8 @@ public class LugusAudioTrack : MonoBehaviour, ILugusAudioTrack
 	public void FadeIn(float duration)
 	{
 		Volume = 0.0f;
-		FadeTo (1.0f, duration);
+		//FadeTo (1.0f, duration);
+        FadeTo(_channel.BaseTrackSettings.Volume(), duration);
 	}
 	
 	public void FadeIn(AudioClip clip, float duration, LugusAudioTrackSettings settings = null)
@@ -277,7 +281,11 @@ public class LugusAudioTrackSettings
 	protected bool volume_set = false;
 	protected float volume = 1.0f;
 	public float Volume() { return volume; }
-	
+
+    protected bool maxVolume_set = false;
+    protected float maxVolume = 1.0f;
+    public float MaxVolume() { return maxVolume; }
+
 	protected bool loop_set = false;
 	protected bool loop = false;
 	public bool Loop() { return loop; }
@@ -296,6 +304,9 @@ public class LugusAudioTrackSettings
 
 		if (pitch_set)
 			target.Pitch = pitch;
+
+        if (maxVolume_set)
+            target.MaxVolume = maxVolume;
 	}
 	
 	// TODO: possible better way of approaching this would be:
@@ -308,13 +319,9 @@ public class LugusAudioTrackSettings
 	// customSettings.ApplyTo(track)
 	public void Merge(LugusAudioTrackSettings baseSettings)
 	{
-		Debug.Log ("Mergin base settings 0"); 
-		
 		if( baseSettings == null )
 			return;
-		
-		Debug.Log ("Mergin base settings");
-		
+				
 		if( !volume_set )
 		{
 			Volume( baseSettings.Volume() );
@@ -329,6 +336,12 @@ public class LugusAudioTrackSettings
 		{
 			Pitch(baseSettings.Pitch());
 		}
+
+        if (!maxVolume_set)
+        {
+            MaxVolume(baseSettings.MaxVolume());
+        }
+
 	}
 	
 	public static LugusAudioTrackSettings FromSource(AudioSource src)
@@ -339,7 +352,7 @@ public class LugusAudioTrackSettings
 		
 		output.volume = src.volume;
 		output.loop = src.loop;
-		output.loop = src.loop;
+		output.pitch = src.pitch;
 		
 		return output;
 	}
@@ -350,6 +363,13 @@ public class LugusAudioTrackSettings
 		this.volume = volume;
 		return this;
 	}
+
+    public LugusAudioTrackSettings MaxVolume(float maxVolume)
+    {
+        maxVolume_set = true;
+        this.maxVolume = maxVolume;
+        return this;
+    }
 	
 	public LugusAudioTrackSettings Loop(bool loop)
 	{

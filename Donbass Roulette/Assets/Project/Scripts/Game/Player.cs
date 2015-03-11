@@ -82,7 +82,7 @@ public class Player : User {
 
     public void DoCastSpell(Spell s)
     {
-        if (m_mana >= s.m_cost)
+        if (m_mana >= s.m_cost && s.GetTimerPercentage() > 0.99f)
             m_spellCasting = s;
         else
             Debug.Log("Not enough MP got " + m_mana + ", requires " + s.m_cost);

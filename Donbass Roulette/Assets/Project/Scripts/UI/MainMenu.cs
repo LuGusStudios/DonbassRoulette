@@ -22,11 +22,14 @@ public class MainMenu : MonoBehaviour {
 
         Time.timeScale = 1;
         CameraController.use.isIdleAnimating = true;
+
+        //SoundManager.use.LoadLuGusAudio();
 	}
 
     void OnEnable()
     {
         CameraController.use.isIdleAnimating = true;
+        SoundManager.use.FadeMenuMusic();
     }
 	
 	// Update is called once per frame

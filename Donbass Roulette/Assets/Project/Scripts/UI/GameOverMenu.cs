@@ -51,6 +51,7 @@ public class GameOverMenu : MonoBehaviour {
         CrossSceneMenuInfo.use.resetDict();
 
         LugusCamera.game.gameObject.FindComponentInChildren<MinimapCamera>(true).gameObject.SetActive(false);
+        SoundManager.use.FadeGameOverMusic();
         
         //if (CrossSceneMenuInfo.use.isPlayerWinner)
         //{

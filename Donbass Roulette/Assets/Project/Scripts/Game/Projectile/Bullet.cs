@@ -29,6 +29,7 @@ public class Bullet : Projectile {
         m_side = side;
 		m_value = value;
 
+        goal.z = this.transform.position.z;
         m_dir = (goal - this.transform.position).normalized;
         m_distLeft = (goal - this.transform.position).magnitude * 2;
 

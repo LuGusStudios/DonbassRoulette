@@ -6,6 +6,8 @@ public class SoundManager : LugusSingletonExisting<SoundManager>
 {
     public AudioClip backgroundAmbientClip = null;
     public AudioClip backgroundMusicClip = null;
+    public AudioClip backgroundMenuClip = null;
+    public AudioClip backgroundGameOverClip = null;
 
     public float volumeFallOffPerMeter = 0.1f;
 
@@ -14,7 +16,7 @@ public class SoundManager : LugusSingletonExisting<SoundManager>
 
     protected Dictionary<string, AudioClip> clipDictionary = new Dictionary<string, AudioClip>();
     protected ILugusAudioTrack backgroundAmbient = null;
-    protected ILugusAudioTrack backgroundMusic = null;
+    protected ILugusAudioTrack backgroundMusic = null;    
 
     public void PlaySound(LugusAudioChannel channel, AudioClip sound)
     {
@@ -32,11 +34,27 @@ public class SoundManager : LugusSingletonExisting<SoundManager>
     }
 
     public void SetupLocal()
-    { 
+    {
+    }
+
+    public void LoadLuGusAudio()
+    {
+        float valMusic = LugusConfig.use.System.GetFloat("MusicVolume", 0.2f);
+        float valAmbient = LugusConfig.use.System.GetFloat("AmbientVolume", 1);
+        float valFX = LugusConfig.use.System.GetFloat("FXVolume", 1);
+
+        LugusAudio.use.Music().BaseTrackSettings = new LugusAudioTrackSettings().Volume(valMusic);
+        LugusAudio.use.Ambient().BaseTrackSettings = new LugusAudioTrackSettings().Volume(valAmbient);
+        LugusAudio.use.SFX().BaseTrackSettings = new LugusAudioTrackSettings().Volume(valFX);
+
+        LugusAudio.use.Music().VolumePercentage = valMusic;
+        LugusAudio.use.Ambient().VolumePercentage = valAmbient;
+        LugusAudio.use.SFX().VolumePercentage = valFX;
     }
 
     public void SetupGlobal()
     {
+        //LoadLuGusAudio();
         if (backgroundAmbient == null)
         {
             backgroundAmbient = LugusAudio.use.Ambient().GetTrack();
@@ -50,12 +68,27 @@ public class SoundManager : LugusSingletonExisting<SoundManager>
             backgroundMusic = LugusAudio.use.Music().GetTrack();
             backgroundMusic.Claim();
 
-            backgroundMusic.Play(backgroundMusicClip, new LugusAudioTrackSettings().Loop(true).Volume(0.2f));
+            //backgroundMusic.Play(backgroundMusicClip, new LugusAudioTrackSettings().Loop(true).MaxVolume(0.2f).Volume(0.2f));            
         }
+
+        LoadLuGusAudio();
 
     }
 
+    public void FadeMenuMusic()
+    {
+        LugusAudio.use.Music().CrossFade(backgroundMenuClip, 1.0f, new LugusAudioTrackSettings().Loop(true));
+    }
 
+    public void FadeGameOverMusic()
+    {
+        LugusAudio.use.Music().CrossFade(backgroundGameOverClip, 1.0f, new LugusAudioTrackSettings().Loop(false));
+    }
+
+    public void FadeGameMusic()
+    {
+        LugusAudio.use.Music().CrossFade(backgroundMusicClip, 1.0f, new LugusAudioTrackSettings().Loop(true));
+    }
 
     public AudioClip GetRandomExplosionSound()
     {

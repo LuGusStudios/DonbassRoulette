@@ -7,6 +7,7 @@ public class OptionsMenu : MonoBehaviour {
 
     Slider slMusic = null;
     Slider slFX = null;
+    Slider slAmbient = null;
     Button btnBack = null;    
 
 	// Use this for initialization
@@ -15,10 +16,12 @@ public class OptionsMenu : MonoBehaviour {
 
         slMusic = gameObject.FindComponentInChildren<Slider>(true, "slider_music");
         slFX = gameObject.FindComponentInChildren<Slider>(true, "slider_FX");
+        slAmbient = gameObject.FindComponentInChildren<Slider>(true, "slider_ambient");
         btnBack = gameObject.FindComponentInChildren<Button>(true, "btn_back");
 
         slMusic.onValueChanged.AddListener(SliderMusicChanged);
         slFX.onValueChanged.AddListener(SliderFXChanged);
+        slAmbient.onValueChanged.AddListener(SliderAmbientChanged);
         btnBack.onClick.AddListener(DoBack);
 
         LoadStoredSettings();
@@ -32,25 +35,44 @@ public class OptionsMenu : MonoBehaviour {
     void OnEnable()
     {
         CameraController.use.blockingInput = true;
-        AnalyticsIntegration.OpenOptionsEvent();        
+        AnalyticsIntegration.OpenOptionsEvent();
+        //SoundManager.use.FadeGameOverMusic();
     }
 
     void LoadStoredSettings()
     {
-        slMusic.value = LugusConfig.use.System.GetFloat("MusicVolume", 1);
-        slFX.value =    LugusConfig.use.System.GetFloat("FXVolume", 1);
+        float valMusic = LugusConfig.use.System.GetFloat("MusicVolume", 0.2f);
+        float valAmbient = LugusConfig.use.System.GetFloat("AmbientVolume", 1);
+        float valFX = LugusConfig.use.System.GetFloat("FXVolume", 1);
+
+        slMusic.value = valMusic;
+        slFX.value = valFX;
+        slAmbient.value = valAmbient;
+
+        LugusAudio.use.Music().BaseTrackSettings =      new LugusAudioTrackSettings().Volume(valMusic);
+        LugusAudio.use.Ambient().BaseTrackSettings =    new LugusAudioTrackSettings().Volume(valAmbient);
+        LugusAudio.use.SFX().BaseTrackSettings =        new LugusAudioTrackSettings().Volume(valFX);
     }
 
     void SliderMusicChanged(float val)
-    {
+    {                
         LugusConfig.use.System.SetFloat("MusicVolume", val, true);
+        LugusAudio.use.Music().BaseTrackSettings = new LugusAudioTrackSettings().Volume(val);
         LugusAudio.use.Music().VolumePercentage = val;
     }
 
     void SliderFXChanged(float val)
-    {
-        LugusConfig.use.System.SetFloat("FXVolume", val, true);
+    {        
+        LugusConfig.use.System.SetFloat("FXVolume", val, true);        
+        LugusAudio.use.SFX().BaseTrackSettings = new LugusAudioTrackSettings().Volume(val);
         LugusAudio.use.SFX().VolumePercentage = val;
+    }
+
+    void SliderAmbientChanged(float val)
+    {
+        LugusConfig.use.System.SetFloat("AmbientVolume", val, true);
+        LugusAudio.use.Ambient().BaseTrackSettings = new LugusAudioTrackSettings().Volume(val);
+        LugusAudio.use.Ambient().VolumePercentage = val;
     }
 
     void DoBack()

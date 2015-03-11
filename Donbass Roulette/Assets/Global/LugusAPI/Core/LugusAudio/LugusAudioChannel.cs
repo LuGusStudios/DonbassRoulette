@@ -67,14 +67,9 @@ public class LugusAudioChannel
 			newValue = Mathf.Clamp01(newValue);
 		}
 
-		// When volume was previously 0, we will happily divide by zero here...
-		// C# is totally happy with this: positive value / 0 = 1.
-		float changeFactor = newValue / _volume;
-		_volume =  newValue;
-
 		foreach( ILugusAudioTrack track in _tracks )
-		{
-			track.Source.volume = track.OriginalVolume * changeFactor; 
+		{            
+			track.Source.volume = track.MaxVolume * newValue;            
 		}
 	}
 
@@ -93,8 +88,14 @@ public class LugusAudioChannel
 	protected LugusAudioTrackSettings _baseTrackSettings = null;
 	public LugusAudioTrackSettings BaseTrackSettings
 	{
-		get{ return _baseTrackSettings; }
-		set{ _baseTrackSettings = value; }
+		get
+        {
+            return _baseTrackSettings; 
+        }
+		set
+        {
+            _baseTrackSettings = value; 
+        }
 	}
 	
 	
