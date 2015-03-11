@@ -1003,7 +1003,7 @@ MonoBehaviour:
   m_deathDestroyTime: 2
   m_side: 1
   m_damage: 30
-  m_range: 6.5
+  m_range: 10
   m_projectile: {fileID: 11420310, guid: d62514521cee9304fa4f7eff1206158d, type: 2}
   m_attackCooldown: 2
   m_speed: .899999976

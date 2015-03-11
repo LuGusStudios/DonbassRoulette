@@ -77,15 +77,25 @@ public class Player : User {
 
     public void DoSpawnUnit(Factory f)
     {        
-        SpawnUnit(f, this.m_side);        
+        bool couldSpawn = SpawnUnit(f, this.m_side);
+
+        if (couldSpawn)
+        {
+            GameData.use.BeginBattle();
+        }
     }
 
     public void DoCastSpell(Spell s)
     {
         if (m_mana >= s.m_cost && s.GetTimerPercentage() > 0.99f)
+        {
             m_spellCasting = s;
+            GameData.use.BeginBattle();
+        }
         else
-            Debug.Log("Not enough MP got " + m_mana + ", requires " + s.m_cost);
+        {
+            Debug.Log("Not ready or Not enough MP got " + m_mana + ", requires " + s.m_cost);
+        }
     }
 
     public Spell GetCastingSpell()

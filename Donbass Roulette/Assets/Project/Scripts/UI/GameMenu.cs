@@ -16,6 +16,8 @@ public class GameMenu : MonoBehaviour {
     public Text txtIncome;
     public Text txtTimer;
 
+    public Text txtCeasefire;
+
     float timer = 0;
 
     Player _player = null;
@@ -48,6 +50,8 @@ public class GameMenu : MonoBehaviour {
         }
 
         SoundManager.use.FadeGameMusic();
+
+        GameData.use.startBattleEvent += showCeasefire;
     }
 	
 	// Update is called once per frame
@@ -126,6 +130,37 @@ public class GameMenu : MonoBehaviour {
             b.gameObject.FindComponentInChildren<Text>(true).text = s.m_cost.ToString();
             b.gameObject.SetActive(true);
         }                
+    }
+
+    void showCeasefire()
+    {        
+        LugusCoroutines.use.StartRoutine(animateCeasefire());
+    }
+
+    IEnumerator animateCeasefire()
+    {
+        float fadeTime = 1;
+
+        txtCeasefire.gameObject.SetActive(true);
+        txtCeasefire.color = txtCeasefire.color.a(0);
+
+        float fade = 0;        
+        while (txtCeasefire.color.a < 0.99f)
+        {
+            fade += Time.deltaTime * fadeTime;
+            txtCeasefire.color = txtCeasefire.color.a(fade);
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(3.0f);
+
+        while (txtCeasefire.color.a > 0.01f)
+        {
+            fade -= Time.deltaTime * fadeTime;
+            txtCeasefire.color = txtCeasefire.color.a(fade);
+            yield return null;
+        }
+
     }
 
     void UpdateIcons()

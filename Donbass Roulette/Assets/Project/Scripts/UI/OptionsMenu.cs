@@ -49,9 +49,9 @@ public class OptionsMenu : MonoBehaviour {
         slFX.value = valFX;
         slAmbient.value = valAmbient;
 
-        LugusAudio.use.Music().BaseTrackSettings =      new LugusAudioTrackSettings().Volume(valMusic);
-        LugusAudio.use.Ambient().BaseTrackSettings =    new LugusAudioTrackSettings().Volume(valAmbient);
-        LugusAudio.use.SFX().BaseTrackSettings =        new LugusAudioTrackSettings().Volume(valFX);
+        //LugusAudio.use.Music().BaseTrackSettings =      new LugusAudioTrackSettings().Volume(valMusic);
+        //LugusAudio.use.Ambient().BaseTrackSettings =    new LugusAudioTrackSettings().Volume(valAmbient);
+        //LugusAudio.use.SFX().BaseTrackSettings =        new LugusAudioTrackSettings().Volume(valFX);
     }
 
     void SliderMusicChanged(float val)

@@ -7,7 +7,7 @@ public class CrossSceneMenuInfo : LugusSingletonCrossScene<CrossSceneMenuInfo> {
     public MenuManager.MenuType nextMenuOnReload = MenuManager.MenuType.MAINMENU;
     public bool isPlayerWinner = false;
     public float lvlDuration = 0;
-    public Dictionary<string, int> unitsSpawned = new Dictionary<string, int>();
+    public Dictionary<string, int> unitsSpawned = new Dictionary<string, int>();    
 
     public void AddUnitToDict(Factory f)
     {
