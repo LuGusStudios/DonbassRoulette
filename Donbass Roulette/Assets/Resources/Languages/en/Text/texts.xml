@@ -39,7 +39,8 @@ Play now: Battle for Donetsk</share.messagewin>
 <share.messagewintwitter>I spared the lives of countless civilians and opened the road to peace.
 Play now: </share.messagewintwitter>
 
-<gameover.header>Game Over</gameover.header>
+<gameover.lose>You Lose!</gameover.lose>
+<gameover.win>You win!</gameover.win>
 <gameover.headerwin>You won the battle but lost the game.
 A lot of civilians were killed</gameover.headerwin>
   <gameover.headerlose>You lost the battle and lost the game.

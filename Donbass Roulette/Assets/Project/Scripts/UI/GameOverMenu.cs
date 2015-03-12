@@ -12,6 +12,8 @@ public class GameOverMenu : MonoBehaviour {
     Text txtLoseMessage;
     Text txtCeasefireMessage;
 
+    Text txtGameOver;
+
     List<int> scores = new List<int>();
 
 	// Use this for initialization
@@ -32,6 +34,8 @@ public class GameOverMenu : MonoBehaviour {
         txtLoseMessage = gameObject.FindComponentInChildren<Text>(true, "txtLostTheBattle");
         txtCeasefireMessage = gameObject.FindComponentInChildren<Text>(true, "txtCeasefire");
 
+        txtGameOver = gameObject.FindComponentInChildren<Text>(true, "txtGameOver");
+
         //scores = new List<int>(new int[] { 23, 475, 86, 24, 610 });
         CalcScores();
 
@@ -41,18 +45,22 @@ public class GameOverMenu : MonoBehaviour {
             txtLoseMessage.gameObject.SetActive(false);
             txtCeasefireMessage.gameObject.SetActive(true);
             scores = new List<int>(new int[] { 0, 0, 0, 0, 0 });
+
+            txtGameOver.text = LugusResources.use.Localized.GetText("gameover.win");
         }
         else if (CrossSceneMenuInfo.use.isPlayerWinner)
         {
             txtWinMessage.gameObject.SetActive(true);
             txtLoseMessage.gameObject.SetActive(false);
             txtCeasefireMessage.gameObject.SetActive(false);
+            txtGameOver.text = LugusResources.use.Localized.GetText("gameover.lose");
         }
         else
         {
             txtWinMessage.gameObject.SetActive(false);
             txtLoseMessage.gameObject.SetActive(true);
             txtCeasefireMessage.gameObject.SetActive(false);
+            txtGameOver.text = LugusResources.use.Localized.GetText("gameover.lose");
         }
         
         LugusCoroutines.use.StartRoutine(AnimateScores(scores));

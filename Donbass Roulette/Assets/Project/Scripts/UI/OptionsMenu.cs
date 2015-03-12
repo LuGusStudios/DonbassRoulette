@@ -24,6 +24,10 @@ public class OptionsMenu : MonoBehaviour {
         slAmbient.onValueChanged.AddListener(SliderAmbientChanged);
         btnBack.onClick.AddListener(DoBack);
 
+        slMusic.maxValue = SoundManager.maxMusicVolume;
+        slAmbient.maxValue = SoundManager.maxAmbientVolume;
+        slFX.maxValue = SoundManager.maxFXVolume;
+
         LoadStoredSettings();
 	}
 	
@@ -41,9 +45,10 @@ public class OptionsMenu : MonoBehaviour {
 
     void LoadStoredSettings()
     {
-        float valMusic = LugusConfig.use.System.GetFloat("MusicVolume", 0.2f);
-        float valAmbient = LugusConfig.use.System.GetFloat("AmbientVolume", 1);
-        float valFX = LugusConfig.use.System.GetFloat("FXVolume", 1);
+
+        float valMusic = LugusConfig.use.System.GetFloat("MusicVolume", SoundManager.maxMusicVolume);
+        float valAmbient = LugusConfig.use.System.GetFloat("AmbientVolume", SoundManager.maxAmbientVolume);
+        float valFX = LugusConfig.use.System.GetFloat("FXVolume", SoundManager.maxFXVolume);
 
         slMusic.value = valMusic;
         slFX.value = valFX;

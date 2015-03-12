@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using UnityEngine.Advertisements;
+//using UnityEngine.Advertisements;
+
 
 public class LevelSelectMenu : MonoBehaviour {
 
@@ -64,24 +65,24 @@ public class LevelSelectMenu : MonoBehaviour {
     {
         Debug.Log("Chosen side: " + chosenSide.ToString());
 
-        if (chosenSide == Side.None) return;
+        //if (chosenSide == Side.None) return;
 
-        if (Advertisement.isReady())
-        {
-            _isShowingAd = true;
-            Advertisement.Show(null, new ShowOptions
-            {
-                resultCallback = result =>
-                {
-                    AdCallback(result);
-                }
-            });
-        }
-        else
-        {
+        //if (Advertisement.isReady())
+        //{
+        //    _isShowingAd = true;
+        //    Advertisement.Show(null, new ShowOptions
+        //    {
+        //        resultCallback = result =>
+        //        {
+        //            AdCallback(result);
+        //        }
+        //    });
+        //}
+        //else
+        //{
             Debug.Log("No add could be displayed");
             StartGame();
-        }
+        //}
     }
 
     void DoBack()
@@ -118,18 +119,18 @@ public class LevelSelectMenu : MonoBehaviour {
 
     }
 
-    void AdCallback(ShowResult result)
-    {
-        Debug.Log( "Add result: " + result.ToString() );
-        _isShowingAd = false;        
+    //void AdCallback(ShowResult result)
+    //{
+    //    Debug.Log( "Add result: " + result.ToString() );
+    //    _isShowingAd = false;        
 
-        // These can be used determine action depending on the add result
-        /*if (result == ShowResult.Finished){}
-        else if (result == ShowResult.Skipped){}
-        else if (result == ShowResult.Failed){}*/
+    //    // These can be used determine action depending on the add result
+    //    /*if (result == ShowResult.Finished){}
+    //    else if (result == ShowResult.Skipped){}
+    //    else if (result == ShowResult.Failed){}*/
 
-        StartGame();
-    }
+    //    StartGame();
+    //}
 
     void StartGame()
     {

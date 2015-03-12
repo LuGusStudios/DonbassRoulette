@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e0183a93bc1b24dbb5c0d86865f1f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: gameover.header
+  key: gameover.lose
   uiText: {fileID: 0}
   richText: 0
 --- !u!114 &11445970

@@ -16,7 +16,11 @@ public class SoundManager : LugusSingletonExisting<SoundManager>
 
     protected Dictionary<string, AudioClip> clipDictionary = new Dictionary<string, AudioClip>();
     protected ILugusAudioTrack backgroundAmbient = null;
-    protected ILugusAudioTrack backgroundMusic = null;    
+    protected ILugusAudioTrack backgroundMusic = null;
+
+    public static float maxMusicVolume = 0.4f;
+    public static float maxAmbientVolume = 1f;
+    public static float maxFXVolume = 1f;
 
     public void PlaySound(LugusAudioChannel channel, AudioClip sound)
     {
@@ -60,9 +64,9 @@ public class SoundManager : LugusSingletonExisting<SoundManager>
     public void LoadLuGusAudio()
     {
         // Don't forget to change the slider in the options menu!
-        float valMusic = LugusConfig.use.System.GetFloat("MusicVolume", 0.3f);
-        float valAmbient = LugusConfig.use.System.GetFloat("AmbientVolume", 1);
-        float valFX = LugusConfig.use.System.GetFloat("FXVolume", 1);
+        float valMusic = LugusConfig.use.System.GetFloat("MusicVolume", maxMusicVolume);
+        float valAmbient = LugusConfig.use.System.GetFloat("AmbientVolume", maxAmbientVolume);
+        float valFX = LugusConfig.use.System.GetFloat("FXVolume", maxFXVolume);
 
         LugusAudio.use.Music().BaseTrackSettings = new LugusAudioTrackSettings().Volume(valMusic);
         LugusAudio.use.Ambient().BaseTrackSettings = new LugusAudioTrackSettings().Volume(valAmbient);

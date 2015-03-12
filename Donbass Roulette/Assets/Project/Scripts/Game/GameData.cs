@@ -49,7 +49,7 @@ public class GameData : LugusSingletonExisting<GameData> {
     public StartBattleEvent startBattleEvent;
 
     public bool ceasefireBroken = false;
-    public float ceasefireDuration = 30.0f;
+    public float ceasefireDuration = 60.0f;
 
 	void Awake()
 	{
