@@ -188,7 +188,7 @@ GameObject:
   - 114: {fileID: 11453718}
   - 114: {fileID: 11402082}
   m_Layer: 5
-  m_Name: Message
+  m_Name: txt_message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

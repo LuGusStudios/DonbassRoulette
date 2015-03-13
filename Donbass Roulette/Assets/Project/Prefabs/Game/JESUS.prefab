@@ -100,6 +100,9 @@ MonoBehaviour:
   backgroundAmbientClip: {fileID: 8300000, guid: b3e4cf1ee3fa65f4fb779c565a9796cd,
     type: 3}
   backgroundMusicClip: {fileID: 8300000, guid: 2cb974e06b866b14fba9548d54e4a6ed, type: 3}
+  backgroundMenuClip: {fileID: 8300000, guid: e1c283cc4b33c5846a9638fa50ed0c30, type: 3}
+  backgroundGameOverClip: {fileID: 8300000, guid: 51f9b15087eb22c4184d19dadc44b9b2,
+    type: 3}
   volumeFallOffPerMeter: .100000001
   explosions:
   - {fileID: 8300000, guid: 5ea589980b1564a488a0c8d368e42ef3, type: 3}

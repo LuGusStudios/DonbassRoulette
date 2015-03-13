@@ -42,7 +42,7 @@ MonoBehaviour:
   m_prefabUnit: {fileID: 133148, guid: c24d86c28098898459b7c7571f17f42a, type: 2}
   m_price: 350
   icon: {fileID: 21300000, guid: 1997d650048799a4b8b34f58aa436539, type: 3}
-  m_cooldown: 3
+  m_cooldown: 4
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

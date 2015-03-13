@@ -19,7 +19,7 @@ public class SocialShareBasic : LugusSingletonRuntime<SocialShareBasic>
 
         string linkUrl = "www.battlefordonetsk.com";
         string linkName = "BattleForDonetsk.com";
-        string imageUrl = "https://lh3.googleusercontent.com/-gjxoCu8Fu3c/AAAAAAAAAAI/AAAAAAAAAAA/Uji17DdykF4/photo.jpg";
+        string imageUrl = "http://www.battlefordonetsk.com/wp-content/uploads/2015/03/Banner1024x500.png";
 
         facebook.linkUrl = linkUrl;
         facebook.linkName = linkName;

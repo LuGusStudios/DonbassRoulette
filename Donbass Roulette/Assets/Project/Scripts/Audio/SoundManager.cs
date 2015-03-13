@@ -16,11 +16,21 @@ public class SoundManager : LugusSingletonExisting<SoundManager>
 
     protected Dictionary<string, AudioClip> clipDictionary = new Dictionary<string, AudioClip>();
     protected ILugusAudioTrack backgroundAmbient = null;
-    protected ILugusAudioTrack backgroundMusic = null;    
+    protected ILugusAudioTrack backgroundMusic = null;
+
+    public static float maxMusicVolume = 0.4f;
+    public static float maxAmbientVolume = 1f;
+    public static float maxFXVolume = 1f;
 
     public void PlaySound(LugusAudioChannel channel, AudioClip sound)
     {
         channel.Play(sound);
+    }
+
+    public void PlayClickSound()
+    {
+        //Debug.Log("click");
+        LugusAudio.use.SFX().Play(LugusResources.use.Shared.GetAudio("Click01"));
     }
 
     protected void Awake()
@@ -35,25 +45,7 @@ public class SoundManager : LugusSingletonExisting<SoundManager>
 
     public void SetupLocal()
     {
-    }
 
-    public void LoadLuGusAudio()
-    {
-        float valMusic = LugusConfig.use.System.GetFloat("MusicVolume", 0.2f);
-        float valAmbient = LugusConfig.use.System.GetFloat("AmbientVolume", 1);
-        float valFX = LugusConfig.use.System.GetFloat("FXVolume", 1);
-
-        LugusAudio.use.Music().BaseTrackSettings = new LugusAudioTrackSettings().Volume(valMusic);
-        LugusAudio.use.Ambient().BaseTrackSettings = new LugusAudioTrackSettings().Volume(valAmbient);
-        LugusAudio.use.SFX().BaseTrackSettings = new LugusAudioTrackSettings().Volume(valFX);
-
-        LugusAudio.use.Music().VolumePercentage = valMusic;
-        LugusAudio.use.Ambient().VolumePercentage = valAmbient;
-        LugusAudio.use.SFX().VolumePercentage = valFX;
-    }
-
-    public void SetupGlobal()
-    {
         //LoadLuGusAudio();
         if (backgroundAmbient == null)
         {
@@ -75,19 +67,64 @@ public class SoundManager : LugusSingletonExisting<SoundManager>
 
     }
 
+    public void LoadLuGusAudio()
+    {
+        // Don't forget to change the slider in the options menu!
+        float valMusic = LugusConfig.use.System.GetFloat("MusicVolume", maxMusicVolume);
+        float valAmbient = LugusConfig.use.System.GetFloat("AmbientVolume", maxAmbientVolume);
+        float valFX = LugusConfig.use.System.GetFloat("FXVolume", maxFXVolume);
+
+        LugusAudio.use.Music().BaseTrackSettings = new LugusAudioTrackSettings().Volume(valMusic);
+        LugusAudio.use.Ambient().BaseTrackSettings = new LugusAudioTrackSettings().Volume(valAmbient);
+        LugusAudio.use.SFX().BaseTrackSettings = new LugusAudioTrackSettings().Volume(valFX);
+
+        LugusAudio.use.Music().VolumePercentage = valMusic;
+        LugusAudio.use.Ambient().VolumePercentage = valAmbient;
+        LugusAudio.use.SFX().VolumePercentage = valFX;
+    }
+
+    public void SetupGlobal()
+    {
+
+    }
+
     public void FadeMenuMusic()
     {
-        LugusAudio.use.Music().CrossFade(backgroundMenuClip, 1.0f, new LugusAudioTrackSettings().Loop(true));
+        // Only crossfade if music isn't already playing
+        if (LugusAudio.use.Music().GetActiveTrack() == null || LugusAudio.use.Music().GetActiveTrack().Source.clip != backgroundMenuClip)
+        {
+            LugusAudio.use.Music().CrossFade(backgroundMenuClip, 1.0f, new LugusAudioTrackSettings().Loop(true));
+        }
+
+        float valFX = LugusConfig.use.System.GetFloat("FXVolume", 1);
+        LugusAudio.use.SFX().BaseTrackSettings = new LugusAudioTrackSettings().Volume(valFX);
+        LugusAudio.use.SFX().VolumePercentage = valFX;
     }
 
     public void FadeGameOverMusic()
     {
-        LugusAudio.use.Music().CrossFade(backgroundGameOverClip, 1.0f, new LugusAudioTrackSettings().Loop(false));
+        // Only crossfade if music isn't already playing
+        if (LugusAudio.use.Music().GetActiveTrack() == null || LugusAudio.use.Music().GetActiveTrack().Source.clip != backgroundGameOverClip)
+        {
+            LugusAudio.use.Music().CrossFade(backgroundGameOverClip, 1.0f, new LugusAudioTrackSettings().Loop(false));
+        }
+
+        float valFX = 0;
+        LugusAudio.use.SFX().BaseTrackSettings = new LugusAudioTrackSettings().Volume(valFX);
+        LugusAudio.use.SFX().VolumePercentage = valFX;
     }
 
     public void FadeGameMusic()
     {
-        LugusAudio.use.Music().CrossFade(backgroundMusicClip, 1.0f, new LugusAudioTrackSettings().Loop(true));
+        // Only crossfade if music isn't already playing
+        if (LugusAudio.use.Music().GetActiveTrack()== null || LugusAudio.use.Music().GetActiveTrack().Source.clip != backgroundMusicClip)
+        {
+            LugusAudio.use.Music().CrossFade(backgroundMusicClip, 1.0f, new LugusAudioTrackSettings().Loop(true));
+        }
+
+        float valFX = LugusConfig.use.System.GetFloat("FXVolume", 1);
+        LugusAudio.use.SFX().BaseTrackSettings = new LugusAudioTrackSettings().Volume(valFX);
+        LugusAudio.use.SFX().VolumePercentage = valFX;
     }
 
     public AudioClip GetRandomExplosionSound()

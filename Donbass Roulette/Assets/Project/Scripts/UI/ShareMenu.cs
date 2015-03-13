@@ -10,6 +10,12 @@ public class ShareMenu : MonoBehaviour {
     Button btnReplay;
     Button btnMenu;
 
+    Text msgContent;
+
+    string message = "I won the battle but lost the game. Just like may civilian casualties every day. Play now: Battle for Donetsk";
+    string messageTwitter = "I won the battle but lost the game. Just like may civilian casualties every day. Play now: ";
+    //string messageWin = "I spared the lives of countless civilians and opened the road to peace. Play now: Battle for Donetsk";
+
 	// Use this for initialization
 	void Start () {
         btnShareFB = gameObject.FindComponentInChildren<Button>(true, "btn_facebook");
@@ -17,10 +23,25 @@ public class ShareMenu : MonoBehaviour {
         btnReplay = gameObject.FindComponentInChildren<Button>(true, "btn_replay");
         btnMenu = gameObject.FindComponentInChildren<Button>(true, "btn_menu");
 
+        msgContent = gameObject.FindComponentInChildren<Text>(true, "txt_message");
+
         btnShareFB.onClick.AddListener(DoShareOnFB);
         btnShareTwitter.onClick.AddListener(DoShareOnTwitter);
         btnReplay.onClick.AddListener(DoReplay);
         btnMenu.onClick.AddListener(DoGotoMenu);
+
+        if (!GameData.use.ceasefireBroken)
+        {
+            message = LugusResources.use.Localized.GetText("share.messagewin");
+            messageTwitter = LugusResources.use.Localized.GetText("share.messagewintwitter");
+        }
+        else
+        {
+            message = LugusResources.use.Localized.GetText("share.message");
+            messageTwitter = LugusResources.use.Localized.GetText("share.messagetwitter");
+        }
+
+        msgContent.text = message;
 	}
 
     void OnEnable()
@@ -49,13 +70,13 @@ public class ShareMenu : MonoBehaviour {
     {
         Debug.Log("Sharing on FB");
         AnalyticsIntegration.ClickedSocialFacebookEvent();           
-        SocialShareBasic.use.facebook.Share("I won the battle but lost the game. Just like may civilian casualties every day. Play now: Battle for Donetsk");
+        SocialShareBasic.use.facebook.Share(message);
     }
 
     void DoShareOnTwitter()
     {
         Debug.Log("Sharing on Twitter");
         AnalyticsIntegration.ClickedSocialTwitterEvent();
-        SocialShareBasic.use.twitter.Share("I won the battle but lost the game. Just like may civilian casualties every day. Play now: Battle for Donetsk");
+        SocialShareBasic.use.twitter.Share(messageTwitter);
     }
 }

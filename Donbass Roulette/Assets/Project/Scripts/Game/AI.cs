@@ -15,6 +15,8 @@ public class AI : User
 
 	public List<float> m_factoriesWeight = new List<float>();
 
+    private bool isStarted = false;
+
 	public override void SetComponents()
 	{
 		base.SetComponents();
@@ -27,11 +29,19 @@ public class AI : User
 
 	override protected void Start()
 	{
-		base.Start();
-		StartCoroutine(TryWeightSpawn());
-		StartCoroutine(ForcedWeightSpawn());
-		StartCoroutine(Spellcast());
+		base.Start();		
 	}
+
+    // This function allows us to keep the AI inactive untill the player has made the first move.
+    public void StartAiBehaviour()
+    {
+        if (isStarted) return;
+        isStarted = true;
+
+        StartCoroutine(TryWeightSpawn());
+        StartCoroutine(ForcedWeightSpawn());
+        StartCoroutine(Spellcast());
+    }
 
 	private float GetFactoryChances(int id)
 	{

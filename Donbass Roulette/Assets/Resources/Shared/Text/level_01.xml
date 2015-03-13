@@ -145,7 +145,7 @@
       </Factory>
 			<Factory>
 				<Name>F_FactionTank</Name>
-				<Weight>0.6</Weight>
+				<Weight>0.2</Weight>
 			</Factory>
 		</AvailableFactories>
 		
@@ -172,8 +172,8 @@
 	</UserData>		
 	<AIData>
 		<Behaviour></Behaviour>
-		<TrySpawnCooldown>10</TrySpawnCooldown>
-		<ForcedSpawnCooldown>5</ForcedSpawnCooldown>
+		<TrySpawnCooldown>13</TrySpawnCooldown>
+		<ForcedSpawnCooldown>7</ForcedSpawnCooldown>
 		<SpellCastCooldown>5</SpellCastCooldown>
 		<SpellCastRange>35</SpellCastRange>
 		<SafetyRange>12</SafetyRange>

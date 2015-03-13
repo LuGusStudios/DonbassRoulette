@@ -32,12 +32,21 @@ Press contact: press@lugus-studios.be</about.panel02>
 <share.header>Share the message!</share.header>
 <share.message>I won the battle but lost the game, just like many civilian casualties every day.
 play now: battle for donetsk</share.message>
+<share.messageTwitter>I won the battle but lost the game, just like many civilian casualties every day.
+play now: </share.messageTwitter>
+<share.messagewin>I spared the lives of countless civilians and opened the road to peace. 
+Play now: Battle for Donetsk</share.messagewin>
+<share.messagewintwitter>I spared the lives of countless civilians and opened the road to peace.
+Play now: </share.messagewintwitter>
 
-<gameover.header>Game Over</gameover.header>
+<gameover.lose>You Lose!</gameover.lose>
+<gameover.win>You win!</gameover.win>
 <gameover.headerwin>You won the battle but lost the game.
 A lot of civilians were killed</gameover.headerwin>
   <gameover.headerlose>You lost the battle and lost the game.
 A lot of civilians were killed</gameover.headerlose>
+  <gameover.headerceasefire>You have respected the ceasefire.
+No civilians were killed</gameover.headerceasefire>
 <gameover.gunshot>by gunshot :</gameover.gunshot>
 <gameover.mortar>by mortar fire :</gameover.mortar>
 <gameover.rocket>by unguided rocket :</gameover.rocket>

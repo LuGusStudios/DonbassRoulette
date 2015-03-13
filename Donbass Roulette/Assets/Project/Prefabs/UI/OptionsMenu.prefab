@@ -787,7 +787,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 22409576}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: .300000012
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -1347,7 +1347,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 30, y: 0}
+  m_SizeDelta: {x: 50, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22404446
 RectTransform:
@@ -1452,7 +1452,7 @@ RectTransform:
   - {fileID: 22404452}
   - {fileID: 22404454}
   m_Father: {fileID: 22446974}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_AnchorMin: {x: .189854667, y: .191024929}
   m_AnchorMax: {x: .809551597, y: .391024917}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1522,7 +1522,7 @@ RectTransform:
   - {fileID: 22409568}
   - {fileID: 22409578}
   m_Father: {fileID: 22446974}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: .190303028, y: .605723202}
   m_AnchorMax: {x: .810000002, y: .80572319}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1561,7 +1561,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 30, y: 0}
+  m_SizeDelta: {x: 50, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22409578
 RectTransform:
@@ -1667,10 +1667,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22462594}
+  - {fileID: 22456600}
   - {fileID: 22446976}
   - {fileID: 22409572}
   - {fileID: 22404456}
-  - {fileID: 22456600}
   - {fileID: 22491772}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1691,7 +1691,7 @@ RectTransform:
   m_Children:
   - {fileID: 22446982}
   m_Father: {fileID: 22446974}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: .0188577585}
   m_AnchorMax: {x: .16435039, y: .116997615}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1763,7 +1763,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 30, y: 0}
+  m_SizeDelta: {x: 50, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22446992
 RectTransform:
@@ -1811,7 +1811,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 22446974}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_AnchorMin: {x: .237000018, y: .918684065}
   m_AnchorMax: {x: .76483047, y: .971000075}
   m_AnchoredPosition: {x: -2, y: 1.5}

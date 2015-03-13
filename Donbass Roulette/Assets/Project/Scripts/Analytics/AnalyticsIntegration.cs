@@ -45,6 +45,13 @@ public class AnalyticsIntegration : MonoBehaviour {
         string aSoldier = "AISoldier";
         string aTank = "AITank";
 
+        if (units.Count == 0)
+        {
+            CrossSceneMenuInfo.use.resetDict();
+            units = CrossSceneMenuInfo.use.unitsSpawned;
+        }
+        
+
         UnityAnalytics.CustomEvent("GameOver", new Dictionary<string, object>
             {
                 {pSoldier, units[pSoldier]},

@@ -44,13 +44,55 @@ public class GameData : LugusSingletonExisting<GameData> {
 
     protected string factionReplaceString = "Faction";
 
+    private bool isBattleStarted = false;
+    public delegate void StartBattleEvent();
+    public StartBattleEvent startBattleEvent;
+
+    public bool ceasefireBroken = false;
+    public float ceasefireDuration = 60.0f;
+
 	void Awake()
 	{
 		player.m_side = Side.Left;
 		ai.m_side = Side.Right;
+
+        CrossSceneMenuInfo.use.lvlDuration = 0;
 	}
 
+    void Update()
+    {
+        CheckCeasefire();
+    }
 
+    public void CheckCeasefire()
+    {
+        if (!player) return;
+        if (!ai) return;
+
+        if (!ceasefireBroken && CrossSceneMenuInfo.use.lvlDuration > ceasefireDuration)
+        {
+            EndGame(ai.m_side);
+        }
+    }
+
+    public void EndGame(Side side)
+    {
+        CrossSceneMenuInfo.use.isPlayerWinner = player.m_side != side;
+
+        ai.StopAllCoroutines();
+        player.StopAllCoroutines();
+
+        if (side == Side.Right)
+        {
+            Destroy(ai.gameObject);
+        }
+        else if (side == Side.Left)
+        {
+            Destroy(player.gameObject);
+        }
+
+        MenuManager.use.Goto(MenuManager.MenuType.GAMEOVERMENU);
+    }
 
 
 	public GameObject FindStructure(string name, Faction faction)
@@ -102,4 +144,14 @@ public class GameData : LugusSingletonExisting<GameData> {
 		player.SetComponents();
 		ai.SetComponents();
 	}
+
+    public void BeginBattle()
+    {
+        if (isBattleStarted) return;        
+        isBattleStarted = true;
+
+        ceasefireBroken = true;
+        (ai as AI).StartAiBehaviour();
+        startBattleEvent();
+    }
 }

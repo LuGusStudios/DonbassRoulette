@@ -33,9 +33,9 @@ public class Player : User {
 			size.x = 130;
 		}
 
-        Rect millionDollars = new Rect(Screen.width - 100, 0, 100, 50);
-        if (GUI.Button(millionDollars, "Million Dollars!"))
-            GetMillionDollars();
+        //Rect millionDollars = new Rect(Screen.width - 100, 0, 100, 50);
+        //if (GUI.Button(millionDollars, "Million Dollars!"))
+        //    GetMillionDollars();
 
 
         //Rect buyIncomeButton = new Rect(0, Screen.height - 4 * size.y, size.x, size.y);
@@ -77,15 +77,25 @@ public class Player : User {
 
     public void DoSpawnUnit(Factory f)
     {        
-        SpawnUnit(f, this.m_side);        
+        bool couldSpawn = SpawnUnit(f, this.m_side);
+
+        if (couldSpawn)
+        {
+            GameData.use.BeginBattle();
+        }
     }
 
     public void DoCastSpell(Spell s)
     {
         if (m_mana >= s.m_cost && s.GetTimerPercentage() > 0.99f)
+        {
             m_spellCasting = s;
+            GameData.use.BeginBattle();
+        }
         else
-            Debug.Log("Not enough MP got " + m_mana + ", requires " + s.m_cost);
+        {
+            Debug.Log("Not ready or Not enough MP got " + m_mana + ", requires " + s.m_cost);
+        }
     }
 
     public Spell GetCastingSpell()
