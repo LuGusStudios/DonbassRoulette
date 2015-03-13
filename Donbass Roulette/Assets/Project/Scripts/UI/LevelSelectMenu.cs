@@ -65,7 +65,7 @@ public class LevelSelectMenu : MonoBehaviour {
     {
         Debug.Log("Chosen side: " + chosenSide.ToString());
 
-        //if (chosenSide == Side.None) return;
+        if (chosenSide == Side.None) return;
 
         //if (Advertisement.isReady())
         //{
