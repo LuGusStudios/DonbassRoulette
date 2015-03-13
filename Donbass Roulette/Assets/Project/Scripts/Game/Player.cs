@@ -11,6 +11,10 @@ public class Player : User {
 		if(LugusInput.use.down && m_spellCasting != null)
 		{
             Vector3 position = LugusCamera.game.ScreenToWorldPoint(LugusInput.use.currentPosition);
+
+            if (position.y < GameData.use.m_map.GetGroundBottom())
+                return;
+
             position = position.y(Map.use.GetRandomHeight());
 
             SummonSpell(position, m_spellCasting, this.m_side);
@@ -87,6 +91,15 @@ public class Player : User {
 
     public void DoCastSpell(Spell s)
     {
+        if (m_spellCasting != null)
+        {
+            if (m_spellCasting == s)
+            {
+                m_spellCasting = null;
+                return;
+            }
+        }
+
         if (m_mana >= s.m_cost && s.GetTimerPercentage() > 0.99f)
         {
             m_spellCasting = s;

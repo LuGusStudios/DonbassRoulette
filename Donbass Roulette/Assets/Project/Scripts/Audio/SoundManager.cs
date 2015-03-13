@@ -27,10 +27,9 @@ public class SoundManager : LugusSingletonExisting<SoundManager>
         channel.Play(sound);
     }
 
-    public void PlayClickSound()
-    {
-        //Debug.Log("click");
-        LugusAudio.use.SFX().Play(LugusResources.use.Shared.GetAudio("Click01"));
+    public void PlayClickSound(string sample)
+    {        
+        LugusAudio.use.SFX().Play(LugusResources.use.Shared.GetAudio(sample));
     }
 
     protected void Awake()

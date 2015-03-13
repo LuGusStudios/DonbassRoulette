@@ -545,7 +545,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: c4138bf2661039941a8abad0ea25d919, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
@@ -675,7 +675,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: c4138bf2661039941a8abad0ea25d919, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
@@ -787,7 +787,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 22409576}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: .300000012
+  m_MaxValue: .400000006
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -934,7 +934,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11446976}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: PlayClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11446976
@@ -1066,7 +1078,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: c4138bf2661039941a8abad0ea25d919, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
@@ -1414,9 +1426,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22404456}
   m_RootOrder: 0
-  m_AnchorMin: {x: .0200776774, y: .274393231}
-  m_AnchorMax: {x: .265243351, y: .69889003}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: .0200776774, y: .343735993}
+  m_AnchorMax: {x: .265243351, y: .610805869}
+  m_AnchoredPosition: {x: 0, y: -4.76837158e-07}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22404454
@@ -1487,8 +1499,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22409572}
   m_RootOrder: 0
-  m_AnchorMin: {x: .0200776793, y: .257032126}
-  m_AnchorMax: {x: .265243351, y: .702362239}
+  m_AnchorMin: {x: .0199968331, y: .34373495}
+  m_AnchorMax: {x: .24462755, y: .610806644}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
@@ -1795,8 +1807,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22491772}
   m_RootOrder: 0
-  m_AnchorMin: {x: .0200776774, y: .281337678}
-  m_AnchorMax: {x: .265243351, y: .719723403}
+  m_AnchorMin: {x: .0200776774, y: .343734771}
+  m_AnchorMax: {x: .265243351, y: .610805869}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
